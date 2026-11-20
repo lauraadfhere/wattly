@@ -51,6 +51,7 @@ export default function LoginForm() {
     { role: "learner", label: t("demoLearner") },
     { role: "parent", label: t("demoParent") },
     { role: "teacher", label: t("demoTeacher") },
+    { role: "admin", label: t("demoAdmin") },
   ];
 
   return (
@@ -67,7 +68,7 @@ export default function LoginForm() {
             <p className="text-xs text-[#000A5E]/65">{t("demoAccessHint")}</p>
           </div>
         </div>
-        <div className="grid gap-2 sm:grid-cols-3">
+        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
           {demos.map((demo) => (
             <button
               key={demo.role}

@@ -24,6 +24,12 @@ const DEMOS = [
     name: "Demo Teacher",
     role: "teacher",
   },
+  {
+    email: "admin@wattly.app",
+    password: "demowattly",
+    name: "Wattly Admin",
+    role: "admin",
+  },
 ];
 
 const client = new Client()

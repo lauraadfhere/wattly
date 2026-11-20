@@ -9,5 +9,8 @@ export const appwriteConfig = {
     supportSettings: "support_settings",
     teacherProfiles: "teacher_profiles",
     bookings: "bookings",
+    courses: "courses",
+    videos: "videos",
+    contentItems: "content_items",
   },
 } as const;

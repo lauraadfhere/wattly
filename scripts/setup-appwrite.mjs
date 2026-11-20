@@ -130,6 +130,51 @@ async function main() {
     },
   ]);
 
+  await ensureTable("courses", "Courses", [
+    { key: "title", type: "string", size: 200, required: true },
+    { key: "description", type: "string", size: 4000, required: false },
+    { key: "level", type: "string", size: 16, required: false },
+    {
+      key: "status",
+      type: "enum",
+      elements: ["draft", "published", "archived"],
+      required: true,
+    },
+    { key: "created_by", type: "string", size: 64, required: false },
+  ]);
+
+  await ensureTable("videos", "Videos", [
+    { key: "title", type: "string", size: 200, required: true },
+    { key: "url", type: "url", required: true },
+    { key: "course_id", type: "string", size: 64, required: false },
+    { key: "description", type: "string", size: 2000, required: false },
+    {
+      key: "status",
+      type: "enum",
+      elements: ["draft", "published", "archived"],
+      required: true,
+    },
+    { key: "created_by", type: "string", size: 64, required: false },
+  ]);
+
+  await ensureTable("content_items", "Content Items", [
+    { key: "title", type: "string", size: 200, required: true },
+    { key: "body", type: "string", size: 10000, required: false },
+    {
+      key: "type",
+      type: "enum",
+      elements: ["article", "worksheet", "notice", "resource"],
+      required: true,
+    },
+    {
+      key: "status",
+      type: "enum",
+      elements: ["draft", "published", "archived"],
+      required: true,
+    },
+    { key: "created_by", type: "string", size: 64, required: false },
+  ]);
+
   console.log("Appwrite Wattly schema ready.");
 }
 

@@ -27,7 +27,38 @@
   },
   "Footer": {
     "tagline": "تحدّث الإنجليزية بثقة — من أول حرف A حتى طلاقة Z.",
-    "rights": "جميع الحقوق محفوظة."
+    "rights": "جميع الحقوق محفوظة.",
+    "adminAccess": "دخول المشرف"
+  },
+  "Admin": {
+    "title": "لوحة تحكم المشرف",
+    "intro": "إدارة المستخدمين والدورات والفيديوهات والمحتوى على Wattly.",
+    "adminOnly": "للمشرفين فقط. سجّل الدخول بحساب مشرف.",
+    "users": "المستخدمون",
+    "courses": "الدورات",
+    "videos": "الفيديوهات",
+    "content": "المحتوى",
+    "manageUsers": "إدارة جميع أنواع المستخدمين",
+    "addCourse": "إضافة دورة",
+    "addVideo": "إضافة فيديو",
+    "addContent": "إضافة محتوى",
+    "courseTitle": "عنوان الدورة",
+    "courseDescription": "وصف الدورة",
+    "videoTitle": "عنوان الفيديو",
+    "videoUrl": "رابط الفيديو",
+    "videoDescription": "وصف الفيديو",
+    "courseIdOptional": "معرّف الدورة (اختياري)",
+    "contentTitle": "عنوان المحتوى",
+    "contentBody": "نص المحتوى",
+    "delete": "حذف",
+    "loadFailed": "تعذّر تحميل بيانات المشرف.",
+    "saveFailed": "تعذّر حفظ التغييرات.",
+    "types": {
+      "article": "مقال",
+      "worksheet": "ورقة عمل",
+      "notice": "إشعار",
+      "resource": "مورد"
+    }
   },
   "Platform": {
     "navLabel": "المنصة",
@@ -65,7 +96,8 @@
     "roles": {
       "learner": "متعلم",
       "parent": "ولي أمر",
-      "teacher": "معلم"
+      "teacher": "معلم",
+      "admin": "مشرف"
     },
     "createAccount": "إنشاء الحساب",
     "creating": "جارٍ الإنشاء…",
@@ -81,7 +113,8 @@
     "demoAccessHint": "اختر نوع الحساب — يُملأ تلقائيًا ويدخل مباشرة",
     "demoLearner": "متعلم تجريبي",
     "demoParent": "ولي أمر تجريبي",
-    "demoTeacher": "معلم تجريبي"
+    "demoTeacher": "معلم تجريبي",
+    "demoAdmin": "مشرف تجريبي"
   },
   "Onboarding": {
     "title": "إعداد مسار التعلم",

@@ -27,7 +27,38 @@
   },
   "Footer": {
     "tagline": "Habla inglés con confianza — desde tu primera A hasta una Z fluida.",
-    "rights": "Todos los derechos reservados."
+    "rights": "Todos los derechos reservados.",
+    "adminAccess": "Acceso admin"
+  },
+  "Admin": {
+    "title": "Panel de administración",
+    "intro": "Gestiona usuarios, cursos, vídeos y contenido de Wattly.",
+    "adminOnly": "Solo acceso admin. Inicia sesión con una cuenta de administrador.",
+    "users": "Usuarios",
+    "courses": "Cursos",
+    "videos": "Vídeos",
+    "content": "Contenido",
+    "manageUsers": "Gestionar todos los tipos de usuario",
+    "addCourse": "Añadir curso",
+    "addVideo": "Añadir vídeo",
+    "addContent": "Añadir contenido",
+    "courseTitle": "Título del curso",
+    "courseDescription": "Descripción del curso",
+    "videoTitle": "Título del vídeo",
+    "videoUrl": "URL del vídeo",
+    "videoDescription": "Descripción del vídeo",
+    "courseIdOptional": "ID del curso (opcional)",
+    "contentTitle": "Título del contenido",
+    "contentBody": "Cuerpo del contenido",
+    "delete": "Eliminar",
+    "loadFailed": "No se pudieron cargar los datos de admin.",
+    "saveFailed": "No se pudieron guardar los cambios.",
+    "types": {
+      "article": "Artículo",
+      "worksheet": "Ficha",
+      "notice": "Aviso",
+      "resource": "Recurso"
+    }
   },
   "Platform": {
     "navLabel": "Plataforma",
@@ -65,7 +96,8 @@
     "roles": {
       "learner": "Aprendiz",
       "parent": "Padre/Madre",
-      "teacher": "Profesor"
+      "teacher": "Profesor",
+      "admin": "Admin"
     },
     "createAccount": "Crear cuenta",
     "creating": "Creando…",
@@ -81,7 +113,8 @@
     "demoAccessHint": "Elige un rol — rellena e inicia sesión solo",
     "demoLearner": "Demo aprendiz",
     "demoParent": "Demo padre/madre",
-    "demoTeacher": "Demo profesor"
+    "demoTeacher": "Demo profesor",
+    "demoAdmin": "Demo admin"
   },
   "Onboarding": {
     "title": "Configura tu camino",

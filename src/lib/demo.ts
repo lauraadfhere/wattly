@@ -1,6 +1,9 @@
 import type { UserRole } from "@/lib/auth";
 
-export type DemoRole = Extract<UserRole, "learner" | "parent" | "teacher">;
+export type DemoRole = Extract<
+  UserRole,
+  "learner" | "parent" | "teacher" | "admin"
+>;
 
 export const DEMO_ACCOUNTS: Record<
   DemoRole,
@@ -23,6 +26,12 @@ export const DEMO_ACCOUNTS: Record<
     password: "demowattly",
     name: "Demo Teacher",
     role: "teacher",
+  },
+  admin: {
+    email: "admin@wattly.app",
+    password: "demowattly",
+    name: "Wattly Admin",
+    role: "admin",
   },
 };
 

@@ -27,7 +27,38 @@
   },
   "Footer": {
     "tagline": "Parlez anglais en confiance — de votre premier A jusqu’au Z fluide.",
-    "rights": "Tous droits réservés."
+    "rights": "Tous droits réservés.",
+    "adminAccess": "Accès admin"
+  },
+  "Admin": {
+    "title": "Tableau de bord admin",
+    "intro": "Gérez les utilisateurs, cours, vidéos et contenus Wattly.",
+    "adminOnly": "Accès réservé aux administrateurs. Connectez-vous avec un compte admin.",
+    "users": "Utilisateurs",
+    "courses": "Cours",
+    "videos": "Vidéos",
+    "content": "Contenu",
+    "manageUsers": "Gérer tous les types d’utilisateurs",
+    "addCourse": "Ajouter un cours",
+    "addVideo": "Ajouter une vidéo",
+    "addContent": "Ajouter du contenu",
+    "courseTitle": "Titre du cours",
+    "courseDescription": "Description du cours",
+    "videoTitle": "Titre de la vidéo",
+    "videoUrl": "URL de la vidéo",
+    "videoDescription": "Description de la vidéo",
+    "courseIdOptional": "ID du cours (optionnel)",
+    "contentTitle": "Titre du contenu",
+    "contentBody": "Corps du contenu",
+    "delete": "Supprimer",
+    "loadFailed": "Impossible de charger les données admin.",
+    "saveFailed": "Impossible d’enregistrer les modifications.",
+    "types": {
+      "article": "Article",
+      "worksheet": "Fiche",
+      "notice": "Annonce",
+      "resource": "Ressource"
+    }
   },
   "Platform": {
     "navLabel": "Plateforme",
@@ -65,7 +96,8 @@
     "roles": {
       "learner": "Apprenant",
       "parent": "Parent",
-      "teacher": "Professeur"
+      "teacher": "Professeur",
+      "admin": "Admin"
     },
     "createAccount": "Créer le compte",
     "creating": "Création…",
@@ -81,7 +113,8 @@
     "demoAccessHint": "Choisissez un rôle — remplissage et connexion auto",
     "demoLearner": "Démo apprenant",
     "demoParent": "Démo parent",
-    "demoTeacher": "Démo professeur"
+    "demoTeacher": "Démo professeur",
+    "demoAdmin": "Démo admin"
   },
   "Onboarding": {
     "title": "Configurer votre parcours",

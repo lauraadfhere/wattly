@@ -27,7 +27,38 @@
   },
   "Footer": {
     "tagline": "Speak English with confidence — from your very first A to fluent Z.",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "adminAccess": "Admin access"
+  },
+  "Admin": {
+    "title": "Admin dashboard",
+    "intro": "Manage users, courses, videos and learning content across Wattly.",
+    "adminOnly": "Admin access only. Sign in with an admin account.",
+    "users": "Users",
+    "courses": "Courses",
+    "videos": "Videos",
+    "content": "Content",
+    "manageUsers": "Manage all user types",
+    "addCourse": "Add course",
+    "addVideo": "Add video",
+    "addContent": "Add content",
+    "courseTitle": "Course title",
+    "courseDescription": "Course description",
+    "videoTitle": "Video title",
+    "videoUrl": "Video URL",
+    "videoDescription": "Video description",
+    "courseIdOptional": "Course ID (optional)",
+    "contentTitle": "Content title",
+    "contentBody": "Content body",
+    "delete": "Delete",
+    "loadFailed": "Could not load admin data.",
+    "saveFailed": "Could not save changes.",
+    "types": {
+      "article": "Article",
+      "worksheet": "Worksheet",
+      "notice": "Notice",
+      "resource": "Resource"
+    }
   },
   "Platform": {
     "navLabel": "Platform",
@@ -65,7 +96,8 @@
     "roles": {
       "learner": "Learner",
       "parent": "Parent",
-      "teacher": "Teacher"
+      "teacher": "Teacher",
+      "admin": "Admin"
     },
     "createAccount": "Create account",
     "creating": "Creating…",
@@ -81,7 +113,8 @@
     "demoAccessHint": "Pick a role — auto-fills and signs you in",
     "demoLearner": "Demo learner",
     "demoParent": "Demo parent",
-    "demoTeacher": "Demo teacher"
+    "demoTeacher": "Demo teacher",
+    "demoAdmin": "Demo admin"
   },
   "Onboarding": {
     "title": "Set up your learning path",
