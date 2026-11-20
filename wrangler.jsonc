@@ -4,6 +4,8 @@
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-11-20",
   "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": true,
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
@@ -14,6 +16,7 @@
   "vars": {
     "NEXT_PUBLIC_APPWRITE_ENDPOINT": "https://fra.cloud.appwrite.io/v1",
     "NEXT_PUBLIC_APPWRITE_PROJECT_ID": "6ad515c80023f767eed7",
-    "NEXT_PUBLIC_APPWRITE_DATABASE_ID": "wattly"
+    "NEXT_PUBLIC_APPWRITE_DATABASE_ID": "wattly",
+    "NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME": "dp5g9tinm"
   }
 }
