@@ -4,10 +4,11 @@ import { notFound } from "next/navigation";
 import * as rootParams from "next/root-params";
 import { routing } from "./routing";
 
-import ar from "../../messages/ar.json";
-import en from "../../messages/en.json";
-import es from "../../messages/es.json";
-import fr from "../../messages/fr.json";
+// Load as TS modules (not JSON) so Turbopack never wraps catalogs in JSON.parse().
+import ar from "../../messages/ar";
+import en from "../../messages/en";
+import es from "../../messages/es";
+import fr from "../../messages/fr";
 
 const catalogs = {
   en,

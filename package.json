@@ -15,6 +15,7 @@
     "appwrite:setup": "node --env-file=.env.local scripts/setup-appwrite.mjs",
     "demo:user": "node --env-file=.env.local scripts/ensure-demo-user.mjs",
     "cloudinary:folders": "node --env-file=.env.local scripts/ensure-cloudinary-folders.mjs",
+    "messages:sync": "node scripts/sync-messages-ts.mjs",
     "cf:sync-vars": "node --env-file=.env.local scripts/sync-cloudflare-vars.mjs"
   },
   "dependencies": {
