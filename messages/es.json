@@ -1,0 +1,14 @@
+{
+  "Metadata": {
+    "title": "Wattly English Platform",
+    "description": "Aprende inglés con Wattly — lecciones interactivas, práctica y seguimiento del progreso."
+  },
+  "HomePage": {
+    "brand": "Wattly",
+    "title": "Aprende inglés con confianza",
+    "description": "Lecciones interactivas, práctica real y progreso que se mantiene — pensado para quienes quieren resultados.",
+    "ctaPrimary": "Empezar",
+    "ctaSecondary": "Ver documentación",
+    "languageLabel": "Idioma"
+  }
+}

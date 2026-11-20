@@ -1,0 +1,14 @@
+{
+  "Metadata": {
+    "title": "Wattly English Platform",
+    "description": "Learn English with Wattly — interactive lessons, practice, and progress tracking."
+  },
+  "HomePage": {
+    "brand": "Wattly",
+    "title": "Learn English with confidence",
+    "description": "Interactive lessons, real practice, and progress that sticks — built for learners who want results.",
+    "ctaPrimary": "Get started",
+    "ctaSecondary": "View documentation",
+    "languageLabel": "Language"
+  }
+}
