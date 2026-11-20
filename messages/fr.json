@@ -35,8 +35,22 @@
     "teachers": "Professeurs",
     "practice": "Pratique",
     "onboarding": "Onboarding",
+    "profile": "Profil",
+    "logout": "Déconnexion",
     "login": "Connexion",
     "signup": "Inscription"
+  },
+  "Profile": {
+    "title": "Votre profil",
+    "intro": "Gérez votre identité Wattly, votre rôle et votre nom affiché.",
+    "displayName": "Nom affiché",
+    "email": "E-mail",
+    "role": "Rôle",
+    "save": "Enregistrer",
+    "saving": "Enregistrement…",
+    "saved": "Profil mis à jour.",
+    "saveFailed": "Impossible de mettre à jour le profil.",
+    "needLogin": "Connectez-vous pour voir votre profil."
   },
   "Auth": {
     "loginTitle": "Bon retour",
@@ -64,7 +78,10 @@
     "signupFailed": "Impossible de créer le compte.",
     "loginFailed": "Connexion impossible. Vérifiez l’e-mail et le mot de passe.",
     "demoAccess": "Accès démo",
-    "demoAccessHint": "Un clic — remplit la démo et vous connecte"
+    "demoAccessHint": "Choisissez un rôle — remplissage et connexion auto",
+    "demoLearner": "Démo apprenant",
+    "demoParent": "Démo parent",
+    "demoTeacher": "Démo professeur"
   },
   "Onboarding": {
     "title": "Configurer votre parcours",

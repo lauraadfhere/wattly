@@ -5,11 +5,26 @@ const projectId = process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID;
 const apiKey = process.env.APPWRITE_API_KEY;
 const databaseId = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID || "wattly";
 
-const DEMO = {
-  email: "demo@wattly.app",
-  password: "demowattly",
-  name: "Wattly Demo",
-};
+const DEMOS = [
+  {
+    email: "learner@wattly.app",
+    password: "demowattly",
+    name: "Demo Learner",
+    role: "learner",
+  },
+  {
+    email: "parent@wattly.app",
+    password: "demowattly",
+    name: "Demo Parent",
+    role: "parent",
+  },
+  {
+    email: "teacher@wattly.app",
+    password: "demowattly",
+    name: "Demo Teacher",
+    role: "teacher",
+  },
+];
 
 const client = new Client()
   .setEndpoint(endpoint)
@@ -19,33 +34,30 @@ const client = new Client()
 const users = new Users(client);
 const tablesDB = new TablesDB(client);
 
-async function main() {
+async function ensureUser(demo) {
   let userId;
 
-  try {
-    const listed = await users.list({ queries: [Query.equal("email", DEMO.email)] });
-    if (listed.users?.[0]) {
-      userId = listed.users[0].$id;
-      console.log(`Demo user exists: ${userId}`);
-      try {
-        await users.updatePassword({ userId, password: DEMO.password });
-      } catch {
-        // password update optional
-      }
-    }
-  } catch (error) {
-    console.log("List users failed, will create:", error.message);
-  }
+  const listed = await users.list({
+    queries: [Query.equal("email", demo.email)],
+  });
 
-  if (!userId) {
+  if (listed.users?.[0]) {
+    userId = listed.users[0].$id;
+    console.log(`Exists: ${demo.email} (${userId})`);
+    try {
+      await users.updatePassword({ userId, password: demo.password });
+    } catch {
+      // ignore
+    }
+  } else {
     const created = await users.create({
       userId: ID.unique(),
-      email: DEMO.email,
-      password: DEMO.password,
-      name: DEMO.name,
+      email: demo.email,
+      password: demo.password,
+      name: demo.name,
     });
     userId = created.$id;
-    console.log(`Created demo user: ${userId}`);
+    console.log(`Created: ${demo.email} (${userId})`);
   }
 
   const ownerPermissions = [
@@ -58,7 +70,7 @@ async function main() {
   const existing = await tablesDB.listRows({
     databaseId,
     tableId: "wattly",
-    queries: [Query.equal("email", DEMO.email), Query.limit(1)],
+    queries: [Query.equal("email", demo.email), Query.limit(1)],
   });
 
   if (!existing.rows?.length) {
@@ -68,20 +80,25 @@ async function main() {
       rowId: ID.unique(),
       data: {
         user_id: userId,
-        role: "learner",
-        display_name: DEMO.name,
-        email: DEMO.email,
+        role: demo.role,
+        display_name: demo.name,
+        email: demo.email,
         locale: "en",
         onboarding_done: true,
       },
       permissions: ownerPermissions,
     });
-    console.log("Created demo wattly profile row");
+    console.log(`Profile row created for ${demo.role}`);
   } else {
-    console.log("Demo profile row already present");
+    console.log(`Profile row OK for ${demo.role}`);
   }
+}
 
-  console.log("Demo ready:", DEMO.email, "/", DEMO.password);
+async function main() {
+  for (const demo of DEMOS) {
+    await ensureUser(demo);
+  }
+  console.log("Demo accounts ready (password: demowattly)");
 }
 
 main().catch((error) => {

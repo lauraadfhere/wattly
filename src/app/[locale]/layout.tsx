@@ -1,14 +1,22 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Cairo, Poppins } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
+import AppLoader from "@/components/AppLoader";
+import { AuthProvider } from "@/components/auth/AuthProvider";
+import { isRtlLocale, routing } from "@/i18n/routing";
 import "../globals.css";
 
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const cairo = Cairo({
+  variable: "--font-cairo",
+  subsets: ["arabic", "latin"],
   weight: ["400", "500", "600", "700", "800"],
 });
 
@@ -27,6 +35,11 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
+    icons: {
+      icon: [{ url: "/favicon.png", type: "image/png" }],
+      apple: [{ url: "/favicon.png" }],
+      shortcut: ["/favicon.png"],
+    },
   };
 }
 
@@ -43,10 +56,25 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  const rtl = isRtlLocale(locale);
+
   return (
-    <html lang={locale} className={`${poppins.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-wattly-blue text-white">
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+    <html
+      lang={locale}
+      dir={rtl ? "rtl" : "ltr"}
+      className={`${poppins.variable} ${cairo.variable} h-full antialiased`}
+    >
+      <body
+        className={`min-h-full flex flex-col bg-wattly-blue text-white ${
+          rtl ? "font-arabic" : "font-sans"
+        }`}
+      >
+        <NextIntlClientProvider>
+          <AuthProvider>
+            <AppLoader />
+            {children}
+          </AuthProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

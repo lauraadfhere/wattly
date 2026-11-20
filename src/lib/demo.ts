@@ -1,5 +1,30 @@
-export const DEMO_CREDENTIALS = {
-  email: "demo@wattly.app",
-  password: "demowattly",
-  name: "Wattly Demo",
-} as const;
+import type { UserRole } from "@/lib/auth";
+
+export type DemoRole = Extract<UserRole, "learner" | "parent" | "teacher">;
+
+export const DEMO_ACCOUNTS: Record<
+  DemoRole,
+  { email: string; password: string; name: string; role: DemoRole }
+> = {
+  learner: {
+    email: "learner@wattly.app",
+    password: "demowattly",
+    name: "Demo Learner",
+    role: "learner",
+  },
+  parent: {
+    email: "parent@wattly.app",
+    password: "demowattly",
+    name: "Demo Parent",
+    role: "parent",
+  },
+  teacher: {
+    email: "teacher@wattly.app",
+    password: "demowattly",
+    name: "Demo Teacher",
+    role: "teacher",
+  },
+};
+
+/** @deprecated use DEMO_ACCOUNTS.learner */
+export const DEMO_CREDENTIALS = DEMO_ACCOUNTS.learner;

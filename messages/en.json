@@ -35,8 +35,22 @@
     "teachers": "Teachers",
     "practice": "Practice",
     "onboarding": "Onboarding",
+    "profile": "Profile",
+    "logout": "Log out",
     "login": "Login",
     "signup": "Sign up"
+  },
+  "Profile": {
+    "title": "Your profile",
+    "intro": "Manage your Wattly identity, role and display name.",
+    "displayName": "Display name",
+    "email": "Email",
+    "role": "Role",
+    "save": "Save changes",
+    "saving": "Saving…",
+    "saved": "Profile updated.",
+    "saveFailed": "Could not update profile.",
+    "needLogin": "Please sign in to view your profile."
   },
   "Auth": {
     "loginTitle": "Welcome back",
@@ -64,7 +78,10 @@
     "signupFailed": "Could not create your account.",
     "loginFailed": "Could not sign in. Check your email and password.",
     "demoAccess": "Demo access",
-    "demoAccessHint": "One click — fills demo and signs you in"
+    "demoAccessHint": "Pick a role — auto-fills and signs you in",
+    "demoLearner": "Demo learner",
+    "demoParent": "Demo parent",
+    "demoTeacher": "Demo teacher"
   },
   "Onboarding": {
     "title": "Set up your learning path",

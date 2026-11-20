@@ -17,6 +17,7 @@
   --color-wattly-sunshine: var(--wattly-sunshine);
   --color-wattly-ink: var(--wattly-ink);
   --font-sans: var(--font-poppins);
+  --font-arabic: var(--font-cairo);
 }
 
 html,
@@ -27,6 +28,24 @@ body {
 
 body {
   font-family: var(--font-poppins), system-ui, sans-serif;
+}
+
+.font-arabic {
+  font-family: var(--font-cairo), "Segoe UI", Tahoma, sans-serif;
+}
+
+.dashboard-shell,
+.dashboard-title,
+.dashboard-nav,
+.dashboard-header {
+  font-family: var(--font-dashboard), var(--font-poppins), system-ui, sans-serif;
+}
+
+/* Reduce desktop chrome ~10% so 100% zoom still feels comfortable */
+@media (min-width: 1024px) {
+  html {
+    font-size: 90%;
+  }
 }
 
 ::selection {
@@ -53,4 +72,30 @@ body {
 
 .hero-rise-delay {
   animation-delay: 0.12s;
+}
+
+@keyframes loader-slide {
+  from {
+    transform: translateX(-120%);
+  }
+  to {
+    transform: translateX(220%);
+  }
+}
+
+.app-loader-bar {
+  animation: loader-slide 1s ease-in-out infinite;
+}
+
+[dir="rtl"] .app-loader-bar {
+  animation-name: loader-slide-rtl;
+}
+
+@keyframes loader-slide-rtl {
+  from {
+    transform: translateX(120%);
+  }
+  to {
+    transform: translateX(-220%);
+  }
 }

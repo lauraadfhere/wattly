@@ -123,3 +123,18 @@ export async function markOnboardingDone(profileId: string) {
     data: { onboarding_done: true },
   });
 }
+
+export async function updateProfileName(profileId: string, displayName: string) {
+  const { account, tablesDB } = createBrowserClient();
+
+  await account.updateName({ name: displayName });
+
+  const updated = await tablesDB.updateRow({
+    databaseId: appwriteConfig.databaseId,
+    tableId: appwriteConfig.tables.wattly,
+    rowId: profileId,
+    data: { display_name: displayName },
+  });
+
+  return updated as unknown as WattlyProfile;
+}
