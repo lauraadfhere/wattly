@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Cairo, Poppins } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import AppLoader from "@/components/AppLoader";
 import CookieBanner from "@/components/CookieBanner";
@@ -56,6 +56,8 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+
+  setRequestLocale(locale);
 
   const rtl = isRtlLocale(locale);
 

@@ -4,8 +4,9 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
-  cacheComponents: true,
-  partialPrefetching: true,
+  // Cache Components hangs on Cloudflare Workers (setTimeout incompat) → Internal Server Error.
+  // Keep these off for OpenNext/Workers runtime stability.
+  cacheComponents: false,
   images: {
     remotePatterns: [
       {
