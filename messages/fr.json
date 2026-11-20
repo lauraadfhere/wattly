@@ -12,12 +12,20 @@
   "Language": {
     "label": "Langue"
   },
+  "About": {
+    "title": "À propos de Wattly",
+    "intro": "Apprentissage inclusif de l’anglais avec professeurs, pratique IA et parcours flexibles.",
+    "body": "Wattly aide les apprenants, écoles, équipes et centres à gagner en confiance — avec sous-titres, pratique calme et préférences de soutien que vous contrôlez. Aucun diagnostic demandé.",
+    "seeCourses": "Voir les démos de cours",
+    "backHome": "Retour à l’accueil"
+  },
   "Menu": {
     "title": "Menu principal",
     "open": "Ouvrir le menu",
     "close": "Fermer le menu",
     "search": "Rechercher",
     "searchPlaceholder": "Rechercher professeurs, leçons…",
+    "about": "À propos",
     "login": "Connexion",
     "signup": "Inscription",
     "lessons": "Leçons",
@@ -28,7 +36,88 @@
   "Footer": {
     "tagline": "Parlez anglais en confiance — de votre premier A jusqu’au Z fluide.",
     "rights": "Tous droits réservés.",
-    "adminAccess": "Accès admin"
+    "adminAccess": "Accès admin",
+    "navLabel": "Pied de page",
+    "policies": "Politiques et conditions",
+    "contact": "Contact",
+    "courses": "Cours"
+  },
+  "CoursesShowcase": {
+    "eyebrow": "Wattly pour apprendre",
+    "title": "Amener Wattly dans une école, une équipe ou un centre ?",
+    "body": "Parcours sur mesure pour apprenants, classes et organisations — avec des outils inclusifs.",
+    "learnMore": "En savoir plus",
+    "cta": "Voir les démos de cours",
+    "cards": {
+      "learners": {
+        "title": "Apprenants",
+        "body": "Cours à votre rythme avec sous-titres, visuels et pratique calme dès le premier jour.",
+        "link": "Cours Wattly"
+      },
+      "schools": {
+        "title": "Écoles",
+        "body": "Une plateforme engageante qui fait parler les élèves tôt, avec le reporting dont les enseignants ont besoin.",
+        "link": "Wattly pour les écoles"
+      },
+      "teams": {
+        "title": "Équipes",
+        "body": "Préparez les équipes au travail interculturel et à un anglais confiant avec des partenaires mondiaux.",
+        "link": "Wattly pour les équipes"
+      },
+      "centers": {
+        "title": "Centres",
+        "body": "Une préparation à l’anglais fiable pour centres et programmes communautaires.",
+        "link": "Wattly pour les centres"
+      }
+    }
+  },
+  "CookieBanner": {
+    "title": "Nous respectons votre vie privée",
+    "body": "Nous utilisons des cookies pour améliorer votre expérience. Voir Politiques et conditions, ou choisissez une option ci-dessous.",
+    "acceptAll": "Tout accepter",
+    "necessaryOnly": "Strictement nécessaires uniquement",
+    "manage": "Gérer les cookies"
+  },
+  "Courses": {
+    "title": "Démos de cours",
+    "subtitle": "Un aperçu clair des parcours Wattly, avec couvertures sur Cloudinary.",
+    "intro": "Ces cours démo montrent les niveaux, le focus des leçons et comment médias (couvertures, PDF, vidéos) s’intégreront.",
+    "mediaHint": "Dossier couvertures : {folder}",
+    "startLearning": "Commencer",
+    "askQuestion": "Nous contacter",
+    "items": {
+      "starter": {
+        "title": "Anglais débutant",
+        "body": "Premiers mots, salutations et pratique calme avec images et sous-titres."
+      },
+      "conversation": {
+        "title": "Conversation du quotidien",
+        "body": "Situations réelles — commander, rencontrer, demander de l’aide."
+      },
+      "business": {
+        "title": "Anglais pro",
+        "body": "Réunions, e-mails et prise de parole au travail."
+      },
+      "exam": {
+        "title": "Préparation examens",
+        "body": "Préparation structurée, formats flexibles — sans minuteurs stressants."
+      }
+    }
+  },
+  "Policies": {
+    "title": "Politiques et conditions",
+    "intro": "Comment Wattly traite vos données et ce que vous acceptez en utilisant la plateforme.",
+    "privacyTitle": "Confidentialité",
+    "privacyBody": "Nous collectons seulement ce qui est nécessaire au compte, aux leçons et aux préférences de soutien. Aucun diagnostic médical. Vous contrôlez ce que voient les professeurs.",
+    "termsTitle": "Conditions d’utilisation",
+    "termsBody": "Wattly sert à apprendre l’anglais avec des professeurs et des outils IA. Respectez les autres, protégez vos identifiants et respectez la loi locale."
+  },
+  "Contact": {
+    "title": "Contact",
+    "intro": "Questions sur les cours, les comptes ou le soutien ? Écrivez à l’équipe Wattly.",
+    "emailLabel": "E-mail",
+    "hours": "Réponse sous un jour ouvré en général.",
+    "seeCourses": "Voir les démos de cours"
   },
   "Admin": {
     "title": "Tableau de bord admin",

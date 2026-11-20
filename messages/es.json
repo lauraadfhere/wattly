@@ -12,12 +12,20 @@
   "Language": {
     "label": "Idioma"
   },
+  "About": {
+    "title": "Sobre Wattly",
+    "intro": "Aprendizaje inclusivo de inglés con profesores, práctica con IA y rutas flexibles.",
+    "body": "Wattly ayuda a alumnos, escuelas, equipos y centros a ganar confianza — con subtítulos, práctica calmada y preferencias de apoyo que tú controlas. Sin pedir un diagnóstico.",
+    "seeCourses": "Ver demos de cursos",
+    "backHome": "Volver al inicio"
+  },
   "Menu": {
     "title": "Menú principal",
     "open": "Abrir menú",
     "close": "Cerrar menú",
     "search": "Buscar",
     "searchPlaceholder": "Buscar profesores, lecciones…",
+    "about": "Acerca de",
     "login": "Iniciar sesión",
     "signup": "Registrarse",
     "lessons": "Lecciones",
@@ -28,7 +36,88 @@
   "Footer": {
     "tagline": "Habla inglés con confianza — desde tu primera A hasta una Z fluida.",
     "rights": "Todos los derechos reservados.",
-    "adminAccess": "Acceso admin"
+    "adminAccess": "Acceso admin",
+    "navLabel": "Pie de página",
+    "policies": "Políticas y términos",
+    "contact": "Contacto",
+    "courses": "Cursos"
+  },
+  "CoursesShowcase": {
+    "eyebrow": "Wattly para aprender",
+    "title": "¿Llevar Wattly a una escuela, equipo o centro?",
+    "body": "Rutas a medida para alumnos, aulas y organizaciones — con herramientas inclusivas.",
+    "learnMore": "Más información",
+    "cta": "Ver demos de cursos",
+    "cards": {
+      "learners": {
+        "title": "Alumnos",
+        "body": "Cursos a tu ritmo con subtítulos, visuales y práctica calmada desde el primer día.",
+        "link": "Cursos Wattly"
+      },
+      "schools": {
+        "title": "Escuelas",
+        "body": "Una plataforma que hace hablar a los estudiantes pronto, con el reporting que necesita el centro.",
+        "link": "Wattly para escuelas"
+      },
+      "teams": {
+        "title": "Equipos",
+        "body": "Prepara equipos para el trabajo intercultural y un inglés confiado con socios globales.",
+        "link": "Wattly para equipos"
+      },
+      "centers": {
+        "title": "Centros",
+        "body": "Preparación de inglés de confianza para centros y programas comunitarios.",
+        "link": "Wattly para centros"
+      }
+    }
+  },
+  "CookieBanner": {
+    "title": "Valoramos tu privacidad",
+    "body": "Usamos cookies para mejorar tu experiencia. Consulta Políticas y términos, o elige una opción abajo.",
+    "acceptAll": "Aceptar todo",
+    "necessaryOnly": "Solo las estrictamente necesarias",
+    "manage": "Gestionar cookies"
+  },
+  "Courses": {
+    "title": "Demos de cursos",
+    "subtitle": "Una vista clara de los caminos Wattly, con portadas en Cloudinary.",
+    "intro": "Estos cursos demo muestran bandas de nivel, foco de lección y cómo vivirán portadas, PDF y vídeos en Wattly.",
+    "mediaHint": "Carpeta de portadas: {folder}",
+    "startLearning": "Empezar a aprender",
+    "askQuestion": "Contáctanos",
+    "items": {
+      "starter": {
+        "title": "Inglés inicial",
+        "body": "Primeras palabras, saludos y práctica calmada con imágenes y subtítulos."
+      },
+      "conversation": {
+        "title": "Conversación diaria",
+        "body": "Situaciones reales — pedir comida, conocer gente, pedir ayuda."
+      },
+      "business": {
+        "title": "Inglés laboral",
+        "body": "Reuniones, correos y hablar con confianza en el trabajo."
+      },
+      "exam": {
+        "title": "Preparación de exámenes",
+        "body": "Preparación estructurada con formatos flexibles — sin cronómetros."
+      }
+    }
+  },
+  "Policies": {
+    "title": "Políticas y términos",
+    "intro": "Cómo Wattly trata tus datos y qué aceptas al usar la plataforma.",
+    "privacyTitle": "Privacidad",
+    "privacyBody": "Solo recogemos lo necesario para tu cuenta, clases y preferencias de apoyo. Nunca pedimos un diagnóstico. Tú controlas qué ven los profesores.",
+    "termsTitle": "Términos de uso",
+    "termsBody": "Wattly es para aprender inglés con profesores y herramientas de IA. Usa un lenguaje respetuoso, protege tu acceso y cumple la ley local."
+  },
+  "Contact": {
+    "title": "Contacto",
+    "intro": "¿Preguntas sobre cursos, cuentas o apoyo? Escribe al equipo Wattly.",
+    "emailLabel": "Correo",
+    "hours": "Solemos responder en un día laborable.",
+    "seeCourses": "Ver demos de cursos"
   },
   "Admin": {
     "title": "Panel de administración",

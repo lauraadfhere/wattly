@@ -5,9 +5,15 @@ import { Link } from "@/i18n/navigation";
 export default async function Footer() {
   const t = await getTranslations("Footer");
 
+  const links = [
+    { href: "/policies" as const, label: t("policies") },
+    { href: "/contact" as const, label: t("contact") },
+    { href: "/courses" as const, label: t("courses") },
+  ];
+
   return (
     <footer className="bg-black text-white">
-      <div className="mx-auto flex w-full max-w-6xl flex-col items-start gap-3 px-6 py-8 sm:px-10 lg:px-16">
+      <div className="mx-auto flex w-full max-w-6xl flex-col items-start gap-4 px-6 py-8 sm:px-10 lg:px-16">
         <Image
           src="/brand/wattly-logo-white.png"
           alt="Wattly"
@@ -16,6 +22,22 @@ export default async function Footer() {
           className="h-auto w-[10vw] min-w-[72px] max-w-[120px]"
         />
         <p className="max-w-xl text-sm leading-6 text-white/70">{t("tagline")}</p>
+
+        <nav
+          aria-label={t("navLabel")}
+          className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-medium text-white/70"
+        >
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="hover:text-white"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
         <div className="flex w-full items-end justify-between gap-4 pt-2">
           <p className="text-xs text-white/45">
             © 2026 Wattly. {t("rights")}

@@ -6,6 +6,7 @@ import { Link, useRouter } from "@/i18n/navigation";
 import LanguageGlobe from "@/components/LanguageGlobe";
 
 const menuItems = [
+  { href: "/about", key: "about" as const },
   { href: "/login", key: "login" as const },
   { href: "/signup", key: "signup" as const },
   { href: "/lessons", key: "lessons" as const },
@@ -43,6 +44,13 @@ export default function HeroActions() {
     <>
       <div className="absolute end-4 top-4 z-40 flex items-center gap-1 sm:end-8 sm:top-8">
         <LanguageGlobe tone="hero" />
+
+        <Link
+          href="/about"
+          className="px-2.5 py-2 text-sm font-medium text-white/90 hover:text-white"
+        >
+          {t("about")}
+        </Link>
 
         <button
           type="button"

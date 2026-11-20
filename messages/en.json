@@ -9,6 +9,13 @@
     "comingSoon": "This section is coming soon.",
     "backHome": "Go to dashboard"
   },
+  "About": {
+    "title": "About Wattly",
+    "intro": "Inclusive English learning with teachers, AI practice, and flexible paths.",
+    "body": "Wattly helps learners, schools, teams, and centers build confident English — with captions, calm practice, and support preferences you control. No diagnosis required.",
+    "seeCourses": "See course demos",
+    "backHome": "Back to home"
+  },
   "Language": {
     "label": "Language"
   },
@@ -18,6 +25,7 @@
     "close": "Close menu",
     "search": "Search",
     "searchPlaceholder": "Search teachers, lessons…",
+    "about": "About",
     "login": "Login",
     "signup": "Sign up",
     "lessons": "Lessons",
@@ -28,7 +36,88 @@
   "Footer": {
     "tagline": "Speak English with confidence — from your very first A to fluent Z.",
     "rights": "All rights reserved.",
-    "adminAccess": "Admin access"
+    "adminAccess": "Admin access",
+    "navLabel": "Footer",
+    "policies": "Policies & Terms",
+    "contact": "Contact",
+    "courses": "Courses"
+  },
+  "CoursesShowcase": {
+    "eyebrow": "Wattly for learning",
+    "title": "Bringing Wattly to a school, team, or learning center?",
+    "body": "Custom paths for learners, classrooms, and organizations — with inclusive tools built in.",
+    "learnMore": "Learn more",
+    "cta": "Explore course demos",
+    "cards": {
+      "learners": {
+        "title": "Learners",
+        "body": "Self-paced courses with captions, visuals, and calm practice from day one.",
+        "link": "Wattly courses"
+      },
+      "schools": {
+        "title": "Schools",
+        "body": "An engaging English platform that gets students speaking early, with reporting teachers need.",
+        "link": "Wattly for schools"
+      },
+      "teams": {
+        "title": "Teams",
+        "body": "Equip teams for cross-cultural work and confident English with global partners.",
+        "link": "Wattly for teams"
+      },
+      "centers": {
+        "title": "Centers",
+        "body": "Trusted for mission-ready English readiness in centers and community programs.",
+        "link": "Wattly for centers"
+      }
+    }
+  },
+  "CookieBanner": {
+    "title": "We value your privacy",
+    "body": "We use cookies to improve your experience. See Policies & Terms for details, or choose an option below.",
+    "acceptAll": "Accept all",
+    "necessaryOnly": "Only strictly necessary",
+    "manage": "Manage cookies"
+  },
+  "Courses": {
+    "title": "Course demos",
+    "subtitle": "A clear look at Wattly learning paths, with covers hosted on Cloudinary.",
+    "intro": "These demo courses show level bands, lesson focus, and how media (covers, PDFs, videos) will sit in Wattly once published.",
+    "mediaHint": "Cover folder: {folder}",
+    "startLearning": "Start learning",
+    "askQuestion": "Contact us",
+    "items": {
+      "starter": {
+        "title": "Starter English",
+        "body": "First words, greetings, and calm practice with pictures and captions."
+      },
+      "conversation": {
+        "title": "Everyday conversation",
+        "body": "Real situations — ordering food, meeting people, asking for help."
+      },
+      "business": {
+        "title": "Work English",
+        "body": "Meetings, emails, and confident speaking for the workplace."
+      },
+      "exam": {
+        "title": "Exam readiness",
+        "body": "Structured prep with flexible formats — no pressure timers."
+      }
+    }
+  },
+  "Policies": {
+    "title": "Policies & Terms",
+    "intro": "How Wattly handles your data and what you agree to when using the platform.",
+    "privacyTitle": "Privacy",
+    "privacyBody": "We collect only what we need to run your account, lessons, and support preferences. We never ask for a medical diagnosis. You control what teachers can see.",
+    "termsTitle": "Terms of use",
+    "termsBody": "Wattly is for learning English with teachers and AI tools. Please use respectful language, keep login details private, and follow local laws when using the service."
+  },
+  "Contact": {
+    "title": "Contact",
+    "intro": "Questions about courses, accounts, or support preferences? Reach the Wattly team.",
+    "emailLabel": "Email",
+    "hours": "We usually reply within one business day.",
+    "seeCourses": "See course demos"
   },
   "Admin": {
     "title": "Admin dashboard",

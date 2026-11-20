@@ -4,6 +4,18 @@ import { notFound } from "next/navigation";
 import * as rootParams from "next/root-params";
 import { routing } from "./routing";
 
+import ar from "../../messages/ar.json";
+import en from "../../messages/en.json";
+import es from "../../messages/es.json";
+import fr from "../../messages/fr.json";
+
+const catalogs = {
+  en,
+  fr,
+  es,
+  ar,
+} as const;
+
 export default getRequestConfig(async ({ locale }) => {
   if (!locale) {
     const paramValue = await rootParams.locale();
@@ -14,8 +26,12 @@ export default getRequestConfig(async ({ locale }) => {
     }
   }
 
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
   return {
     locale,
-    messages: (await import(`../../messages/${locale}.json`)).default,
+    messages: catalogs[locale],
   };
 });
