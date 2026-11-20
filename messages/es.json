@@ -1,14 +1,130 @@
 {
   "Metadata": {
-    "title": "Wattly English Platform",
-    "description": "Aprende inglés con Wattly — lecciones interactivas, práctica y seguimiento del progreso."
+    "title": "Wattly English",
+    "description": "Aprende inglés con Wattly — clases inclusivas con profesores y apoyo de IA."
   },
   "HomePage": {
-    "brand": "Wattly",
-    "title": "Aprende inglés con confianza",
-    "description": "Lecciones interactivas, práctica real y progreso que se mantiene — pensado para quienes quieren resultados.",
-    "ctaPrimary": "Empezar",
-    "ctaSecondary": "Ver documentación",
-    "languageLabel": "Idioma"
+    "title": "Aprende más, obtén resultados, progresa.",
+    "description": "Un método probado con total flexibilidad — en línea o en el centro, tú eliges.",
+    "comingSoon": "Esta sección estará disponible pronto.",
+    "backHome": "Ir al panel"
+  },
+  "Language": {
+    "label": "Idioma"
+  },
+  "Menu": {
+    "title": "Menú principal",
+    "open": "Abrir menú",
+    "close": "Cerrar menú",
+    "search": "Buscar",
+    "searchPlaceholder": "Buscar profesores, lecciones…",
+    "login": "Iniciar sesión",
+    "signup": "Registrarse",
+    "lessons": "Lecciones",
+    "levels": "Niveles",
+    "assessment": "Evaluación",
+    "courses": "Cursos"
+  },
+  "Footer": {
+    "tagline": "Habla inglés con confianza — desde tu primera A hasta una Z fluida.",
+    "rights": "Todos los derechos reservados."
+  },
+  "Platform": {
+    "navLabel": "Plataforma",
+    "dashboard": "Panel",
+    "teachers": "Profesores",
+    "practice": "Práctica",
+    "onboarding": "Onboarding",
+    "login": "Iniciar sesión",
+    "signup": "Registrarse"
+  },
+  "Auth": {
+    "loginTitle": "Bienvenido de nuevo",
+    "loginIntro": "Inicia sesión para seguir con tu profesor y herramientas accesibles.",
+    "signupTitle": "Crea tu cuenta Wattly",
+    "signupIntro": "Únete como aprendiz, padre/madre o profesor. La inclusión está desde el inicio.",
+    "name": "Nombre completo",
+    "email": "Correo",
+    "password": "Contraseña",
+    "passwordHint": "Al menos 8 caracteres.",
+    "role": "Soy",
+    "roles": {
+      "learner": "Aprendiz",
+      "parent": "Padre/Madre",
+      "teacher": "Profesor"
+    },
+    "createAccount": "Crear cuenta",
+    "creating": "Creando…",
+    "signIn": "Iniciar sesión",
+    "signingIn": "Entrando…",
+    "haveAccount": "¿Ya tienes cuenta?",
+    "loginLink": "Inicia sesión",
+    "noAccount": "¿Nuevo en Wattly?",
+    "signupLink": "Regístrate",
+    "signupFailed": "No se pudo crear la cuenta.",
+    "loginFailed": "No se pudo iniciar sesión. Revisa correo y contraseña.",
+    "demoAccess": "Acceso demo",
+    "demoAccessHint": "Un clic — rellena demo e inicia sesión"
+  },
+  "Onboarding": {
+    "title": "Configura tu camino",
+    "intro": "Cuéntanos tus metas y, si quieres, tus preferencias de apoyo. Se pueden cambiar. Nunca pedimos un diagnóstico.",
+    "goals": "¿Por qué aprendes inglés?",
+    "goalsPlaceholder": "Presentarme, pedir comida, hablar con amigos…",
+    "level": "Nivel inicial",
+    "interests": "Intereses (opcional)",
+    "interestsPlaceholder": "Animales, fútbol, espacio…",
+    "supports": "Preferencias de apoyo (opcional)",
+    "supportsHint": "Elige lo que te ayuda. Tú decides qué ven los profesores.",
+    "supportOptions": {
+      "captions": "Subtítulos en vivo",
+      "text_to_speech": "Texto a voz",
+      "dyslexia_mode": "Lectura amigable con dislexia",
+      "reduce_motion": "Menos movimiento / modo calmado",
+      "speak_optional": "Hablar es opcional",
+      "symbols_with_text": "Imágenes con palabras"
+    },
+    "continue": "Continuar al panel",
+    "skip": "Omitir por ahora",
+    "saving": "Guardando…",
+    "failed": "No se pudieron guardar las preferencias."
+  },
+  "Dashboard": {
+    "title": "Tu espacio de aprendizaje",
+    "intro": "Encuentra un profesor, practica con IA y sigue tu progreso — a tu ritmo.",
+    "findTeacher": "Buscar profesor",
+    "findTeacherBody": "Empareja por nivel, idioma y especialización inclusiva.",
+    "practice": "Práctica con IA",
+    "practiceBody": "Vocabulario, escucha, conversación y pronunciación en sesiones cortas.",
+    "lessons": "Lecciones",
+    "lessonsBody": "Clases en vivo con subtítulos, agenda visual y ritmo flexible.",
+    "assessment": "Nivelación y evaluación",
+    "assessmentBody": "Controles sin presión, con formatos alternativos."
+  },
+  "Teachers": {
+    "title": "Encuentra tu profesor",
+    "intro": "Filtra por especialización, idioma de explicación y estilo. Se muestran profesores de ejemplo para el prototipo.",
+    "resultsFor": "Resultados para “{query}”",
+    "viewProfile": "Ver perfil",
+    "profileTitle": "Perfil del profesor",
+    "profileBody": "Intro con subtítulos, insignias, disponibilidad y clase de prueba se conectarán aquí. Pantalla prototipo por ahora.",
+    "bookTrial": "Reservar clase de prueba",
+    "back": "Volver a profesores"
+  },
+  "Practice": {
+    "title": "Centro de práctica",
+    "intro": "Cada actividad se puede hacer hablando, escribiendo o tocando — sin hablar obligado.",
+    "vocabulary": "Vocabulario",
+    "vocabularyBody": "Palabras con imagen + audio + texto y repaso espaciado.",
+    "vocabularyDetail": "Aprende pocas palabras con imágenes, audio y símbolos opcionales. Repaso corto y calmado.",
+    "listening": "Escucha",
+    "listeningBody": "Clips con subtítulos y comprensión suave.",
+    "listeningDetail": "Escucha con subtítulos. Responde escribiendo o tocando — sin prisa.",
+    "conversation": "Conversación IA",
+    "conversationBody": "Juegos de rol pacientes para situaciones reales.",
+    "conversationDetail": "Practica pedir comida o presentarte. Una pregunta a la vez. Sin cronómetro ni puntuación.",
+    "pronunciation": "Pronunciación",
+    "pronunciationBody": "Feedback de apoyo opcional — nunca obligatorio.",
+    "pronunciationDetail": "Prueba sonidos si quieres. Feedback amable y visual. Puedes no hablar."
   }
 }

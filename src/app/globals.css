@@ -1,26 +1,56 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --wattly-blue: #000ea8;
+  --wattly-sky: #8fa8ff;
+  --wattly-sunshine: #ffc933;
+  --wattly-ink: #0b0b1a;
+  --background: #000ea8;
+  --foreground: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-wattly-blue: var(--wattly-blue);
+  --color-wattly-sky: var(--wattly-sky);
+  --color-wattly-sunshine: var(--wattly-sunshine);
+  --color-wattly-ink: var(--wattly-ink);
+  --font-sans: var(--font-poppins);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  background: var(--wattly-blue);
+  color: var(--foreground);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), system-ui, sans-serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--wattly-sunshine) 70%, white);
+  color: var(--wattly-ink);
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.hero-rise {
+  animation: hero-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-rise-delay {
+  animation-delay: 0.12s;
 }

@@ -1,24 +1,63 @@
 # Wattly English
 
-Next.js platform for Wattly English, with App Router, TypeScript, Tailwind CSS, Yarn, and multi-language support (`en`, `fr`, `es`).
+Inclusive English-learning platform (prototype) aligned with `Wattly_Project_Overview.md`.
 
-## Getting Started
+**Tagline:** Speak English with confidence — from your very first A to fluent Z.
+
+## Stack
+
+- Next.js 16 + TypeScript + Tailwind + Yarn
+- next-intl (`en` / `fr` / `es`)
+- Appwrite Auth + TablesDB (`wattly` database)
+- Cloudflare Worker deploy via OpenNext (`wrangler.jsonc` name: **wattly**)
+
+## Local setup
 
 ```bash
 yarn install
+yarn appwrite:setup
+yarn demo:user
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) — you’ll be redirected to a locale route such as `/en`.
+Open [http://localhost:3000/en](http://localhost:3000/en).
 
-## Scripts
+### Demo access
 
-- `yarn dev` — start the development server
-- `yarn build` — production build
-- `yarn start` — run the production server
-- `yarn lint` — run ESLint
+On `/login`, click **Demo access** — it auto-fills and signs in as:
 
-## Learn More
+- Email: `demo@wattly.app`
+- Password: `demowattly`
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [next-intl](https://next-intl.dev/)
+## Core routes
+
+| Route | Purpose |
+|---|---|
+| `/login` `/signup` | Auth |
+| `/onboarding` | Goals + optional supports |
+| `/dashboard` | Learner home |
+| `/teachers` | Teacher discovery |
+| `/practice` | AI practice hub |
+| `/lessons` `/levels` `/assessment` `/courses` | Curriculum stubs |
+
+## Cloudflare deploy
+
+Worker name: **`wattly`** (matches Cloudflare dashboard).
+
+```bash
+# One-time: put account token in .env.cloudflare (see .env.cloudflare.example)
+yarn cf:sync-vars
+yarn deploy
+```
+
+Git-connected Workers Builds should use:
+
+- **Build command:** `yarn && yarn build:cf`
+- **Deploy command:** `npx wrangler deploy`
+- **Root directory:** `/`
+- **Build variables:** `NEXT_PUBLIC_APPWRITE_*` (synced by `yarn cf:sync-vars` / `wrangler.jsonc`)
+
+## Product source of truth
+
+- `PRODUCT.md` — durable product record
+- `../Wattly_Project_Overview.md` — full concept / MVP specification

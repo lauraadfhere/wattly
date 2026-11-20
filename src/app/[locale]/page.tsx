@@ -1,45 +1,35 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
+import Footer from "@/components/Footer";
+import HeroActions from "@/components/HeroActions";
 
 export default async function HomePage() {
   const t = await getTranslations("HomePage");
 
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <div className="flex w-full items-center justify-between gap-4">
-          <p className="text-sm font-semibold tracking-[0.2em] uppercase text-zinc-500 dark:text-zinc-400">
-            {t("brand")}
-          </p>
-          <LanguageSwitcher />
-        </div>
-
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xl text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50 sm:text-4xl">
-            {t("title")}
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            {t("description")}
-          </p>
-        </div>
-
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-auto md:min-w-[158px]"
-            href="#get-started"
-          >
-            {t("ctaPrimary")}
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-auto md:min-w-[158px]"
-            href="https://nextjs.org/docs"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {t("ctaSecondary")}
-          </a>
-        </div>
+    <div className="flex min-h-dvh flex-1 flex-col">
+      <main className="relative flex flex-1 flex-col bg-[#000ea8] text-white">
+        <HeroActions />
+        <header className="flex flex-1 flex-col justify-start px-6 pb-20 pt-28 sm:px-10 sm:pt-32 lg:px-16">
+          <div className="mx-auto w-full max-w-4xl">
+            <Image
+              src="/brand/wattly-logo-white.png"
+              alt="Wattly"
+              width={1000}
+              height={280}
+              priority
+              className="hero-rise mb-8 h-auto w-[34vw] min-w-[140px] max-w-[220px] sm:mb-10 sm:w-[10vw] sm:min-w-[72px] sm:max-w-[140px]"
+            />
+            <h1 className="hero-rise max-w-[14ch] text-[clamp(2.5rem,7vw,4.75rem)] font-extrabold leading-[1.05] tracking-[-0.03em] text-white">
+              {t("title")}
+            </h1>
+            <p className="hero-rise hero-rise-delay mt-6 max-w-[38ch] text-lg leading-8 text-[#c9d4ff] sm:text-xl sm:leading-9">
+              {t("description")}
+            </p>
+          </div>
+        </header>
       </main>
+      <Footer />
     </div>
   );
 }
