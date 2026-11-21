@@ -34,10 +34,10 @@ export default async function HomePage() {
               </span>
               <span className="sr-only">Trademark</span>
             </div>
-            <h1 className="hero-rise max-w-[14ch] text-[clamp(2.5rem,7vw,4.75rem)] font-medium leading-[1.05] tracking-[-0.03em] text-white">
+            <h1 className="hero-rise max-w-[16ch] text-[clamp(2rem,5.5vw,3.75rem)] font-semibold leading-[1.08] tracking-[-0.02em] text-white">
               {t("title")}
             </h1>
-            <p className="hero-rise hero-rise-delay mt-6 max-w-[38ch] text-lg leading-8 text-[#c9d4ff] sm:text-xl sm:leading-9">
+            <p className="hero-rise hero-rise-delay mt-5 max-w-[38ch] text-base leading-7 text-[#c9d4ff] sm:text-lg sm:leading-8">
               {t("description")}
             </p>
             <p className="hero-rise hero-rise-delay mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-medium text-white/90">

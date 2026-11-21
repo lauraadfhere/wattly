@@ -5,6 +5,8 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
 const menuItems = [
+  { href: "/about", key: "about" as const },
+  { href: "/pricing", key: "pricing" as const },
   { href: "/login", key: "login" as const },
   { href: "/signup", key: "signup" as const },
   { href: "/lessons", key: "lessons" as const },

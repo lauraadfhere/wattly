@@ -72,12 +72,43 @@
     "search": "Rechercher",
     "searchPlaceholder": "Rechercher professeurs, leçons…",
     "about": "À propos",
+    "pricing": "Tarifs",
     "login": "Connexion",
     "signup": "Inscription",
     "lessons": "Leçons",
     "levels": "Niveaux",
     "assessment": "Évaluation",
     "courses": "Cours"
+  },
+  "Pricing": {
+    "title": "Tarifs",
+    "intro": "Tarifs horaires simples et packs avantageux — kids et adultes, adaptés au distanciel.",
+    "hourlyLabel": "À l’heure",
+    "packBadge": "Meilleur pack",
+    "kidsEyebrow": "Pour enfants",
+    "kidsTitle": "Tarifs kids",
+    "kidsHourly": "{rate} DA / heure",
+    "kidsHourlyHint": "Séances live flexibles d’une heure avec des professeurs kids.",
+    "kidsPackHours": "Pack {hours} heures",
+    "kidsPackPrice": "{price} DA",
+    "kidsIncludeHours": "{hours} heures de leçons live kids",
+    "kidsIncludeAssessment": "Évaluation de niveau offerte",
+    "kidsIncludeRemote": "En ligne ou en centre — à vous de choisir",
+    "kidsCta": "Commencer avec l’évaluation gratuite",
+    "adultsEyebrow": "Pour adultes",
+    "adultsTitle": "Tarifs adultes",
+    "adultsHourly": "{rate} DA / heure",
+    "adultsHourlyHint": "Séances flexibles d’une heure pour ados et adultes.",
+    "adultsPackHours": "Pack {hours} heures",
+    "adultsPackPrice": "{price} DA",
+    "adultsIncludeHours": "{hours} heures de leçons live adultes",
+    "adultsIncludeCourses": "Accès offert à {count} cours Wattly",
+    "adultsIncludeAudiobooks": "Pack de {count} livres audio inclus",
+    "adultsIncludeRemote": "Prêt pour le distanciel avec sous-titres",
+    "adultsCta": "Prendre le pack adultes",
+    "note": "Prix en dinars algériens (DA). Les packs s’utilisent avec les professeurs Wattly. L’évaluation des packs kids est gratuite ; les packs adultes débloquent cours et livres audio sur le tableau de bord.",
+    "bookTest": "Réserver un test",
+    "backHome": "Retour à l’accueil"
   },
   "Footer": {
     "tagline": "Parlez anglais en confiance — de votre premier A jusqu’au Z fluide.",
@@ -135,6 +166,16 @@
         "link": "Wattly pour les centres"
       }
     }
+  },
+  "Kinpal": {
+    "name": "Kinpal assistance",
+    "welcome": "Bonjour — je suis Kinpal. Posez vos questions sur les leçons, tarifs ou tests.",
+    "reply": "Merci ! Un guide Wattly peut vous aider. Essayez Leçons, Tarifs ou Réserver un test.",
+    "placeholder": "Demander à Kinpal…",
+    "send": "Envoyer",
+    "close": "Fermer",
+    "scrollTop": "Haut de page",
+    "scrollBottom": "Bas de page"
   },
   "CookieBanner": {
     "title": "Nous respectons votre vie privée",

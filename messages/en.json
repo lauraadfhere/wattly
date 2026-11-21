@@ -72,12 +72,43 @@
     "search": "Search",
     "searchPlaceholder": "Search teachers, lessons…",
     "about": "About",
+    "pricing": "Pricing",
     "login": "Login",
     "signup": "Sign up",
     "lessons": "Lessons",
     "levels": "Levels",
     "assessment": "Assessment",
     "courses": "Courses"
+  },
+  "Pricing": {
+    "title": "Pricing",
+    "intro": "Simple hourly rates and value packs — kids and adults, fully remote-friendly.",
+    "hourlyLabel": "Per hour",
+    "packBadge": "Best value pack",
+    "kidsEyebrow": "For children",
+    "kidsTitle": "Kids pricing",
+    "kidsHourly": "{rate} DA / hour",
+    "kidsHourlyHint": "Flexible one-hour live sessions with kids teachers.",
+    "kidsPackHours": "{hours}-hour pack",
+    "kidsPackPrice": "{price} DA",
+    "kidsIncludeHours": "{hours} hours of live kids lessons",
+    "kidsIncludeAssessment": "Free placement assessment included",
+    "kidsIncludeRemote": "Online or in-center — you choose",
+    "kidsCta": "Start with free assessment",
+    "adultsEyebrow": "For adults",
+    "adultsTitle": "Adults pricing",
+    "adultsHourly": "{rate} DA / hour",
+    "adultsHourlyHint": "Flexible one-hour sessions for teens and adults.",
+    "adultsPackHours": "{hours}-hour pack",
+    "adultsPackPrice": "{price} DA",
+    "adultsIncludeHours": "{hours} hours of live adult lessons",
+    "adultsIncludeCourses": "Free access to {count} Wattly courses",
+    "adultsIncludeAudiobooks": "{count} audiobooks pack included",
+    "adultsIncludeRemote": "Fully remote-ready with captions",
+    "adultsCta": "Get the adult pack",
+    "note": "Prices in Algerian dinars (DA). Packs can be used with matched Wattly teachers. Assessment for kids packs is free; adult packs unlock courses and audiobooks on your dashboard.",
+    "bookTest": "Book a test",
+    "backHome": "Back to home"
   },
   "Footer": {
     "tagline": "Speak English with confidence — from your very first A to fluent Z.",
@@ -135,6 +166,16 @@
         "link": "Wattly for centers"
       }
     }
+  },
+  "Kinpal": {
+    "name": "Kinpal assistance",
+    "welcome": "Hi — I’m Kinpal. Ask about lessons, pricing, or booking a test.",
+    "reply": "Thanks! A Wattly guide can help with that. Try Lessons, Pricing, or Book a test from the menu.",
+    "placeholder": "Ask Kinpal…",
+    "send": "Send",
+    "close": "Close",
+    "scrollTop": "Scroll to top",
+    "scrollBottom": "Scroll to bottom"
   },
   "CookieBanner": {
     "title": "We value your privacy",

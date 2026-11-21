@@ -72,12 +72,43 @@
     "search": "Buscar",
     "searchPlaceholder": "Buscar profesores, lecciones…",
     "about": "Acerca de",
+    "pricing": "Precios",
     "login": "Iniciar sesión",
     "signup": "Registrarse",
     "lessons": "Lecciones",
     "levels": "Niveles",
     "assessment": "Evaluación",
     "courses": "Cursos"
+  },
+  "Pricing": {
+    "title": "Precios",
+    "intro": "Tarifas por hora simples y packs de valor — kids y adultos, listos para remoto.",
+    "hourlyLabel": "Por hora",
+    "packBadge": "Mejor pack",
+    "kidsEyebrow": "Para niños",
+    "kidsTitle": "Precios kids",
+    "kidsHourly": "{rate} DA / hora",
+    "kidsHourlyHint": "Sesiones en vivo flexibles de una hora con profesores kids.",
+    "kidsPackHours": "Pack de {hours} horas",
+    "kidsPackPrice": "{price} DA",
+    "kidsIncludeHours": "{hours} horas de clases en vivo kids",
+    "kidsIncludeAssessment": "Evaluación de nivel gratis incluida",
+    "kidsIncludeRemote": "Online o en centro — tú eliges",
+    "kidsCta": "Empezar con evaluación gratis",
+    "adultsEyebrow": "Para adultos",
+    "adultsTitle": "Precios adultos",
+    "adultsHourly": "{rate} DA / hora",
+    "adultsHourlyHint": "Sesiones flexibles de una hora para teens y adultos.",
+    "adultsPackHours": "Pack de {hours} horas",
+    "adultsPackPrice": "{price} DA",
+    "adultsIncludeHours": "{hours} horas de clases en vivo adultos",
+    "adultsIncludeCourses": "Acceso gratis a {count} cursos Wattly",
+    "adultsIncludeAudiobooks": "Pack de {count} audiolibros incluido",
+    "adultsIncludeRemote": "Listo para remoto con subtítulos",
+    "adultsCta": "Obtener el pack adultos",
+    "note": "Precios en dinares argelinos (DA). Los packs se usan con profesores Wattly. La evaluación de packs kids es gratis; los packs adultos desbloquean cursos y audiolibros en el panel.",
+    "bookTest": "Reservar un test",
+    "backHome": "Volver al inicio"
   },
   "Footer": {
     "tagline": "Habla inglés con confianza — desde tu primera A hasta una Z fluida.",
@@ -135,6 +166,16 @@
         "link": "Wattly para centros"
       }
     }
+  },
+  "Kinpal": {
+    "name": "Kinpal assistance",
+    "welcome": "Hola — soy Kinpal. Pregunta por lecciones, precios o reservar un test.",
+    "reply": "¡Gracias! Una guía Wattly puede ayudar. Prueba Lecciones, Precios o Reservar un test.",
+    "placeholder": "Pregunta a Kinpal…",
+    "send": "Enviar",
+    "close": "Cerrar",
+    "scrollTop": "Ir arriba",
+    "scrollBottom": "Ir abajo"
   },
   "CookieBanner": {
     "title": "Valoramos tu privacidad",

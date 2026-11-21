@@ -72,12 +72,43 @@
     "search": "بحث",
     "searchPlaceholder": "ابحث عن معلمين أو دروس…",
     "about": "عنّا",
+    "pricing": "الأسعار",
     "login": "تسجيل الدخول",
     "signup": "إنشاء حساب",
     "lessons": "الدروس",
     "levels": "المستويات",
     "assessment": "التقييم",
     "courses": "الدورات"
+  },
+  "Pricing": {
+    "title": "الأسعار",
+    "intro": "أسعار ساعية واضحة وباقات قيمة — للأطفال والكبار، مناسبة للتعلّم عن بُعد.",
+    "hourlyLabel": "بالساعة",
+    "packBadge": "أفضل باقة",
+    "kidsEyebrow": "للأطفال",
+    "kidsTitle": "أسعار الأطفال",
+    "kidsHourly": "{rate} دج / ساعة",
+    "kidsHourlyHint": "حصص مباشرة مرنة لمدة ساعة مع معلمي الأطفال.",
+    "kidsPackHours": "باقة {hours} ساعة",
+    "kidsPackPrice": "{price} دج",
+    "kidsIncludeHours": "{hours} ساعة من دروس الأطفال المباشرة",
+    "kidsIncludeAssessment": "تقييم تحديد مستوى مجاني مشمول",
+    "kidsIncludeRemote": "عبر الإنترنت أو في المركز — أنت تختار",
+    "kidsCta": "ابدأ بتقييم مجاني",
+    "adultsEyebrow": "للكبار",
+    "adultsTitle": "أسعار الكبار",
+    "adultsHourly": "{rate} دج / ساعة",
+    "adultsHourlyHint": "حصص مرنة لمدة ساعة للمراهقين والكبار.",
+    "adultsPackHours": "باقة {hours} ساعة",
+    "adultsPackPrice": "{price} دج",
+    "adultsIncludeHours": "{hours} ساعة من دروس الكبار المباشرة",
+    "adultsIncludeCourses": "وصول مجاني إلى {count} دورات Wattly",
+    "adultsIncludeAudiobooks": "باقة {count} كتب صوتية مشمولة",
+    "adultsIncludeRemote": "جاهز عن بُعد مع الترجمة النصية",
+    "adultsCta": "احصل على باقة الكبار",
+    "note": "الأسعار بالدينار الجزائري (دج). يمكن استخدام الباقات مع معلمي Wattly. تقييم باقات الأطفال مجاني؛ باقات الكبار تفتح الدورات والكتب الصوتية في لوحة التحكم.",
+    "bookTest": "احجز اختباراً",
+    "backHome": "العودة للرئيسية"
   },
   "Footer": {
     "tagline": "تحدّث الإنجليزية بثقة — من أول حرف A حتى طلاقة Z.",
@@ -135,6 +166,16 @@
         "link": "Wattly للمراكز"
       }
     }
+  },
+  "Kinpal": {
+    "name": "مساعدة Kinpal",
+    "welcome": "مرحباً — أنا Kinpal. اسأل عن الدروس أو الأسعار أو حجز اختبار.",
+    "reply": "شكراً! يمكن لدليل Wattly المساعدة. جرّب الدروس أو الأسعار أو احجز اختباراً من القائمة.",
+    "placeholder": "اسأل Kinpal…",
+    "send": "إرسال",
+    "close": "إغلاق",
+    "scrollTop": "التمرير للأعلى",
+    "scrollBottom": "التمرير للأسفل"
   },
   "CookieBanner": {
     "title": "نحترم خصوصيتك",

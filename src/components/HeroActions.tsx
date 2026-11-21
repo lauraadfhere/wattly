@@ -9,6 +9,7 @@ import ProfileMenu from "@/components/platform/ProfileMenu";
 
 const menuItems = [
   { href: "/about", key: "about" as const },
+  { href: "/pricing", key: "pricing" as const },
   { href: "/login", key: "login" as const },
   { href: "/signup", key: "signup" as const },
   { href: "/lessons", key: "lessons" as const },
@@ -50,6 +51,12 @@ export default function HeroActions() {
             className="px-2.5 py-2 text-sm font-medium text-white/90 hover:text-white"
           >
             {t("about")}
+          </Link>
+          <Link
+            href="/pricing"
+            className="px-2.5 py-2 text-sm font-medium text-white/90 hover:text-white"
+          >
+            {t("pricing")}
           </Link>
 
           <LanguageGlobe tone="hero" />
