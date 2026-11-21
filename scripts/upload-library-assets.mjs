@@ -184,6 +184,7 @@ async function ensureFolders() {
     "wattly",
     "wattly/covers",
     "wattly/pdfs",
+    "wattly/story-pages",
     "wattly/epubs",
     "wattly/library",
   ]) {
@@ -216,11 +217,36 @@ async function uploadRaw(localPath, folder, publicId) {
     folder,
     overwrite: true,
     resource_type: "raw",
+    type: "upload",
+    access_mode: "public",
   });
-  console.log("Raw →", result.public_id);
+  console.log("Raw →", result.public_id, result.secure_url);
   return {
     publicId: result.public_id,
     url: result.secure_url,
+  };
+}
+
+/** PDFs as image resources so Cloudinary can serve page JPGs (raw PDFs 401 on this cloud). */
+async function uploadStoryPdf(localPath, publicId) {
+  const result = await cloudinary.uploader.upload(localPath, {
+    public_id: publicId,
+    folder: "wattly/story-pages",
+    overwrite: true,
+    resource_type: "image",
+    access_mode: "public",
+  });
+  console.log(
+    "Story PDF →",
+    result.public_id,
+    "pages",
+    result.pages,
+    result.secure_url,
+  );
+  return {
+    publicId: result.public_id,
+    url: result.secure_url,
+    pages: Number(result.pages) || 10,
   };
 }
 
@@ -246,11 +272,7 @@ async function main() {
       continue;
     }
     const cover = await uploadImage(coverPath, book.id);
-    const pdf = await uploadRaw(
-      pdfPath,
-      "wattly/pdfs",
-      `${book.id}.pdf`,
-    );
+    const story = await uploadStoryPdf(pdfPath, book.id);
     kids.push({
       id: book.id,
       audience: "kids",
@@ -261,11 +283,12 @@ async function main() {
       ages: book.ages,
       summary: book.theme,
       description: book.theme,
-      pages: 10,
+      pages: story.pages,
       coverPublicId: cover.publicId,
       coverUrl: cover.url,
-      pdfPublicId: pdf.publicId,
-      pdfUrl: pdf.url,
+      pagesPublicId: story.publicId,
+      pdfPublicId: story.publicId,
+      pdfUrl: story.url,
       minutes: 12,
     });
   }

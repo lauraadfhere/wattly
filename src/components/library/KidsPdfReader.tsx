@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import ReadingPageHeader from "@/components/library/ReadingPageHeader";
 import {
   libraryPageCount,
-  libraryPdfSrc,
+  libraryPageImageSrc,
   type LibraryBook,
 } from "@/lib/library";
 import {
@@ -19,12 +20,11 @@ type Props = {
 };
 
 /**
- * Full-screen storybook reader:
- * special reading header, left/right page turns, page numbers, auto-fit PDF.
+ * Full-screen storybook reader using Cloudinary page images
+ * (raw PDF delivery is blocked 401 on this Cloudinary cloud).
  */
 export default function KidsPdfReader({ book }: Props) {
   const t = useTranslations("Library");
-  const pdfSrc = libraryPdfSrc(book);
   const totalPages = libraryPageCount(book);
   const [page, setPage] = useState(1);
   const [percent, setPercent] = useState(0);
@@ -46,59 +46,10 @@ export default function KidsPdfReader({ book }: Props) {
     return () => mq.removeEventListener("change", sync);
   }, []);
 
-  useEffect(() => {
-    function onKey(e: KeyboardEvent) {
-      if (e.key === "ArrowLeft" || e.key === "PageUp") {
-        e.preventDefault();
-        setPage((p) => {
-          const next = Math.max(1, p - 1);
-          const nextPercent = Math.round((next / totalPages) * 100);
-          setPercent(nextPercent);
-          saveReadingProgress(book.id, { percent: nextPercent, location: next });
-          return next;
-        });
-      }
-      if (e.key === "ArrowRight" || e.key === "PageDown" || e.key === " ") {
-        e.preventDefault();
-        setPage((p) => {
-          const next = Math.min(totalPages, p + 1);
-          const nextPercent = Math.round((next / totalPages) * 100);
-          setPercent(nextPercent);
-          saveReadingProgress(book.id, { percent: nextPercent, location: next });
-          return next;
-        });
-      }
-      if (e.key === "Home") {
-        e.preventDefault();
-        setPage(1);
-        saveReadingProgress(book.id, { percent: Math.round(100 / totalPages), location: 1 });
-        setPercent(Math.round(100 / totalPages));
-      }
-      if (e.key === "End") {
-        e.preventDefault();
-        setPage(totalPages);
-        setPercent(100);
-        saveReadingProgress(book.id, { percent: 100, location: totalPages });
-      }
-    }
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [book.id, totalPages]);
-
   const leftPage = page;
   const rightPage = Math.min(totalPages, page + 1);
   const showSpread = spreadMode && totalPages > 1 && page < totalPages;
   const step = showSpread ? 2 : 1;
-
-  const leftSrc = useMemo(() => {
-    if (!pdfSrc) return "";
-    return `${pdfSrc}#page=${leftPage}&view=Fit&toolbar=0&navpanes=0&scrollbar=0`;
-  }, [pdfSrc, leftPage]);
-
-  const rightSrc = useMemo(() => {
-    if (!pdfSrc || !showSpread) return "";
-    return `${pdfSrc}#page=${rightPage}&view=Fit&toolbar=0&navpanes=0&scrollbar=0`;
-  }, [pdfSrc, rightPage, showSpread]);
 
   function goTo(nextPage: number) {
     const safe = Math.max(1, Math.min(totalPages, nextPage));
@@ -107,6 +58,29 @@ export default function KidsPdfReader({ book }: Props) {
     setPercent(nextPercent);
     saveReadingProgress(book.id, { percent: nextPercent, location: safe });
   }
+
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "ArrowLeft" || e.key === "PageUp") {
+        e.preventDefault();
+        goTo(Math.max(1, page - step));
+      }
+      if (e.key === "ArrowRight" || e.key === "PageDown" || e.key === " ") {
+        e.preventDefault();
+        goTo(Math.min(totalPages, page + step));
+      }
+      if (e.key === "Home") {
+        e.preventDefault();
+        goTo(1);
+      }
+      if (e.key === "End") {
+        e.preventDefault();
+        goTo(totalPages);
+      }
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  });
 
   function turnBack() {
     goTo(Math.max(1, page - step));
@@ -120,6 +94,9 @@ export default function KidsPdfReader({ book }: Props) {
     ? t("spreadOf", { left: leftPage, right: rightPage, total: totalPages })
     : t("pageOf", { page: leftPage, total: totalPages });
 
+  const leftSrc = libraryPageImageSrc(book, leftPage);
+  const rightSrc = libraryPageImageSrc(book, rightPage);
+
   return (
     <div className="flex h-full min-h-0 flex-col">
       <ReadingPageHeader
@@ -129,7 +106,6 @@ export default function KidsPdfReader({ book }: Props) {
       />
 
       <div className="relative flex min-h-0 flex-1">
-        {/* Left turn zone */}
         <button
           type="button"
           aria-label={t("prevPage")}
@@ -142,7 +118,6 @@ export default function KidsPdfReader({ book }: Props) {
           </span>
         </button>
 
-        {/* Right turn zone */}
         <button
           type="button"
           aria-label={t("nextPage")}
@@ -155,50 +130,44 @@ export default function KidsPdfReader({ book }: Props) {
           </span>
         </button>
 
-        {/* Book stage */}
         <main className="mx-auto flex h-full w-full max-w-6xl flex-col px-10 py-3 sm:px-14 sm:py-4">
-          {!pdfSrc ? (
-            <p className="m-auto text-sm text-red-300">{t("pdfMissing")}</p>
-          ) : (
-            <div
-              className={`mx-auto grid h-full min-h-0 w-full flex-1 overflow-hidden rounded-sm border-2 border-black bg-[#f7f3e8] shadow-[0_24px_60px_rgba(0,0,0,0.55)] ${
-                showSpread
-                  ? "grid-cols-1 md:grid-cols-2"
-                  : "grid-cols-1"
-              }`}
-            >
-              <div className="relative min-h-0 border-black/10 md:border-e-2">
-                <iframe
-                  key={`L-${leftPage}`}
-                  title={`${book.title} — ${t("pageOf", { page: leftPage, total: totalPages })}`}
-                  src={leftSrc}
-                  className="absolute inset-0 h-full w-full border-0 bg-[#f7f3e8]"
-                  onLoad={() => {
-                    if (percent < 1) goTo(1);
-                  }}
+          <div
+            className={`mx-auto grid h-full min-h-0 w-full flex-1 overflow-hidden rounded-sm border-2 border-black bg-[#f7f3e8] shadow-[0_24px_60px_rgba(0,0,0,0.55)] ${
+              showSpread ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"
+            }`}
+          >
+            <div className="relative min-h-[50dvh] border-black/10 md:min-h-0 md:border-e-2">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                key={`L-${leftPage}`}
+                src={leftSrc}
+                alt={`${book.title} — page ${leftPage}`}
+                className="absolute inset-0 h-full w-full object-contain object-center"
+                onLoad={() => {
+                  if (percent < 1) goTo(1);
+                }}
+              />
+              <span className="pointer-events-none absolute bottom-2 start-1/2 z-10 -translate-x-1/2 rounded-full bg-black/55 px-2.5 py-0.5 text-[11px] font-semibold tabular-nums text-white backdrop-blur-sm">
+                {leftPage}
+              </span>
+            </div>
+
+            {showSpread ? (
+              <div className="relative hidden min-h-0 md:block">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  key={`R-${rightPage}`}
+                  src={rightSrc}
+                  alt={`${book.title} — page ${rightPage}`}
+                  className="absolute inset-0 h-full w-full object-contain object-center"
                 />
                 <span className="pointer-events-none absolute bottom-2 start-1/2 z-10 -translate-x-1/2 rounded-full bg-black/55 px-2.5 py-0.5 text-[11px] font-semibold tabular-nums text-white backdrop-blur-sm">
-                  {leftPage}
+                  {rightPage}
                 </span>
               </div>
+            ) : null}
+          </div>
 
-              {showSpread ? (
-                <div className="relative hidden min-h-0 md:block">
-                  <iframe
-                    key={`R-${rightPage}`}
-                    title={`${book.title} — ${t("pageOf", { page: rightPage, total: totalPages })}`}
-                    src={rightSrc}
-                    className="absolute inset-0 h-full w-full border-0 bg-[#f7f3e8]"
-                  />
-                  <span className="pointer-events-none absolute bottom-2 start-1/2 z-10 -translate-x-1/2 rounded-full bg-black/55 px-2.5 py-0.5 text-[11px] font-semibold tabular-nums text-white backdrop-blur-sm">
-                    {rightPage}
-                  </span>
-                </div>
-              ) : null}
-            </div>
-          )}
-
-          {/* Footer page strip */}
           <div className="mt-3 flex shrink-0 items-center justify-between gap-3 text-xs text-white/70">
             <button
               type="button"
@@ -213,7 +182,9 @@ export default function KidsPdfReader({ book }: Props) {
               <div className="h-1 w-40 max-w-[40vw] overflow-hidden rounded-full bg-white/15 sm:w-56">
                 <div
                   className="h-full rounded-full bg-white/80 transition-[width]"
-                  style={{ width: `${Math.max(percent, Math.round((page / totalPages) * 100))}%` }}
+                  style={{
+                    width: `${Math.max(percent, Math.round((page / totalPages) * 100))}%`,
+                  }}
                 />
               </div>
             </div>

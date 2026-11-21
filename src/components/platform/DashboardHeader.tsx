@@ -172,6 +172,29 @@ export default function DashboardHeader() {
                 className="w-full rounded-xl bg-[#3a3a3a] px-4 py-3 text-sm text-white placeholder:text-white/45"
               />
             </form>
+            <div className="mb-3 flex items-center justify-between gap-2 rounded-xl bg-[#353535] px-3 py-2.5">
+              {loading ? (
+                <span className="h-8 w-32 animate-pulse rounded-full bg-white/10" />
+              ) : user ? (
+                <>
+                  <div className="min-w-0">
+                    <p className="truncate text-sm font-semibold text-white">
+                      {user.name || user.email}
+                    </p>
+                    <p className="truncate text-[11px] text-white/55">{user.email}</p>
+                  </div>
+                  <ProfileMenu tone="dark" />
+                </>
+              ) : (
+                <Link
+                  href="/login"
+                  className="w-full rounded-lg bg-white px-3 py-2 text-center text-sm font-bold text-black"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {t("login")}
+                </Link>
+              )}
+            </div>
             <div className="grid gap-1 text-sm">
               <Link href="/dashboard" className="rounded-lg px-3 py-2.5 hover:bg-[#353535]" onClick={() => setMobileOpen(false)}>
                 {t("dashboard")}

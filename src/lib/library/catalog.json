@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T14:27:09.844Z",
+  "updatedAt": "2026-11-21T19:08:21.536Z",
   "cloudName": "dp5g9tinm",
   "kids": [
     {
@@ -11,13 +11,14 @@
       "level": "Pre-A1",
       "ages": "5–7",
       "summary": "Greetings and everyday phrases",
+      "description": "Greetings and everyday phrases",
+      "pages": 10,
       "coverPublicId": "kids-hello-sunny",
       "coverUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795271155/wattly/covers/kids-hello-sunny.jpg",
-      "pdfPublicId": "wattly/pdfs/kids-hello-sunny.pdf",
-      "pdfUrl": "https://res.cloudinary.com/dp5g9tinm/raw/upload/v1795271159/wattly/pdfs/kids-hello-sunny.pdf",
-      "minutes": 12,
-      "pages": 10,
-      "description": "Meet Sunny and practice friendly greetings, simple introductions, and everyday phrases kids use at home and school."
+      "pagesPublicId": "wattly/story-pages/kids-hello-sunny",
+      "pdfPublicId": "wattly/story-pages/kids-hello-sunny",
+      "pdfUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795288045/wattly/story-pages/kids-hello-sunny.pdf",
+      "minutes": 12
     },
     {
       "id": "kids-alphabet-adventure",
@@ -28,13 +29,14 @@
       "level": "Pre-A1",
       "ages": "5–7",
       "summary": "The alphabet A to Z",
+      "description": "The alphabet A to Z",
+      "pages": 10,
       "coverPublicId": "kids-alphabet-adventure",
       "coverUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795271161/wattly/covers/kids-alphabet-adventure.jpg",
-      "pdfPublicId": "wattly/pdfs/kids-alphabet-adventure.pdf",
-      "pdfUrl": "https://res.cloudinary.com/dp5g9tinm/raw/upload/v1795271165/wattly/pdfs/kids-alphabet-adventure.pdf",
-      "minutes": 12,
-      "pages": 10,
-      "description": "Travel A to Z with bright scenes that help children name letters, sounds, and first words with confidence."
+      "pagesPublicId": "wattly/story-pages/kids-alphabet-adventure",
+      "pdfPublicId": "wattly/story-pages/kids-alphabet-adventure",
+      "pdfUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795288051/wattly/story-pages/kids-alphabet-adventure.pdf",
+      "minutes": 12
     },
     {
       "id": "kids-lost-dragon",
@@ -45,13 +47,14 @@
       "level": "A1",
       "ages": "6–8",
       "summary": "Bravery, kindness and friendship",
+      "description": "Bravery, kindness and friendship",
+      "pages": 10,
       "coverPublicId": "kids-lost-dragon",
       "coverUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795271167/wattly/covers/kids-lost-dragon.jpg",
-      "pdfPublicId": "wattly/pdfs/kids-lost-dragon.pdf",
-      "pdfUrl": "https://res.cloudinary.com/dp5g9tinm/raw/upload/v1795271170/wattly/pdfs/kids-lost-dragon.pdf",
-      "minutes": 12,
-      "pages": 10,
-      "description": "Help a little dragon find the way home while building vocabulary for kindness, bravery, and friendship."
+      "pagesPublicId": "wattly/story-pages/kids-lost-dragon",
+      "pdfPublicId": "wattly/story-pages/kids-lost-dragon",
+      "pdfUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795288054/wattly/story-pages/kids-lost-dragon.pdf",
+      "minutes": 12
     },
     {
       "id": "kids-day-zoo",
@@ -62,13 +65,14 @@
       "level": "A1",
       "ages": "6–8",
       "summary": "Zoo animals and describing words",
+      "description": "Zoo animals and describing words",
+      "pages": 10,
       "coverPublicId": "kids-day-zoo",
       "coverUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795271172/wattly/covers/kids-day-zoo.jpg",
-      "pdfPublicId": "wattly/pdfs/kids-day-zoo.pdf",
-      "pdfUrl": "https://res.cloudinary.com/dp5g9tinm/raw/upload/v1795271174/wattly/pdfs/kids-day-zoo.pdf",
-      "minutes": 12,
-      "pages": 10,
-      "description": "Spend a day at the zoo naming animals, colours, and describing words in short, clear sentences."
+      "pagesPublicId": "wattly/story-pages/kids-day-zoo",
+      "pdfPublicId": "wattly/story-pages/kids-day-zoo",
+      "pdfUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795288057/wattly/story-pages/kids-day-zoo.pdf",
+      "minutes": 12
     },
     {
       "id": "kids-colourful-world",
@@ -79,13 +83,14 @@
       "level": "A1",
       "ages": "5–8",
       "summary": "Colors, objects and descriptions",
+      "description": "Colors, objects and descriptions",
+      "pages": 10,
       "coverPublicId": "kids-colourful-world",
       "coverUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795271176/wattly/covers/kids-colourful-world.jpg",
-      "pdfPublicId": "wattly/pdfs/kids-colourful-world.pdf",
-      "pdfUrl": "https://res.cloudinary.com/dp5g9tinm/raw/upload/v1795271179/wattly/pdfs/kids-colourful-world.pdf",
-      "minutes": 12,
-      "pages": 10,
-      "description": "Explore colours and familiar objects through playful pages made for early description practice."
+      "pagesPublicId": "wattly/story-pages/kids-colourful-world",
+      "pdfPublicId": "wattly/story-pages/kids-colourful-world",
+      "pdfUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795288060/wattly/story-pages/kids-colourful-world.pdf",
+      "minutes": 12
     },
     {
       "id": "kids-magic-school-bag",
@@ -96,13 +101,14 @@
       "level": "A1",
       "ages": "6–9",
       "summary": "School life and classroom objects",
+      "description": "School life and classroom objects",
+      "pages": 10,
       "coverPublicId": "kids-magic-school-bag",
       "coverUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795271181/wattly/covers/kids-magic-school-bag.jpg",
-      "pdfPublicId": "wattly/pdfs/kids-magic-school-bag.pdf",
-      "pdfUrl": "https://res.cloudinary.com/dp5g9tinm/raw/upload/v1795271183/wattly/pdfs/kids-magic-school-bag.pdf",
-      "minutes": 12,
-      "pages": 10,
-      "description": "Follow a school day and learn classroom objects, routines, and useful school phrases."
+      "pagesPublicId": "wattly/story-pages/kids-magic-school-bag",
+      "pdfPublicId": "wattly/story-pages/kids-magic-school-bag",
+      "pdfUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795288063/wattly/story-pages/kids-magic-school-bag.pdf",
+      "minutes": 12
     },
     {
       "id": "kids-friends-forest",
@@ -113,13 +119,14 @@
       "level": "A1",
       "ages": "6–9",
       "summary": "Friendship, nature and sharing",
+      "description": "Friendship, nature and sharing",
+      "pages": 10,
       "coverPublicId": "kids-friends-forest",
       "coverUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795271185/wattly/covers/kids-friends-forest.jpg",
-      "pdfPublicId": "wattly/pdfs/kids-friends-forest.pdf",
-      "pdfUrl": "https://res.cloudinary.com/dp5g9tinm/raw/upload/v1795271187/wattly/pdfs/kids-friends-forest.pdf",
-      "minutes": 12,
-      "pages": 10,
-      "description": "Walk through the forest with friends and practise sharing, nature words, and simple conversation."
+      "pagesPublicId": "wattly/story-pages/kids-friends-forest",
+      "pdfPublicId": "wattly/story-pages/kids-friends-forest",
+      "pdfUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795288067/wattly/story-pages/kids-friends-forest.pdf",
+      "minutes": 12
     },
     {
       "id": "kids-little-chef",
@@ -130,13 +137,14 @@
       "level": "A1",
       "ages": "6–9",
       "summary": "Food words, actions and instructions",
+      "description": "Food words, actions and instructions",
+      "pages": 10,
       "coverPublicId": "kids-little-chef",
       "coverUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795271190/wattly/covers/kids-little-chef.jpg",
-      "pdfPublicId": "wattly/pdfs/kids-little-chef.pdf",
-      "pdfUrl": "https://res.cloudinary.com/dp5g9tinm/raw/upload/v1795271192/wattly/pdfs/kids-little-chef.pdf",
-      "minutes": 12,
-      "pages": 10,
-      "description": "Cook along with a little chef using food words, action verbs, and easy kitchen instructions."
+      "pagesPublicId": "wattly/story-pages/kids-little-chef",
+      "pdfPublicId": "wattly/story-pages/kids-little-chef",
+      "pdfUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795288070/wattly/story-pages/kids-little-chef.pdf",
+      "minutes": 12
     },
     {
       "id": "kids-where-teddy",
@@ -147,13 +155,14 @@
       "level": "A1",
       "ages": "5–8",
       "summary": "Home, family, places and feelings",
+      "description": "Home, family, places and feelings",
+      "pages": 10,
       "coverPublicId": "kids-where-teddy",
       "coverUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795271193/wattly/covers/kids-where-teddy.jpg",
-      "pdfPublicId": "wattly/pdfs/kids-where-teddy.pdf",
-      "pdfUrl": "https://res.cloudinary.com/dp5g9tinm/raw/upload/v1795271196/wattly/pdfs/kids-where-teddy.pdf",
-      "minutes": 12,
-      "pages": 10,
-      "description": "Search the house for a missing teddy while learning home, family, places, and feelings vocabulary."
+      "pagesPublicId": "wattly/story-pages/kids-where-teddy",
+      "pdfPublicId": "wattly/story-pages/kids-where-teddy",
+      "pdfUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795288073/wattly/story-pages/kids-where-teddy.pdf",
+      "minutes": 12
     },
     {
       "id": "kids-big-blue-sea",
@@ -164,13 +173,14 @@
       "level": "A1–A2",
       "ages": "6–9",
       "summary": "Sea animals, places and action words",
+      "description": "Sea animals, places and action words",
+      "pages": 10,
       "coverPublicId": "kids-big-blue-sea",
       "coverUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795271198/wattly/covers/kids-big-blue-sea.jpg",
-      "pdfPublicId": "wattly/pdfs/kids-big-blue-sea.pdf",
-      "pdfUrl": "https://res.cloudinary.com/dp5g9tinm/raw/upload/v1795271201/wattly/pdfs/kids-big-blue-sea.pdf",
-      "minutes": 12,
-      "pages": 10,
-      "description": "Dive into sea animals, places, and action words with calm A1–A2 storytelling pages."
+      "pagesPublicId": "wattly/story-pages/kids-big-blue-sea",
+      "pdfPublicId": "wattly/story-pages/kids-big-blue-sea",
+      "pdfUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795288079/wattly/story-pages/kids-big-blue-sea.pdf",
+      "minutes": 12
     }
   ],
   "adults": [
@@ -182,13 +192,13 @@
       "author": "Wattly Voices",
       "level": "B1–B2",
       "summary": "A narrative ebook for confident intermediate readers.",
+      "description": "A narrative ebook for confident intermediate readers.",
+      "pages": 48,
       "coverPublicId": "adults-babbylon",
       "coverUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795271205/wattly/covers/adults-babbylon.png",
       "epubPublicId": "wattly/epubs/adults-babbylon.epub",
       "epubUrl": "https://res.cloudinary.com/dp5g9tinm/raw/upload/v1795271206/wattly/epubs/adults-babbylon.epub",
-      "minutes": 25,
-      "pages": 48,
-      "description": "A narrative ebook for confident intermediate readers — calm pacing, natural dialogue, and Kindle-style page turns."
+      "minutes": 25
     },
     {
       "id": "adults-do-not-click",
@@ -198,13 +208,13 @@
       "author": "Wattly Voices",
       "level": "B1–B2",
       "summary": "Practical online-safety lessons in ebook form.",
+      "description": "Practical online-safety lessons in ebook form.",
+      "pages": 36,
       "coverPublicId": "adults-do-not-click",
       "coverUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795271208/wattly/covers/adults-do-not-click.png",
       "epubPublicId": "wattly/epubs/adults-do-not-click.epub",
       "epubUrl": "https://res.cloudinary.com/dp5g9tinm/raw/upload/v1795271209/wattly/epubs/adults-do-not-click.epub",
-      "minutes": 25,
-      "pages": 36,
-      "description": "Practical online-safety lessons wrapped in an accessible ebook format for B1–B2 learners."
+      "minutes": 25
     },
     {
       "id": "adults-sports-injuries",
@@ -214,13 +224,13 @@
       "author": "Wattly Voices",
       "level": "B2",
       "summary": "Clear guidance for safer training and recovery.",
+      "description": "Clear guidance for safer training and recovery.",
+      "pages": 42,
       "coverPublicId": "adults-sports-injuries",
       "coverUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795271212/wattly/covers/adults-sports-injuries.jpg",
       "epubPublicId": "wattly/epubs/adults-sports-injuries.epub",
       "epubUrl": "https://res.cloudinary.com/dp5g9tinm/raw/upload/v1795271214/wattly/epubs/adults-sports-injuries.epub",
-      "minutes": 25,
-      "pages": 42,
-      "description": "Clear guidance for safer training and recovery, written for adult English learners at B2."
+      "minutes": 25
     },
     {
       "id": "adults-kingdom-rainbow",
@@ -230,13 +240,13 @@
       "author": "Wattly Voices",
       "level": "B1–B2",
       "summary": "A story ebook with calm pacing for older learners.",
+      "description": "A story ebook with calm pacing for older learners.",
+      "pages": 56,
       "coverPublicId": "adults-kingdom-rainbow",
       "coverUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795271216/wattly/covers/adults-kingdom-rainbow.png",
       "epubPublicId": "wattly/epubs/adults-kingdom-rainbow.epub",
       "epubUrl": "https://res.cloudinary.com/dp5g9tinm/raw/upload/v1795271217/wattly/epubs/adults-kingdom-rainbow.epub",
-      "minutes": 25,
-      "pages": 56,
-      "description": "A story ebook with gentle pacing and rich scenes for older learners building reading stamina."
+      "minutes": 25
     },
     {
       "id": "adults-kingdom-clock",
@@ -246,13 +256,13 @@
       "author": "Wattly Voices",
       "level": "B2–C1",
       "summary": "An advanced narrative for Kindle-style reading practice.",
+      "description": "An advanced narrative for Kindle-style reading practice.",
+      "pages": 64,
       "coverPublicId": "adults-kingdom-clock",
       "coverUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795271221/wattly/covers/adults-kingdom-clock.png",
       "epubPublicId": "wattly/epubs/adults-kingdom-clock.epub",
       "epubUrl": "https://res.cloudinary.com/dp5g9tinm/raw/upload/v1795271229/wattly/epubs/adults-kingdom-clock.epub",
-      "minutes": 25,
-      "pages": 64,
-      "description": "An advanced narrative for Kindle-style reading practice at B2–C1, with longer stretches of prose."
+      "minutes": 25
     }
   ]
 }

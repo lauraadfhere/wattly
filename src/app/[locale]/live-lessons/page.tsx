@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import LiveLessonsStudio from "@/components/live/LiveLessonsStudio";
 import PlatformShell from "@/components/platform/PlatformShell";
-import { fetchLiveLessons } from "@/lib/live-lessons";
+import { fetchLiveLessons } from "@/lib/live-lessons.server";
 
 export default async function LiveLessonsPage() {
   const t = await getTranslations("LiveLessons");

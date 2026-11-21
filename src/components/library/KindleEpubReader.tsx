@@ -32,6 +32,11 @@ type EpubBook = {
   destroy: () => void;
 };
 
+type EpubContents = {
+  document?: Document;
+  find?: (query: string) => unknown[];
+};
+
 type EpubRendition = {
   display: (target?: string | number) => Promise<unknown>;
   next: () => Promise<unknown>;
@@ -42,6 +47,8 @@ type EpubRendition = {
     fontSize: (size: string) => void;
   };
   on: (event: string, cb: (...args: unknown[]) => void) => void;
+  getContents: () => EpubContents[];
+  currentLocation: () => { start?: { cfi?: string } } | undefined;
 };
 
 declare global {
@@ -114,9 +121,14 @@ export default function KindleEpubReader({ book }: Props) {
   const [error, setError] = useState<string | null>(null);
   const [fontSize, setFontSize] = useState(100);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchHits, setSearchHits] = useState(0);
+  const [savedFlash, setSavedFlash] = useState(false);
   const [percent, setPercent] = useState(0);
   const [locationIndex, setLocationIndex] = useState(1);
   const [locationTotal, setLocationTotal] = useState(libraryPageCount(book) * 6);
+  const [currentCfi, setCurrentCfi] = useState<string | undefined>();
   const remoteSrc = libraryEpubSrc(book);
   const proxySrc = `/api/library/epub/${book.id}`;
 
@@ -248,6 +260,7 @@ export default function KindleEpubReader({ book }: Props) {
           setPercent(next);
           setLocationIndex(idx);
           if (total > 0) setLocationTotal(total);
+          if (loc.start?.cfi) setCurrentCfi(loc.start.cfi);
           saveReadingProgress(book.id, {
             percent: next,
             location: loc.start?.cfi || saved.location,
@@ -332,6 +345,51 @@ export default function KindleEpubReader({ book }: Props) {
     seekPercent(Math.round(ratio * 100));
   }
 
+  function runSearch() {
+    const q = searchQuery.trim();
+    if (!q || !renditionRef.current) {
+      setSearchHits(0);
+      return;
+    }
+    let hits = 0;
+    try {
+      const contents = renditionRef.current.getContents?.() || [];
+      for (const content of contents) {
+        if (typeof content.find === "function") {
+          const found = content.find(q) || [];
+          hits += Array.isArray(found) ? found.length : 0;
+          continue;
+        }
+        const text = content.document?.body?.innerText || "";
+        if (!text) continue;
+        const lower = text.toLowerCase();
+        const needle = q.toLowerCase();
+        let idx = 0;
+        while ((idx = lower.indexOf(needle, idx)) !== -1) {
+          hits += 1;
+          idx += needle.length;
+        }
+      }
+    } catch {
+      hits = 0;
+    }
+    setSearchHits(hits);
+  }
+
+  function saveBookmark() {
+    const cfi =
+      currentCfi ||
+      renditionRef.current?.currentLocation?.()?.start?.cfi ||
+      loadReadingProgress(book.id).location;
+    if (!cfi) return;
+    saveReadingProgress(book.id, {
+      percent,
+      location: String(cfi),
+    });
+    setSavedFlash(true);
+    window.setTimeout(() => setSavedFlash(false), 1600);
+  }
+
   const clamped = Math.max(0, Math.min(100, percent));
   const backHref = `/stories/library/${book.id}`;
 
@@ -367,10 +425,40 @@ export default function KindleEpubReader({ book }: Props) {
               {book.title}
             </p>
 
-            <div className="relative shrink-0">
+            <div className="relative flex shrink-0 items-center gap-0.5">
               <button
                 type="button"
-                onClick={() => setSettingsOpen((v) => !v)}
+                onClick={() => {
+                  setSearchOpen((v) => !v);
+                  setSettingsOpen(false);
+                }}
+                className="rounded p-1.5 text-[#333] hover:bg-black/5"
+                aria-label={t("readerSearch")}
+                title={t("readerSearch")}
+              >
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="M20 20l-3.5-3.5" strokeLinecap="round" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                onClick={saveBookmark}
+                disabled={!ready}
+                className="rounded p-1.5 text-[#333] hover:bg-black/5 disabled:opacity-40"
+                aria-label={t("readerSave")}
+                title={t("readerSave")}
+              >
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M6 4h12v16l-6-3.5L6 20V4z" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setSettingsOpen((v) => !v);
+                  setSearchOpen(false);
+                }}
                 className="rounded px-2 py-1 text-sm font-semibold text-[#333] hover:bg-black/5"
                 aria-label={t("fontSize")}
               >
@@ -396,6 +484,38 @@ export default function KindleEpubReader({ book }: Props) {
               ) : null}
             </div>
           </header>
+
+          {searchOpen ? (
+            <div className="flex flex-wrap items-center gap-2 border-b border-black/10 bg-[#fafafa] px-3 py-2">
+              <input
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") runSearch();
+                }}
+                placeholder={t("readerSearchPlaceholder")}
+                className="min-w-0 flex-1 rounded-lg border border-black/15 bg-white px-3 py-1.5 text-sm text-[#222] outline-none focus:border-[#3d81c8]"
+              />
+              <button
+                type="button"
+                onClick={runSearch}
+                className="rounded-lg bg-[#1c1914] px-3 py-1.5 text-xs font-bold text-white"
+              >
+                {t("readerSearch")}
+              </button>
+              <span className="text-xs text-[#555]">
+                {searchQuery.trim()
+                  ? t("readerSearchHits", { count: searchHits })
+                  : ""}
+              </span>
+            </div>
+          ) : null}
+
+          {savedFlash ? (
+            <p className="border-b border-[#c45c00]/20 bg-[#fff8ef] px-3 py-1.5 text-center text-xs font-semibold text-[#c45c00]">
+              {t("readerSaved")}
+            </p>
+          ) : null}
 
           {/* Page stage */}
           <div className="relative min-h-0 flex-1 bg-white">

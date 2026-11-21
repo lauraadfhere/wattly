@@ -600,7 +600,14 @@
     "reviewUpdated": "Review updated.",
     "reviewDeleted": "Review removed.",
     "reviewNeedLogin": "Sign in as a student to leave a review.",
-    "reviewTooShort": "Please write at least a short sentence."
+    "reviewTooShort": "Please write at least a short sentence.",
+    "pdfLoadFailed": "Could not display this PDF in the reader.",
+    "openPdfTab": "Open PDF in a new tab",
+    "readerSearch": "Search",
+    "readerSearchPlaceholder": "Find in book…",
+    "readerSearchHits": "{count} matches on this spread",
+    "readerSave": "Save place",
+    "readerSaved": "Place saved — you can continue from here later."
   },
   "LiveLessons": {
     "title": "Live lessons",

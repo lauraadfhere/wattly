@@ -2,7 +2,8 @@ import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import LiveLessonRoom from "@/components/live/LiveLessonRoom";
 import PlatformShell from "@/components/platform/PlatformShell";
-import { featuredLiveLessons, fetchLiveLesson } from "@/lib/live-lessons";
+import { featuredLiveLessons } from "@/lib/live-lessons";
+import { fetchLiveLesson } from "@/lib/live-lessons.server";
 
 export function generateStaticParams() {
   return featuredLiveLessons.map((lesson) => ({ id: lesson.id }));

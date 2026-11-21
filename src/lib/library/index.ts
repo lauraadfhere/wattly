@@ -1,5 +1,5 @@
 import catalog from "@/lib/library/catalog.json";
-import { coverImageUrl, pdfUrl } from "@/lib/cloudinary";
+import { coverImageUrl, getCloudinaryCloudName, pdfUrl } from "@/lib/cloudinary";
 
 export type LibraryAudience = "kids" | "adults";
 export type LibraryFormat = "pdf" | "epub";
@@ -19,6 +19,8 @@ export type LibraryBook = {
   pages?: number;
   coverPublicId: string;
   coverUrl?: string;
+  /** Cloudinary image public id for paginated story PDF pages. */
+  pagesPublicId?: string;
   pdfPublicId?: string;
   pdfUrl?: string;
   epubPublicId?: string;
@@ -50,6 +52,18 @@ export function libraryPdfSrc(book: LibraryBook) {
     return pdfUrl(id.replace(/\.pdf$/i, ""));
   }
   return "";
+}
+
+/** Story page as JPG (Cloudinary blocks raw PDF delivery on this cloud). */
+export function libraryPageImageSrc(book: LibraryBook, page: number, width = 1100) {
+  const publicId =
+    book.pagesPublicId ||
+    (book.pdfPublicId?.includes("story-pages")
+      ? book.pdfPublicId
+      : `wattly/story-pages/${book.id}`);
+  const safePage = Math.max(1, page);
+  const cloud = getCloudinaryCloudName();
+  return `https://res.cloudinary.com/${cloud}/image/upload/c_fit,pg_${safePage},w_${width},f_jpg,q_auto/${publicId}.jpg`;
 }
 
 export function libraryEpubSrc(book: LibraryBook) {
