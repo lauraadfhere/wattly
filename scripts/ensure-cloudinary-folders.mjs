@@ -31,7 +31,35 @@ if (process.env.CLOUDINARY_URL) {
   });
 }
 
-const folders = ["wattly", "wattly/media", "wattly/pdfs", "wattly/covers"];
+const folders = [
+  "wattly",
+  "wattly/media",
+  "wattly/pdfs",
+  "wattly/covers",
+  "wattly/avatars",
+];
+
+async function ensureAvatarPreset() {
+  const name = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET || "wattly_avatars";
+  try {
+    await cloudinary.api.upload_preset(name);
+    console.log(`Upload preset exists: ${name}`);
+    return;
+  } catch {
+    // create below
+  }
+
+  await cloudinary.api.create_upload_preset({
+    name,
+    unsigned: true,
+    folder: "wattly/avatars",
+    allowed_formats: "jpg,png,webp,gif",
+    transformation: [
+      { width: 400, height: 400, crop: "fill", gravity: "auto", quality: "auto" },
+    ],
+  });
+  console.log(`Created upload preset: ${name}`);
+}
 
 async function ensureFolder(path) {
   try {
@@ -97,6 +125,7 @@ async function main() {
   for (const folder of folders) {
     await ensureFolder(folder);
   }
+  await ensureAvatarPreset();
   await seedCoverPlaceholders();
   console.log("Cloudinary Wattly folders ready.");
 }

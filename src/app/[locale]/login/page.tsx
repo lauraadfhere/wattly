@@ -1,14 +1,28 @@
 import { getTranslations } from "next-intl/server";
-import LoginForm from "@/components/auth/LoginForm";
-import PlatformShell from "@/components/platform/PlatformShell";
+import AuthShell from "@/components/auth/AuthShell";
+import LoginAccessHub from "@/components/auth/LoginAccessHub";
+import { Link } from "@/i18n/navigation";
 
-export default async function LoginPage() {
+export default async function LoginPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ next?: string }>;
+}) {
   const t = await getTranslations("Auth");
+  const tHub = await getTranslations("LoginHub");
+  const { next } = await searchParams;
+  const nextPath =
+    next && next.startsWith("/") && !next.startsWith("//") ? next : null;
 
   return (
-    <PlatformShell title={t("loginTitle")}>
-      <p className="mb-6 max-w-xl text-base text-[#000A5E]/75">{t("loginIntro")}</p>
-      <LoginForm />
-    </PlatformShell>
+    <AuthShell title={t("loginTitle")} intro={tHub("pageIntro")}>
+      <LoginAccessHub nextPath={nextPath} />
+      <p className="mt-8 text-center text-sm text-black/70">
+        {t("noAccount")}{" "}
+        <Link href="/signup" className="font-semibold text-[#0016BD]">
+          {t("signupLink")}
+        </Link>
+      </p>
+    </AuthShell>
   );
 }

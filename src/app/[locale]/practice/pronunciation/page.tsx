@@ -5,7 +5,7 @@ export default async function PronunciationPracticePage() {
   const t = await getTranslations("Practice");
 
   return (
-    <PlatformShell title={t("pronunciation")}>
+    <PlatformShell title={t("pronunciation")} gate="auth">
       <p className="max-w-2xl text-base leading-7 text-[#000A5E]/75">
         {t("pronunciationDetail")}
       </p>

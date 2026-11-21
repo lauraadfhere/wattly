@@ -9,8 +9,42 @@
     "comingSoon": "Esta sección estará disponible pronto.",
     "backHome": "Ir al panel"
   },
+  "NotFound": {
+    "code": "404",
+    "title": "Página no encontrada",
+    "body": "Esta página no existe o se ha movido. Vuelve al inicio o busca en Wattly.",
+    "home": "Volver al inicio",
+    "search": "Buscar"
+  },
+  "SearchPage": {
+    "title": "Buscar en Wattly",
+    "placeholder": "Profesores, lecciones, cursos…",
+    "submit": "Buscar",
+    "hint": "Encuentra profesores y rutas de aprendizaje en Wattly.",
+    "close": "Cerrar"
+  },
   "Language": {
     "label": "Idioma"
+  },
+  "LoginHub": {
+    "eyebrow": "Elige tu acceso",
+    "title": "¿Cómo quieres entrar en Wattly?",
+    "body": "Elige acceso estudiante o profesor — demos en un toque, sin escribir.",
+    "pageIntro": "Selecciona un tipo de acceso. La entrada demo rápida está lista en cada ruta.",
+    "studentTitle": "Acceso estudiante",
+    "studentBody": "Cursos, práctica calmada, subtítulos y progreso a tu ritmo.",
+    "studentCta": "Continuar como estudiante",
+    "teacherTitle": "Acceso profesor",
+    "teacherBody": "Guía a los alumnos con herramientas inclusivas, clases y reporting claro.",
+    "teacherCta": "Continuar como profesor",
+    "parentAccess": "Acceso padre/madre",
+    "adminAccess": "Acceso admin",
+    "parentBody": "Sigue el camino de tu aprendiz con actualizaciones claras.",
+    "adminBody": "Gestiona usuarios, cursos, vídeos y contenido Wattly.",
+    "fastAccess": "Acceso demo en un toque",
+    "fastAccessHint": "Entra como {role} al instante — sin configuración manual.",
+    "manualHint": "O inicia sesión con tu correo si ya tienes cuenta.",
+    "backToOptions": "Volver a las opciones de acceso"
   },
   "About": {
     "title": "Sobre Wattly",
@@ -41,6 +75,25 @@
     "policies": "Políticas y términos",
     "contact": "Contacto",
     "courses": "Cursos"
+  },
+  "ProductsStories": {
+    "eyebrow": "Productos Wattly",
+    "title": "Historias reales con cursos y práctica Wattly.",
+    "cta": "Explorar nuestros productos",
+    "slides": {
+      "courses": {
+        "quote": "Imaginamos un inglés fluido — y los cursos Wattly lo hicieron real.",
+        "name": "Amina, Marruecos",
+        "detail": "Empezando su ruta de cursos",
+        "product": "Cursos"
+      },
+      "practice": {
+        "quote": "Práctica a mi ritmo — subtítulos, ejercicios calmados, progreso real.",
+        "name": "Luis, España",
+        "detail": "Práctica diaria con IA en Wattly",
+        "product": "Práctica"
+      }
+    }
   },
   "CoursesShowcase": {
     "eyebrow": "Wattly para aprender",
@@ -151,6 +204,7 @@
   },
   "Platform": {
     "navLabel": "Plataforma",
+    "home": "Inicio",
     "dashboard": "Panel",
     "teachers": "Profesores",
     "practice": "Práctica",
@@ -162,7 +216,7 @@
   },
   "Profile": {
     "title": "Tu perfil",
-    "intro": "Gestiona tu identidad Wattly, rol y nombre visible.",
+    "intro": "Gestiona tu identidad Wattly, rol, nombre y foto.",
     "displayName": "Nombre visible",
     "email": "Correo",
     "role": "Rol",
@@ -170,7 +224,14 @@
     "saving": "Guardando…",
     "saved": "Perfil actualizado.",
     "saveFailed": "No se pudo actualizar el perfil.",
-    "needLogin": "Inicia sesión para ver tu perfil."
+    "needLogin": "Inicia sesión para ver tu perfil.",
+    "changeAvatar": "Cambiar foto de perfil",
+    "avatarHint": "Toca + para subir una foto (PNG, JPG, WEBP).",
+    "avatarUploading": "Subiendo foto…",
+    "avatarSaved": "Foto de perfil actualizada.",
+    "avatarFailed": "No se pudo subir la foto.",
+    "avatarInvalid": "Elige un archivo de imagen.",
+    "avatarTooLarge": "La imagen debe pesar menos de 5 MB."
   },
   "Auth": {
     "loginTitle": "Bienvenido de nuevo",
@@ -198,6 +259,8 @@
     "signupLink": "Regístrate",
     "signupFailed": "No se pudo crear la cuenta.",
     "loginFailed": "No se pudo iniciar sesión. Revisa correo y contraseña.",
+    "checkingSession": "Comprobando tu sesión…",
+    "alreadySignedIn": "Ya has iniciado sesión — llevándote a Wattly…",
     "demoAccess": "Acceso demo",
     "demoAccessHint": "Elige un rol — rellena e inicia sesión solo",
     "demoLearner": "Demo aprendiz",

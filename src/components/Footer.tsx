@@ -43,7 +43,7 @@ export default async function Footer() {
             © 2026 Wattly. {t("rights")}
           </p>
           <Link
-            href="/admin"
+            href="/admin/login"
             className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-xs font-medium text-white/80 hover:bg-white/15 hover:text-white"
             aria-label={t("adminAccess")}
             title={t("adminAccess")}

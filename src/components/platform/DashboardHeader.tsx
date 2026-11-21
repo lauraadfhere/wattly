@@ -82,7 +82,12 @@ export default function DashboardHeader() {
               <span className="h-9 w-24 animate-pulse rounded-full bg-white/10" />
             ) : user ? (
               <Link href="/profile" className="flex items-center gap-2 pe-1">
-                <Avatar name={displayName || user.email} role={role} size="sm" />
+                <Avatar
+                  name={displayName || user.email}
+                  role={role}
+                  size="sm"
+                  src={profile?.avatar_url}
+                />
                 <span className="hidden max-w-[8rem] truncate text-sm font-medium text-white lg:inline">
                   {displayName || user.email}
                 </span>

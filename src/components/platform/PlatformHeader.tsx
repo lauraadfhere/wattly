@@ -51,7 +51,12 @@ export default function PlatformHeader() {
                 href="/profile"
                 className="flex items-center gap-2 rounded-full px-1 py-1 pe-2"
               >
-                <Avatar name={displayName || user.email} role={role} size="sm" />
+                <Avatar
+                  name={displayName || user.email}
+                  role={role}
+                  size="sm"
+                  src={profile?.avatar_url}
+                />
                 <span className="hidden max-w-[9rem] truncate text-black sm:inline">
                   {displayName || user.email}
                 </span>

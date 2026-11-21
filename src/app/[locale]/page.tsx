@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import CoursesShowcase from "@/components/CoursesShowcase";
 import Footer from "@/components/Footer";
 import HeroActions from "@/components/HeroActions";
+import ProductsStories from "@/components/ProductsStories";
 
 export default async function HomePage() {
   const t = await getTranslations("HomePage");
@@ -11,8 +12,8 @@ export default async function HomePage() {
     <div className="flex min-h-dvh flex-1 flex-col">
       <main className="relative flex flex-1 flex-col bg-[#000ea8] text-white">
         <HeroActions />
-        <header className="flex flex-1 flex-col justify-start px-6 pb-20 pt-28 sm:px-10 sm:pt-32 lg:px-16">
-          <div className="mx-auto w-full max-w-4xl">
+        <header className="flex flex-1 flex-col justify-start px-5 pb-20 pt-10 sm:px-8 sm:pt-14 lg:px-12">
+          <div className="w-full max-w-4xl ps-4 sm:ps-8 lg:ps-12">
             <div className="hero-rise mb-8 flex items-start gap-1 sm:mb-10">
               <Image
                 src="/brand/wattly-logo-white.png"
@@ -40,6 +41,7 @@ export default async function HomePage() {
         </header>
       </main>
       <CoursesShowcase />
+      <ProductsStories />
       <Footer />
     </div>
   );

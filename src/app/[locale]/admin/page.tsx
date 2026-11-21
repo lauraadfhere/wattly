@@ -6,7 +6,7 @@ export default async function AdminPage() {
   const t = await getTranslations("Admin");
 
   return (
-    <PlatformShell title={t("title")} intro={t("intro")}>
+    <PlatformShell title={t("title")} intro={t("intro")} gate="admin">
       <AdminPanel />
     </PlatformShell>
   );

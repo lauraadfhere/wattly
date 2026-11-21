@@ -14,6 +14,7 @@ export type WattlyProfile = {
   email: string;
   locale?: string;
   onboarding_done: boolean;
+  avatar_url?: string;
 };
 
 export async function registerAccount(input: {
@@ -136,5 +137,16 @@ export async function updateProfileName(profileId: string, displayName: string) 
     data: { display_name: displayName },
   });
 
+  return updated as unknown as WattlyProfile;
+}
+
+export async function updateProfileAvatar(profileId: string, avatarUrl: string) {
+  const { tablesDB } = createBrowserClient();
+  const updated = await tablesDB.updateRow({
+    databaseId: appwriteConfig.databaseId,
+    tableId: appwriteConfig.tables.wattly,
+    rowId: profileId,
+    data: { avatar_url: avatarUrl },
+  });
   return updated as unknown as WattlyProfile;
 }

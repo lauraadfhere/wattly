@@ -13,7 +13,7 @@ export default async function PracticePage() {
   ] as const;
 
   return (
-    <PlatformShell title={t("title")}>
+    <PlatformShell title={t("title")} gate="auth">
       <p className="mb-8 max-w-2xl text-base text-[#000A5E]/75">{t("intro")}</p>
       <div className="grid gap-4 sm:grid-cols-2">
         {activities.map((activity) => (

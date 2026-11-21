@@ -9,8 +9,42 @@
     "comingSoon": "Cette section arrive bientôt.",
     "backHome": "Aller au tableau de bord"
   },
+  "NotFound": {
+    "code": "404",
+    "title": "Page introuvable",
+    "body": "Cette page n’existe pas ou a été déplacée. Revenez à l’accueil ou recherchez sur Wattly.",
+    "home": "Retour à l’accueil",
+    "search": "Rechercher"
+  },
+  "SearchPage": {
+    "title": "Rechercher sur Wattly",
+    "placeholder": "Professeurs, leçons, cours…",
+    "submit": "Rechercher",
+    "hint": "Trouvez des professeurs et des parcours sur Wattly.",
+    "close": "Fermer"
+  },
   "Language": {
     "label": "Langue"
+  },
+  "LoginHub": {
+    "eyebrow": "Choisissez votre accès",
+    "title": "Comment voulez-vous entrer dans Wattly ?",
+    "body": "Choisissez accès étudiant ou professeur — les démos s’ouvrent en un clic, sans saisie.",
+    "pageIntro": "Sélectionnez un type d’accès. L’entrée démo rapide est prête sur chaque parcours.",
+    "studentTitle": "Accès étudiant",
+    "studentBody": "Cours, pratique calme, sous-titres et progrès à votre rythme.",
+    "studentCta": "Continuer en étudiant",
+    "teacherTitle": "Accès professeur",
+    "teacherBody": "Accompagnez les apprenants avec outils inclusifs, leçons et reporting clair.",
+    "teacherCta": "Continuer en professeur",
+    "parentAccess": "Accès parent",
+    "adminAccess": "Accès admin",
+    "parentBody": "Suivez le parcours de votre apprenant avec des mises à jour claires.",
+    "adminBody": "Gérez utilisateurs, cours, vidéos et contenus Wattly.",
+    "fastAccess": "Accès démo en un clic",
+    "fastAccessHint": "Entrez en {role} instantanément — sans configuration manuelle.",
+    "manualHint": "Ou connectez-vous avec votre e-mail si vous avez déjà un compte.",
+    "backToOptions": "Retour aux options d’accès"
   },
   "About": {
     "title": "À propos de Wattly",
@@ -41,6 +75,25 @@
     "policies": "Politiques et conditions",
     "contact": "Contact",
     "courses": "Cours"
+  },
+  "ProductsStories": {
+    "eyebrow": "Produits Wattly",
+    "title": "Des parcours réels avec les cours et la pratique Wattly.",
+    "cta": "Découvrir nos produits",
+    "slides": {
+      "courses": {
+        "quote": "Nous imaginions un anglais fluide — les cours Wattly l’ont rendu réel.",
+        "name": "Amina, Maroc",
+        "detail": "Début de son parcours de cours",
+        "product": "Cours"
+      },
+      "practice": {
+        "quote": "Une pratique à mon rythme — sous-titres, exercices calmes, vrai progrès.",
+        "name": "Luis, Espagne",
+        "detail": "Pratique IA quotidienne sur Wattly",
+        "product": "Pratique"
+      }
+    }
   },
   "CoursesShowcase": {
     "eyebrow": "Wattly pour apprendre",
@@ -151,6 +204,7 @@
   },
   "Platform": {
     "navLabel": "Plateforme",
+    "home": "Accueil",
     "dashboard": "Tableau de bord",
     "teachers": "Professeurs",
     "practice": "Pratique",
@@ -162,7 +216,7 @@
   },
   "Profile": {
     "title": "Votre profil",
-    "intro": "Gérez votre identité Wattly, votre rôle et votre nom affiché.",
+    "intro": "Gérez votre identité Wattly, votre rôle, votre nom et votre photo.",
     "displayName": "Nom affiché",
     "email": "E-mail",
     "role": "Rôle",
@@ -170,7 +224,14 @@
     "saving": "Enregistrement…",
     "saved": "Profil mis à jour.",
     "saveFailed": "Impossible de mettre à jour le profil.",
-    "needLogin": "Connectez-vous pour voir votre profil."
+    "needLogin": "Connectez-vous pour voir votre profil.",
+    "changeAvatar": "Changer la photo de profil",
+    "avatarHint": "Appuyez sur + pour ajouter une photo (PNG, JPG, WEBP).",
+    "avatarUploading": "Envoi de la photo…",
+    "avatarSaved": "Photo de profil mise à jour.",
+    "avatarFailed": "Impossible d’envoyer la photo.",
+    "avatarInvalid": "Choisissez un fichier image.",
+    "avatarTooLarge": "L’image doit faire moins de 5 Mo."
   },
   "Auth": {
     "loginTitle": "Bon retour",
@@ -198,6 +259,8 @@
     "signupLink": "S’inscrire",
     "signupFailed": "Impossible de créer le compte.",
     "loginFailed": "Connexion impossible. Vérifiez l’e-mail et le mot de passe.",
+    "checkingSession": "Vérification de votre session…",
+    "alreadySignedIn": "Vous êtes déjà connecté — redirection vers Wattly…",
     "demoAccess": "Accès démo",
     "demoAccessHint": "Choisissez un rôle — remplissage et connexion auto",
     "demoLearner": "Démo apprenant",

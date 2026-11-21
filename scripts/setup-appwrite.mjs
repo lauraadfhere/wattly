@@ -54,6 +54,21 @@ async function ensureTable(tableId, name, columns = []) {
   }
 }
 
+async function ensureUrlColumn(tableId, key, size = 2000) {
+  try {
+    await tablesDB.getColumn({ databaseId, tableId, key });
+    console.log(`Column exists: ${tableId}.${key}`);
+  } catch {
+    await tablesDB.createUrlColumn({
+      databaseId,
+      tableId,
+      key,
+      required: false,
+    });
+    console.log(`Created column: ${tableId}.${key}`);
+  }
+}
+
 async function main() {
   await ensureDatabase();
 
@@ -129,6 +144,9 @@ async function main() {
       required: true,
     },
   ]);
+
+  await ensureUrlColumn("wattly", "avatar_url");
+  await ensureUrlColumn("profiles", "avatar_url");
 
   await ensureTable("courses", "Courses", [
     { key: "title", type: "string", size: 200, required: true },

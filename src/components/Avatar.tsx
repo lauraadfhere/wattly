@@ -1,7 +1,12 @@
+"use client";
+
+import Image from "next/image";
+
 type AvatarProps = {
   name: string;
   role?: string;
   size?: "sm" | "md" | "lg";
+  src?: string | null;
 };
 
 const roleColors: Record<string, string> = {
@@ -18,10 +23,28 @@ function initialsFromName(name: string) {
   return `${parts[0][0]}${parts[1][0]}`.toUpperCase();
 }
 
-export default function Avatar({ name, role, size = "md" }: AvatarProps) {
+export default function Avatar({ name, role, size = "md", src }: AvatarProps) {
   const sizeClass =
     size === "sm" ? "h-8 w-8 text-xs" : size === "lg" ? "h-16 w-16 text-xl" : "h-10 w-10 text-sm";
   const color = roleColors[role || ""] || "bg-[#0016BD]";
+
+  if (src) {
+    return (
+      <span
+        className={`relative inline-flex shrink-0 overflow-hidden rounded-full ${sizeClass}`}
+        aria-hidden="true"
+      >
+        <Image
+          src={src}
+          alt=""
+          fill
+          className="object-cover"
+          sizes={size === "lg" ? "64px" : size === "sm" ? "32px" : "40px"}
+          unoptimized
+        />
+      </span>
+    );
+  }
 
   return (
     <span

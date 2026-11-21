@@ -1,19 +1,23 @@
 "use client";
 
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { useAuth } from "@/components/auth/AuthProvider";
 import Avatar from "@/components/Avatar";
-import { updateProfileName } from "@/lib/auth";
+import { updateProfileAvatar, updateProfileName } from "@/lib/auth";
+import { uploadAvatarImage } from "@/lib/cloudinary";
 
 export default function ProfilePanel() {
   const t = useTranslations("Profile");
   const tAuth = useTranslations("Auth");
   const { user, profile, loading, refresh, setProfile } = useAuth();
   const router = useRouter();
+  const fileRef = useRef<HTMLInputElement>(null);
   const [name, setName] = useState("");
+  const [preview, setPreview] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+  const [uploading, setUploading] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -25,6 +29,7 @@ export default function ProfilePanel() {
 
   useEffect(() => {
     setName(profile?.display_name || user?.name || "");
+    setPreview(profile?.avatar_url || null);
   }, [profile, user]);
 
   async function onSubmit(event: FormEvent) {
@@ -45,6 +50,42 @@ export default function ProfilePanel() {
     }
   }
 
+  async function onAvatarChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    if (!file || !profile || !user) return;
+
+    if (!file.type.startsWith("image/")) {
+      setError(t("avatarInvalid"));
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      setError(t("avatarTooLarge"));
+      return;
+    }
+
+    setUploading(true);
+    setError(null);
+    setMessage(null);
+    try {
+      const localPreview = URL.createObjectURL(file);
+      setPreview(localPreview);
+
+      const url = await uploadAvatarImage(file, profile.user_id);
+      const updated = await updateProfileAvatar(profile.$id, url);
+      setProfile(updated);
+      setPreview(url);
+      await refresh();
+      setMessage(t("avatarSaved"));
+      URL.revokeObjectURL(localPreview);
+    } catch (err) {
+      setPreview(profile.avatar_url || null);
+      setError(err instanceof Error ? err.message : t("avatarFailed"));
+    } finally {
+      setUploading(false);
+      if (fileRef.current) fileRef.current.value = "";
+    }
+  }
+
   if (loading) {
     return (
       <div className="space-y-4">
@@ -61,12 +102,41 @@ export default function ProfilePanel() {
   return (
     <div className="mx-auto w-full max-w-xl space-y-6">
       <div className="flex items-center gap-4 rounded-2xl border border-[#0016BD]/15 bg-white p-5">
-        <Avatar name={profile.display_name || user.name} role={profile.role} size="lg" />
+        <div className="relative">
+          <Avatar
+            name={profile.display_name || user.name}
+            role={profile.role}
+            size="lg"
+            src={preview}
+          />
+          <button
+            type="button"
+            disabled={uploading}
+            onClick={() => fileRef.current?.click()}
+            className="absolute -bottom-1 -end-1 flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-[#0016BD] text-white shadow disabled:opacity-60"
+            aria-label={t("changeAvatar")}
+            title={t("changeAvatar")}
+          >
+            <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.2">
+              <path d="M12 5v14M5 12h14" strokeLinecap="round" />
+            </svg>
+          </button>
+          <input
+            ref={fileRef}
+            type="file"
+            accept="image/png,image/jpeg,image/webp,image/gif"
+            className="sr-only"
+            onChange={onAvatarChange}
+          />
+        </div>
         <div>
           <p className="text-xl font-bold text-[#000A5E]">{profile.display_name}</p>
           <p className="text-sm text-[#000A5E]/70">{profile.email}</p>
           <p className="mt-1 inline-flex rounded-full bg-[#0016BD]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#0016BD]">
             {tAuth(`roles.${profile.role}` as "roles.learner")}
+          </p>
+          <p className="mt-2 text-xs text-black/50">
+            {uploading ? t("avatarUploading") : t("avatarHint")}
           </p>
         </div>
       </div>

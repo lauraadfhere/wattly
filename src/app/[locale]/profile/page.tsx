@@ -6,7 +6,7 @@ export default async function ProfilePage() {
   const t = await getTranslations("Profile");
 
   return (
-    <PlatformShell title={t("title")} intro={t("intro")}>
+    <PlatformShell title={t("title")} intro={t("intro")} gate="auth">
       <ProfilePanel />
     </PlatformShell>
   );

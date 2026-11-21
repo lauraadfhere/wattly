@@ -9,6 +9,40 @@ const messages = {
     "comingSoon": "This section is coming soon.",
     "backHome": "Go to dashboard"
   },
+  "NotFound": {
+    "code": "404",
+    "title": "Page not found",
+    "body": "This page does not exist or may have moved. Head home or search Wattly.",
+    "home": "Back to home",
+    "search": "Search"
+  },
+  "SearchPage": {
+    "title": "Search Wattly",
+    "placeholder": "Teachers, lessons, courses…",
+    "submit": "Search",
+    "hint": "Find teachers and learning paths across Wattly.",
+    "close": "Close"
+  },
+  "LoginHub": {
+    "eyebrow": "Choose your path",
+    "title": "How do you want to enter Wattly?",
+    "body": "Pick student or teacher access for a creative learning space — demos open in one tap, no typing required.",
+    "pageIntro": "Select an access type. Fast demo entry is ready on each path.",
+    "studentTitle": "Student access",
+    "studentBody": "Courses, calm practice, captions and progress at your pace.",
+    "studentCta": "Continue as student",
+    "teacherTitle": "Teacher access",
+    "teacherBody": "Guide learners with inclusive tools, lessons and clear reporting.",
+    "teacherCta": "Continue as teacher",
+    "parentAccess": "Parent access",
+    "adminAccess": "Admin access",
+    "parentBody": "Follow your learner’s journey with clear, respectful updates.",
+    "adminBody": "Manage users, courses, videos and Wattly content.",
+    "fastAccess": "One-tap demo access",
+    "fastAccessHint": "Enter as {role} instantly — no manual setup.",
+    "manualHint": "Or sign in with your email if you already have an account.",
+    "backToOptions": "Back to access options"
+  },
   "About": {
     "title": "About Wattly",
     "intro": "Inclusive English learning with teachers, AI practice, and flexible paths.",
@@ -41,6 +75,25 @@ const messages = {
     "policies": "Policies & Terms",
     "contact": "Contact",
     "courses": "Courses"
+  },
+  "ProductsStories": {
+    "eyebrow": "Wattly products",
+    "title": "Real journeys with Wattly courses and practice.",
+    "cta": "Explore our products",
+    "slides": {
+      "courses": {
+        "quote": "We imagined fluent English — and Wattly courses made it real.",
+        "name": "Amina, Morocco",
+        "detail": "Starting her first course path",
+        "product": "Courses"
+      },
+      "practice": {
+        "quote": "Practice that fits my pace — captions, calm drills, real progress.",
+        "name": "Luis, Spain",
+        "detail": "Daily AI practice on Wattly",
+        "product": "Practice"
+      }
+    }
   },
   "CoursesShowcase": {
     "eyebrow": "Wattly for learning",
@@ -151,6 +204,7 @@ const messages = {
   },
   "Platform": {
     "navLabel": "Platform",
+    "home": "Home",
     "dashboard": "Dashboard",
     "teachers": "Teachers",
     "practice": "Practice",
@@ -162,7 +216,7 @@ const messages = {
   },
   "Profile": {
     "title": "Your profile",
-    "intro": "Manage your Wattly identity, role and display name.",
+    "intro": "Manage your Wattly identity, role, display name and photo.",
     "displayName": "Display name",
     "email": "Email",
     "role": "Role",
@@ -170,7 +224,14 @@ const messages = {
     "saving": "Saving…",
     "saved": "Profile updated.",
     "saveFailed": "Could not update profile.",
-    "needLogin": "Please sign in to view your profile."
+    "needLogin": "Please sign in to view your profile.",
+    "changeAvatar": "Change profile photo",
+    "avatarHint": "Tap + to upload a profile photo (PNG, JPG, WEBP).",
+    "avatarUploading": "Uploading photo…",
+    "avatarSaved": "Profile photo updated.",
+    "avatarFailed": "Could not upload profile photo.",
+    "avatarInvalid": "Please choose an image file.",
+    "avatarTooLarge": "Image must be under 5 MB."
   },
   "Auth": {
     "loginTitle": "Welcome back",
@@ -198,6 +259,8 @@ const messages = {
     "signupLink": "Sign up",
     "signupFailed": "Could not create your account.",
     "loginFailed": "Could not sign in. Check your email and password.",
+    "checkingSession": "Checking your session…",
+    "alreadySignedIn": "You’re already signed in — taking you to Wattly…",
     "demoAccess": "Demo access",
     "demoAccessHint": "Pick a role — auto-fills and signs you in",
     "demoLearner": "Demo learner",

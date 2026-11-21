@@ -40,21 +40,44 @@ export default async function CoursesShowcase() {
   const t = await getTranslations("CoursesShowcase");
 
   return (
-    <section className="relative overflow-hidden bg-[#141414] text-white">
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.14]"
+    <section className="relative overflow-hidden bg-[#1a1a1a] text-white">
+      {/* Screenshot-style geometric forms (low-contrast arts) */}
+      <svg
+        className="pointer-events-none absolute inset-0 h-full w-full"
         aria-hidden="true"
-        style={{
-          backgroundImage: [
-            "linear-gradient(135deg, #2a2a2a 25%, transparent 25%)",
-            "linear-gradient(225deg, #2a2a2a 25%, transparent 25%)",
-            "linear-gradient(45deg, #2a2a2a 25%, transparent 25%)",
-            "linear-gradient(315deg, #2a2a2a 25%, transparent 25%)",
-          ].join(", "),
-          backgroundPosition: "0 0, 12px 0, 12px -12px, 0 12px",
-          backgroundSize: "24px 24px",
-        }}
-      />
+      >
+        <defs>
+          <pattern
+            id="wattly-dark-forms"
+            width="280"
+            height="120"
+            patternUnits="userSpaceOnUse"
+          >
+            {/* Parallel bars */}
+            <rect x="18" y="42" width="36" height="8" fill="#2f2f2f" />
+            <rect x="18" y="58" width="36" height="8" fill="#2f2f2f" />
+            {/* Offset squares */}
+            <rect x="78" y="52" width="16" height="16" fill="#333333" />
+            <rect x="92" y="38" width="16" height="16" fill="#333333" />
+            {/* Striped square */}
+            <g transform="translate(130 36)">
+              <rect width="36" height="36" fill="#2a2a2a" />
+              <path
+                d="M0 28 L28 0 M0 36 L36 0 M8 36 L36 8 M20 36 L36 20"
+                stroke="#3a3a3a"
+                strokeWidth="5"
+              />
+            </g>
+            {/* Right triangle */}
+            <path d="M190 72 L226 72 L226 36 Z" fill="#2f2f2f" />
+            {/* Circle in square */}
+            <rect x="246" y="38" width="28" height="28" fill="#2a2a2a" />
+            <circle cx="274" cy="52" r="14" fill="#1a1a1a" />
+            <circle cx="274" cy="52" r="14" fill="none" stroke="#333" strokeWidth="3" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#wattly-dark-forms)" />
+      </svg>
 
       <div className="relative mx-auto w-full max-w-6xl px-6 py-14 sm:px-10 sm:py-16 lg:px-16 lg:py-20">
         <div className="max-w-2xl">
@@ -77,8 +100,8 @@ export default async function CoursesShowcase() {
             <li key={card.key}>
               <Link
                 href={card.href}
-                className="group relative flex h-full min-h-[220px] flex-col rounded-sm border bg-black p-5 transition hover:-translate-y-0.5"
-                style={{ borderColor: card.accent }}
+                className="group relative flex h-full min-h-[220px] flex-col border bg-[#121212] p-5 transition hover:-translate-y-0.5"
+                style={{ borderColor: card.accent, borderRadius: 0 }}
               >
                 <span
                   className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-full"

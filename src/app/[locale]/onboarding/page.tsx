@@ -6,7 +6,7 @@ export default async function OnboardingPage() {
   const t = await getTranslations("Onboarding");
 
   return (
-    <PlatformShell title={t("title")}>
+    <PlatformShell title={t("title")} gate="auth">
       <OnboardingForm />
     </PlatformShell>
   );

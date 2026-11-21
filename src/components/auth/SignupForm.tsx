@@ -3,12 +3,15 @@
 import { FormEvent, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link, useRouter } from "@/i18n/navigation";
+import { useAuth } from "@/components/auth/AuthProvider";
 import { registerAccount, type UserRole } from "@/lib/auth";
+import { postLoginPath } from "@/lib/auth-redirect";
 
 export default function SignupForm() {
   const t = useTranslations("Auth");
   const locale = useLocale();
   const router = useRouter();
+  const { refresh } = useAuth();
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -31,12 +34,8 @@ export default function SignupForm() {
         role,
         locale,
       });
-
-      if (profile.onboarding_done) {
-        router.push("/dashboard");
-      } else {
-        router.push("/onboarding");
-      }
+      await refresh();
+      router.push(postLoginPath(profile));
     } catch (err) {
       const message =
         err instanceof Error ? err.message : t("signupFailed");

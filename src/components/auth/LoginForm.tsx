@@ -3,12 +3,22 @@
 import { FormEvent, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link, useRouter } from "@/i18n/navigation";
+import { useSearchParams } from "next/navigation";
+import { useAuth } from "@/components/auth/AuthProvider";
 import { getCurrentProfile, loginAccount } from "@/lib/auth";
+import { postLoginPath } from "@/lib/auth-redirect";
 import { DEMO_ACCOUNTS, type DemoRole } from "@/lib/demo";
+
+function safeNextPath(raw: string | null): string | null {
+  if (!raw || !raw.startsWith("/") || raw.startsWith("//")) return null;
+  return raw;
+}
 
 export default function LoginForm() {
   const t = useTranslations("Auth");
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const { refresh } = useAuth();
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const [error, setError] = useState<string | null>(null);
@@ -20,8 +30,10 @@ export default function LoginForm() {
     setLoading(true);
     try {
       await loginAccount(email, password);
+      await refresh();
       const profile = await getCurrentProfile();
-      router.push(profile?.onboarding_done ? "/dashboard" : "/onboarding");
+      const next = safeNextPath(searchParams.get("next"));
+      router.push(next || postLoginPath(profile));
     } catch (err) {
       const message = err instanceof Error ? err.message : t("loginFailed");
       setError(message);

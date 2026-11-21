@@ -4,7 +4,11 @@ export const CLOUDINARY_FOLDERS = {
   media: "wattly/media",
   pdfs: "wattly/pdfs",
   covers: "wattly/covers",
+  avatars: "wattly/avatars",
 } as const;
+
+export const CLOUDINARY_AVATAR_PRESET =
+  process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET || "wattly_avatars";
 
 export type CloudinaryFolder =
   (typeof CLOUDINARY_FOLDERS)[keyof typeof CLOUDINARY_FOLDERS];
@@ -54,4 +58,31 @@ export function pdfUrl(publicId: string) {
     folder: CLOUDINARY_FOLDERS.pdfs,
     resourceType: "raw",
   });
+}
+
+/** Browser upload to unsigned Cloudinary preset (avatars). */
+export async function uploadAvatarImage(file: File, userId: string) {
+  const cloud = getCloudinaryCloudName();
+  const form = new FormData();
+  form.append("file", file);
+  form.append("upload_preset", CLOUDINARY_AVATAR_PRESET);
+  form.append("folder", CLOUDINARY_FOLDERS.avatars);
+  form.append("public_id", `user_${userId}`);
+  form.append("overwrite", "true");
+
+  const res = await fetch(
+    `https://api.cloudinary.com/v1_1/${cloud}/image/upload`,
+    { method: "POST", body: form },
+  );
+
+  const data = (await res.json()) as {
+    secure_url?: string;
+    error?: { message?: string };
+  };
+
+  if (!res.ok || !data.secure_url) {
+    throw new Error(data.error?.message || "Avatar upload failed");
+  }
+
+  return data.secure_url;
 }
