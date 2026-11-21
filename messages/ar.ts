@@ -781,7 +781,26 @@ const messages = {
     "showcaseTitle": "Browse our illustrated kids covers",
     "showcaseIntro": "Tap a cover to sign in and open the Wattly kids PDF library.",
     "showcaseCta": "Sign in to read",
-    "showcaseLoginAria": "Sign in to read {title}"
+    "showcaseLoginAria": "Sign in to read {title}",
+    "spreadOf": "Pages {left}–{right} of {total}",
+    "kindleLocation": "Location {location} of {total} • {percent}%",
+    "reviewsTitle": "Student reviews",
+    "reviewsIntro": "Share what you thought about “{title}”.",
+    "reviewsCount": "{count} reviews",
+    "reviewsEmpty": "No reviews yet — be the first.",
+    "reviewAdd": "Write a review",
+    "reviewEdit": "Update your review",
+    "reviewBody": "Your review",
+    "reviewPlaceholder": "What did you like? Was it clear? Would you recommend it?",
+    "reviewStars": "{count} stars",
+    "reviewSubmit": "Post review",
+    "reviewUpdate": "Save changes",
+    "reviewDelete": "Remove",
+    "reviewSaved": "Review posted.",
+    "reviewUpdated": "Review updated.",
+    "reviewDeleted": "Review removed.",
+    "reviewNeedLogin": "Sign in as a student to leave a review.",
+    "reviewTooShort": "Please write at least a short sentence."
   }
 } as const;
 

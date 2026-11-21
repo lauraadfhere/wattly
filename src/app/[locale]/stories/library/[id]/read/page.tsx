@@ -1,8 +1,7 @@
 import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
 import KidsPdfReader from "@/components/library/KidsPdfReader";
 import KindleEpubReader from "@/components/library/KindleEpubReader";
-import PlatformShell from "@/components/platform/PlatformShell";
+import ReadingShell from "@/components/library/ReadingShell";
 import { getLibraryBook, libraryBooks } from "@/lib/library";
 import { kidsContextHtml } from "@/lib/library/kids-context";
 
@@ -38,19 +37,13 @@ export default async function LibraryBookReadPage({ params }: Props) {
   const book = getLibraryBook(id);
   if (!book) notFound();
 
-  const t = await getTranslations("Library");
-
   return (
-    <PlatformShell
-      title={book.format === "pdf" ? t("pdfReaderTitle") : t("kindleReaderTitle")}
-      intro={t("readerIntro")}
-      gate="auth"
-    >
+    <ReadingShell>
       {book.format === "pdf" ? (
         <KidsPdfReader book={book} contextHtml={kidsContextHtml(book.id)} />
       ) : (
         <KindleEpubReader book={book} />
       )}
-    </PlatformShell>
+    </ReadingShell>
   );
 }
