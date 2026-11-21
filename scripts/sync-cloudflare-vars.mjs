@@ -1,12 +1,15 @@
 /**
- * Syncs Appwrite env vars into Cloudflare Worker (wattly) without dashboard clicking.
- * Requires: CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID
+ * Syncs Appwrite + Cloudinary env into Cloudflare Worker (wattly).
+ * Prefer: wrangler OAuth session (yarn cf:sync-vars) — no API token required.
+ * Optional: CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID in .env.cloudflare
  *
  * Usage:
- *   node --env-file=.env.local --env-file=.env.cloudflare scripts/sync-cloudflare-vars.mjs
+ *   yarn cf:sync-vars
+ *   node --env-file=.env.local scripts/sync-cloudflare-vars.mjs
  */
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { spawnSync } from "node:child_process";
 
 function loadEnvFile(path) {
   if (!existsSync(path)) return;
@@ -15,25 +18,25 @@ function loadEnvFile(path) {
     if (!trimmed || trimmed.startsWith("#") || !trimmed.includes("=")) continue;
     const i = trimmed.indexOf("=");
     const key = trimmed.slice(0, i);
-    const value = trimmed.slice(i + 1);
+    let value = trimmed.slice(i + 1);
+    if (
+      (value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
+      value = value.slice(1, -1);
+    }
     if (!process.env[key]) process.env[key] = value;
   }
 }
 
 loadEnvFile(resolve(process.cwd(), ".env.local"));
+loadEnvFile(resolve(process.cwd(), ".env.production"));
 loadEnvFile(resolve(process.cwd(), ".env.cloudflare"));
 
-const accountId = process.env.CLOUDFLARE_ACCOUNT_ID;
+const accountId =
+  process.env.CLOUDFLARE_ACCOUNT_ID || "1b0d0da111bf8727b19e095d1d1e9694";
 const token = process.env.CLOUDFLARE_API_TOKEN;
 const workerName = process.env.CLOUDFLARE_WORKER_NAME || "wattly";
-
-if (!accountId || !token) {
-  console.error(
-    "Missing CLOUDFLARE_ACCOUNT_ID or CLOUDFLARE_API_TOKEN.\n" +
-      "Create .env.cloudflare with those values (gitignored), then re-run.",
-  );
-  process.exit(1);
-}
 
 const plainVars = {
   NEXT_PUBLIC_APPWRITE_ENDPOINT:
@@ -43,9 +46,63 @@ const plainVars = {
     process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID || "6ad515c80023f767eed7",
   NEXT_PUBLIC_APPWRITE_DATABASE_ID:
     process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID || "wattly",
+  NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME:
+    process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME ||
+    process.env.CLOUDINARY_CLOUD_NAME ||
+    "dp5g9tinm",
+  NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET:
+    process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET || "wattly_avatars",
 };
 
+const secrets = {
+  APPWRITE_API_KEY: process.env.APPWRITE_API_KEY,
+  CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY,
+  CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET,
+  CLOUDINARY_CLOUD_NAME:
+    process.env.CLOUDINARY_CLOUD_NAME ||
+    process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
+  CLOUDINARY_URL: process.env.CLOUDINARY_URL,
+};
+
+function ensureCloudflareEnvFile() {
+  const path = resolve(process.cwd(), ".env.cloudflare");
+  if (existsSync(path)) return;
+  writeFileSync(
+    path,
+    [
+      `CLOUDFLARE_ACCOUNT_ID=${accountId}`,
+      "CLOUDFLARE_API_TOKEN=",
+      `CLOUDFLARE_WORKER_NAME=${workerName}`,
+      "",
+    ].join("\n"),
+  );
+  console.log("Created .env.cloudflare (gitignored) with account id.");
+}
+
+function wranglerSecretPut(name, value) {
+  if (!value) {
+    console.warn(`Skip secret ${name}: missing in .env.local`);
+    return false;
+  }
+  const result = spawnSync(
+    "npx",
+    ["wrangler", "secret", "put", name, "--name", workerName],
+    {
+      input: value,
+      encoding: "utf8",
+      shell: true,
+      stdio: ["pipe", "inherit", "inherit"],
+    },
+  );
+  if (result.status !== 0) {
+    throw new Error(`Failed to set secret ${name}`);
+  }
+  console.log(`Secret set via wrangler: ${name}`);
+  return true;
+}
+
 async function cf(path, init = {}) {
+  if (!token) throw new Error("No CLOUDFLARE_API_TOKEN");
   const res = await fetch(`https://api.cloudflare.com/client/v4${path}`, {
     ...init,
     headers: {
@@ -61,9 +118,7 @@ async function cf(path, init = {}) {
   return json.result;
 }
 
-async function putSecret(name, value) {
-  // Wrangler-compatible secret upload via API multipart is awkward;
-  // use Workers Scripts Settings secrets endpoint.
+async function putSecretApi(name, value) {
   const res = await fetch(
     `https://api.cloudflare.com/client/v4/accounts/${accountId}/workers/scripts/${workerName}/secrets`,
     {
@@ -79,48 +134,83 @@ async function putSecret(name, value) {
   if (!json.success) {
     throw new Error(`Secret ${name}: ${JSON.stringify(json.errors || json)}`);
   }
-  console.log(`Secret set: ${name}`);
+  console.log(`Secret set via API: ${name}`);
+}
+
+function syncWranglerJsoncVars() {
+  const path = resolve(process.cwd(), "wrangler.jsonc");
+  if (!existsSync(path)) return;
+  let text = readFileSync(path, "utf8");
+  // Keep JSONC comments; replace "vars" object only.
+  const varsBlock = `  "vars": ${JSON.stringify(plainVars, null, 4).replace(/\n/g, "\n  ")}`;
+  if (/"vars"\s*:\s*\{[\s\S]*?\n  \}/.test(text)) {
+    text = text.replace(/"vars"\s*:\s*\{[\s\S]*?\n  \}/, varsBlock.trim());
+  } else {
+    text = text.replace(/\n\}\s*$/, `,\n${varsBlock}\n}\n`);
+  }
+  writeFileSync(path, text.endsWith("\n") ? text : `${text}\n`);
+  console.log("Updated wrangler.jsonc vars.");
 }
 
 async function main() {
-  console.log(`Syncing vars to worker: ${workerName}`);
+  console.log(`Syncing Cloudflare worker: ${workerName}`);
+  ensureCloudflareEnvFile();
+  syncWranglerJsoncVars();
 
-  // Patch worker settings vars (non-secret)
-  // Get current script settings if possible; otherwise print wrangler commands.
-  try {
-    await cf(`/accounts/${accountId}/workers/scripts/${workerName}/settings`, {
-      method: "PATCH",
-      body: JSON.stringify({
-        bindings: Object.entries(plainVars).map(([name, text]) => ({
-          type: "plain_text",
-          name,
-          text,
-        })),
-      }),
-    });
-    console.log("Plain text bindings updated.");
-  } catch (error) {
-    console.warn("Could not PATCH settings bindings:", error.message);
-    console.warn("Falling back to documenting wrangler secret/var commands.");
+  console.log("Plain vars to ship on next deploy:");
+  for (const [k, v] of Object.entries(plainVars)) {
+    console.log(`  ${k}=${v}`);
   }
 
-  if (process.env.APPWRITE_API_KEY) {
-    await putSecret("APPWRITE_API_KEY", process.env.APPWRITE_API_KEY);
+  if (token) {
+    try {
+      await cf(`/accounts/${accountId}/workers/scripts/${workerName}/settings`, {
+        method: "PATCH",
+        body: JSON.stringify({
+          bindings: Object.entries(plainVars).map(([name, text]) => ({
+            type: "plain_text",
+            name,
+            text,
+          })),
+        }),
+      });
+      console.log("Plain text bindings patched via API.");
+    } catch (error) {
+      console.warn("API bindings patch skipped:", error.message);
+    }
   } else {
-    console.warn("APPWRITE_API_KEY missing — skipped secret upload.");
-  }
-
-  // Also try Workers Builds project variables if BUILD project name exists
-  try {
-    const projects = await cf(
-      `/accounts/${accountId}/builds/workers?search=${encodeURIComponent(workerName)}`,
+    console.log(
+      "No CLOUDFLARE_API_TOKEN — plain vars will apply on next `yarn deploy` via wrangler.jsonc.",
     );
-    console.log("Builds search result keys:", Object.keys(projects || {}));
-  } catch (error) {
-    console.warn("Builds API lookup skipped:", error.message);
   }
 
-  console.log("Done. Public Appwrite vars are also in wrangler.jsonc for builds.");
+  let setCount = 0;
+  for (const [name, value] of Object.entries(secrets)) {
+    try {
+      if (token && value) {
+        await putSecretApi(name, value);
+        setCount += 1;
+      } else if (wranglerSecretPut(name, value)) {
+        setCount += 1;
+      }
+    } catch (error) {
+      console.warn(`Could not set ${name}:`, error.message);
+    }
+  }
+
+  // Verify
+  const listed = spawnSync(
+    "npx",
+    ["wrangler", "secret", "list", "--name", workerName],
+    { encoding: "utf8", shell: true },
+  );
+  console.log("Current worker secrets:");
+  console.log(listed.stdout || listed.stderr || "(none)");
+  console.log(`Done. Secrets written this run: ${setCount}`);
+  if (!secrets.APPWRITE_API_KEY) {
+    console.error("CRITICAL: APPWRITE_API_KEY missing from .env.local");
+    process.exit(1);
+  }
 }
 
 main().catch((error) => {

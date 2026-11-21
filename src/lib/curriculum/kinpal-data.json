@@ -1,0 +1,1926 @@
+{
+  "source": "Kinpal_English_Curriculum_A1_C1_50_Grammar_50_Reading.md",
+  "levels": [
+    "A1",
+    "A2",
+    "B1",
+    "B2",
+    "C1"
+  ],
+  "grammar": [
+    {
+      "id": "grammar-1",
+      "kind": "grammar",
+      "level": "A1",
+      "number": 1,
+      "title": "Be: am, is, are",
+      "durationMin": 20,
+      "goal": "Use be to give names, describe people and places, and say how someone feels.",
+      "examples": "I am a learner. She is kind. They are at school.",
+      "prompt": "Complete with am, is or are: 1) I \\_\\_ ready. 2) The books \\_\\_ new. 3) Our teacher \\_\\_ here.",
+      "items": [
+        "I ____ ready.",
+        "The books ____ new.",
+        "Our teacher ____ here."
+      ],
+      "answers": [
+        "am",
+        "are",
+        "is"
+      ]
+    },
+    {
+      "id": "grammar-2",
+      "kind": "grammar",
+      "level": "A1",
+      "number": 2,
+      "title": "Subject pronouns",
+      "durationMin": 20,
+      "goal": "Use I, you, he, she, it, we and they instead of repeating names or things.",
+      "examples": "Maya is a doctor. She works here. The keys are new. They are blue.",
+      "prompt": "Replace the bold noun with a pronoun: 1) Omar is a student. 2) The machine is old. 3) Lina and I are friends.",
+      "items": [
+        "Omar is a student.",
+        "The machine is old.",
+        "Lina and I are friends."
+      ],
+      "answers": [
+        "He",
+        "It",
+        "We"
+      ]
+    },
+    {
+      "id": "grammar-3",
+      "kind": "grammar",
+      "level": "A1",
+      "number": 3,
+      "title": "Articles: a, an, the",
+      "durationMin": 20,
+      "goal": "Use a before a consonant sound, an before a vowel sound, and the for something specific or already known.",
+      "examples": "a book; an apple; the door near the desk.",
+      "prompt": "Choose a, an or the: 1) I see \\_\\_ orange. 2) Please close \\_\\_ window beside you. 3) She has \\_\\_ pencil.",
+      "items": [
+        "I see ____ orange.",
+        "Please close ____ window beside you.",
+        "She has ____ pencil."
+      ],
+      "answers": [
+        "an",
+        "the",
+        "a"
+      ]
+    },
+    {
+      "id": "grammar-4",
+      "kind": "grammar",
+      "level": "A1",
+      "number": 4,
+      "title": "Singular and plural nouns",
+      "durationMin": 20,
+      "goal": "Most countable nouns add -s or -es; some have irregular plural forms.",
+      "examples": "one class / two classes; one child / two children.",
+      "prompt": "Write the plural: 1) city 2) box 3) child.",
+      "items": [
+        "city",
+        "box",
+        "child."
+      ],
+      "answers": [
+        "cities",
+        "boxes",
+        "children"
+      ]
+    },
+    {
+      "id": "grammar-5",
+      "kind": "grammar",
+      "level": "A1",
+      "number": 5,
+      "title": "Possessive adjectives",
+      "durationMin": 20,
+      "goal": "Use my, your, his, her, its, our and their before a noun to show ownership.",
+      "examples": "This is my bag. Their classroom is upstairs.",
+      "prompt": "Choose the correct word: 1) Sara has a cat. \\_\\_ cat is white. 2) We love \\_\\_ school. 3) I forgot \\_\\_ keys.",
+      "items": [
+        "Sara has a cat. ____ cat is white.",
+        "We love ____ school.",
+        "I forgot ____ keys."
+      ],
+      "answers": [
+        "Her",
+        "our",
+        "my"
+      ]
+    },
+    {
+      "id": "grammar-6",
+      "kind": "grammar",
+      "level": "A1",
+      "number": 6,
+      "title": "Present simple: affirmative",
+      "durationMin": 20,
+      "goal": "Use the present simple for routines, facts and regular events. Add -s or -es with he, she and it.",
+      "examples": "I study every day. He watches the news. Water boils at 100°C.",
+      "prompt": "Put the verb in the present simple: 1) He (work) in a clinic. 2) They (play) chess. 3) The sun (rise) in the east.",
+      "items": [
+        "He (work) in a clinic.",
+        "They (play) chess.",
+        "The sun (rise) in the east."
+      ],
+      "answers": [
+        "works",
+        "play",
+        "rises"
+      ]
+    },
+    {
+      "id": "grammar-7",
+      "kind": "grammar",
+      "level": "A1",
+      "number": 7,
+      "title": "Present simple: negatives and questions",
+      "durationMin": 20,
+      "goal": "Use do/does + not for negatives and do/does before the subject in questions.",
+      "examples": "She doesn't drive. Do you read? Does he live here?",
+      "prompt": "Rewrite as requested: 1) He likes tea. (negative) 2) You speak French. (question) 3) They work here. (negative).",
+      "items": [
+        "He likes tea. (negative)",
+        "You speak French. (question)",
+        "They work here. (negative)."
+      ],
+      "answers": [
+        "He doesn't like tea.",
+        "Do you speak French?",
+        "They don't work here."
+      ]
+    },
+    {
+      "id": "grammar-8",
+      "kind": "grammar",
+      "level": "A1",
+      "number": 8,
+      "title": "There is / there are",
+      "durationMin": 20,
+      "goal": "Use there is with singular or uncountable nouns and there are with plural nouns.",
+      "examples": "There is a pharmacy nearby. There are three windows.",
+      "prompt": "Complete: 1) \\_\\_ a museum in this street. 2) \\_\\_ two nurses on duty. 3) \\_\\_ some milk in the fridge.",
+      "items": [
+        "____ a museum in this street.",
+        "____ two nurses on duty.",
+        "____ some milk in the fridge."
+      ],
+      "answers": [
+        "There is",
+        "There are",
+        "There is"
+      ]
+    },
+    {
+      "id": "grammar-9",
+      "kind": "grammar",
+      "level": "A1",
+      "number": 9,
+      "title": "Prepositions of place",
+      "durationMin": 20,
+      "goal": "Use in, on, under, next to, between and behind to describe location.",
+      "examples": "The map is on the wall. The clinic is between the bank and the café.",
+      "prompt": "Choose a preposition: 1) The shoes are \\_\\_ the bed. 2) The clock is \\_\\_ the wall. 3) The library is \\_\\_ the bank and the park.",
+      "items": [
+        "The shoes are ____ the bed.",
+        "The clock is ____ the wall.",
+        "The library is ____ the bank and the park."
+      ],
+      "answers": [
+        "under",
+        "on",
+        "between"
+      ]
+    },
+    {
+      "id": "grammar-10",
+      "kind": "grammar",
+      "level": "A1",
+      "number": 10,
+      "title": "Can / can't for ability",
+      "durationMin": 20,
+      "goal": "Use can + base verb for ability and can't for inability. Do not add -s after can.",
+      "examples": "A dolphin can swim. A baby can't drive.",
+      "prompt": "Complete with can or can't: 1) Birds \\_\\_ fly. 2) A fish \\_\\_ walk. 3) My sister \\_\\_ speak three languages.",
+      "items": [
+        "Birds ____ fly.",
+        "A fish ____ walk.",
+        "My sister ____ speak three languages."
+      ],
+      "answers": [
+        "can",
+        "can't",
+        "can"
+      ]
+    },
+    {
+      "id": "grammar-11",
+      "kind": "grammar",
+      "level": "A2",
+      "number": 11,
+      "title": "Present continuous",
+      "durationMin": 20,
+      "goal": "Use am/is/are + verb-ing for actions happening now or temporary situations.",
+      "examples": "The students are writing now. I am staying with my aunt this week.",
+      "prompt": "Complete: 1) She \\_\\_ (read) now. 2) We \\_\\_ (prepare) dinner. 3) I \\_\\_ (not / sleep).",
+      "items": [
+        "She ____ (read) now.",
+        "We ____ (prepare) dinner.",
+        "I ____ (not / sleep)."
+      ],
+      "answers": [
+        "is reading",
+        "are preparing",
+        "am not sleeping"
+      ]
+    },
+    {
+      "id": "grammar-12",
+      "kind": "grammar",
+      "level": "A2",
+      "number": 12,
+      "title": "Present simple vs present continuous",
+      "durationMin": 20,
+      "goal": "Use present simple for routines and present continuous for actions happening now or temporary situations.",
+      "examples": "He usually cycles, but today he is taking the bus.",
+      "prompt": "Choose the correct form: 1) I usually (walk/am walking) to work. 2) Look! It (rains/is raining). 3) She (works/is working) at home this week.",
+      "items": [
+        "I usually (walk/am walking) to work.",
+        "Look! It (rains/is raining).",
+        "She (works/is working) at home this week."
+      ],
+      "answers": [
+        "walk",
+        "is raining",
+        "is working"
+      ]
+    },
+    {
+      "id": "grammar-13",
+      "kind": "grammar",
+      "level": "A2",
+      "number": 13,
+      "title": "Past simple: regular verbs",
+      "durationMin": 20,
+      "goal": "Use the past simple for completed actions in the past. Regular verbs usually take -ed.",
+      "examples": "We visited the fort yesterday. The team finished the project.",
+      "prompt": "Write the past form: 1) visit 2) stop 3) study.",
+      "items": [
+        "visit",
+        "stop",
+        "study."
+      ],
+      "answers": [
+        "visited",
+        "stopped",
+        "studied"
+      ]
+    },
+    {
+      "id": "grammar-14",
+      "kind": "grammar",
+      "level": "A2",
+      "number": 14,
+      "title": "Past simple: irregular verbs",
+      "durationMin": 20,
+      "goal": "Irregular verbs have special past forms that must be learned.",
+      "examples": "go–went; see–saw; buy–bought; make–made.",
+      "prompt": "Complete: 1) They \\_\\_ (go) to the museum. 2) I \\_\\_ (see) the doctor. 3) She \\_\\_ (buy) a notebook.",
+      "items": [
+        "They ____ (go) to the museum.",
+        "I ____ (see) the doctor.",
+        "She ____ (buy) a notebook."
+      ],
+      "answers": [
+        "went",
+        "saw",
+        "bought"
+      ]
+    },
+    {
+      "id": "grammar-15",
+      "kind": "grammar",
+      "level": "A2",
+      "number": 15,
+      "title": "Past simple: questions and negatives",
+      "durationMin": 20,
+      "goal": "Use did + base verb in questions and didn't + base verb in negatives.",
+      "examples": "Did you call? We didn't miss the train.",
+      "prompt": "Rewrite: 1) He visited Rome. (question) 2) They ate lunch. (negative) 3) She found the key. (question).",
+      "items": [
+        "He visited Rome. (question)",
+        "They ate lunch. (negative)",
+        "She found the key. (question)."
+      ],
+      "answers": [
+        "Did he visit Rome?",
+        "They didn't eat lunch.",
+        "Did she find the key?"
+      ]
+    },
+    {
+      "id": "grammar-16",
+      "kind": "grammar",
+      "level": "A2",
+      "number": 16,
+      "title": "Countable and uncountable nouns",
+      "durationMin": 20,
+      "goal": "Countable nouns have singular and plural forms; uncountable nouns are not normally counted individually.",
+      "examples": "three bottles; some rice; a piece of advice.",
+      "prompt": "Choose the correct option: 1) many/much information 2) a/an apple 3) a few/a little coins.",
+      "items": [
+        "many/much information",
+        "a/an apple",
+        "a few/a little coins."
+      ],
+      "answers": [
+        "much",
+        "an",
+        "a few"
+      ]
+    },
+    {
+      "id": "grammar-17",
+      "kind": "grammar",
+      "level": "A2",
+      "number": 17,
+      "title": "Some, any, much, many",
+      "durationMin": 20,
+      "goal": "Use some mainly in positive statements and offers; any in many questions and negatives; much with uncountable nouns and many with countable nouns.",
+      "examples": "There is some bread. Are there any eggs? How many chairs?",
+      "prompt": "Complete: 1) Are there \\_\\_ tickets? 2) We don't have \\_\\_ time. 3) How \\_\\_ students came?",
+      "items": [
+        "Are there ____ tickets?",
+        "We don't have ____ time.",
+        "How ____ students came?"
+      ],
+      "answers": [
+        "any",
+        "much",
+        "many"
+      ]
+    },
+    {
+      "id": "grammar-18",
+      "kind": "grammar",
+      "level": "A2",
+      "number": 18,
+      "title": "Comparatives and superlatives",
+      "durationMin": 20,
+      "goal": "Use -er / more to compare two things and -est / most for the highest degree in a group.",
+      "examples": "This road is wider. It is the most useful guide.",
+      "prompt": "Complete: 1) A train is \\_\\_ (fast) than a bus. 2) This is the \\_\\_ (cheap) option. 3) Health is \\_\\_ (important) than fame.",
+      "items": [
+        "A train is ____ (fast) than a bus.",
+        "This is the ____ (cheap) option.",
+        "Health is ____ (important) than fame."
+      ],
+      "answers": [
+        "faster",
+        "cheapest",
+        "more important"
+      ]
+    },
+    {
+      "id": "grammar-19",
+      "kind": "grammar",
+      "level": "A2",
+      "number": 19,
+      "title": "Be going to: plans and predictions",
+      "durationMin": 20,
+      "goal": "Use am/is/are going to + base verb for intentions and predictions based on evidence.",
+      "examples": "We are going to visit the coast. Those clouds are going to bring rain.",
+      "prompt": "Complete: 1) I \\_\\_ (study) tonight. 2) Look at the glass! It \\_\\_ (fall). 3) They \\_\\_ (not / travel) in July.",
+      "items": [
+        "I ____ (study) tonight.",
+        "Look at the glass! It ____ (fall).",
+        "They ____ (not / travel) in July."
+      ],
+      "answers": [
+        "am going to study",
+        "is going to fall",
+        "aren't going to travel"
+      ]
+    },
+    {
+      "id": "grammar-20",
+      "kind": "grammar",
+      "level": "A2",
+      "number": 20,
+      "title": "Adverbs of frequency",
+      "durationMin": 20,
+      "goal": "Use always, usually, often, sometimes and never to say how frequently something happens.",
+      "examples": "She usually checks her work. He is never late.",
+      "prompt": "Put the adverb in a natural position: 1) I am late. (never) 2) They play football. (often) 3) He drinks coffee. (sometimes).",
+      "items": [
+        "I am late. (never)",
+        "They play football. (often)",
+        "He drinks coffee. (sometimes)."
+      ],
+      "answers": [
+        "I am never late.",
+        "They often play football.",
+        "He sometimes drinks coffee."
+      ]
+    },
+    {
+      "id": "grammar-21",
+      "kind": "grammar",
+      "level": "B1",
+      "number": 21,
+      "title": "Present perfect: experiences",
+      "durationMin": 20,
+      "goal": "Use have/has + past participle for life experiences when the exact time is not stated.",
+      "examples": "I have visited Cairo. She has never flown.",
+      "prompt": "Complete: 1) We \\_\\_ (see) that film. 2) He \\_\\_ never \\_\\_ (eat) sushi. 3) \\_\\_ you ever \\_\\_ (ride) a horse?",
+      "items": [
+        "We ____ (see) that film.",
+        "He ____ never ____ (eat) sushi.",
+        "____ you ever ____ (ride) a horse?"
+      ],
+      "answers": [
+        "have seen",
+        "has never eaten",
+        "Have / ridden"
+      ]
+    },
+    {
+      "id": "grammar-22",
+      "kind": "grammar",
+      "level": "B1",
+      "number": 22,
+      "title": "Present perfect vs past simple",
+      "durationMin": 20,
+      "goal": "Use past simple with a finished time and present perfect when the time is unfinished or not specified.",
+      "examples": "I went in 2022. I have visited twice.",
+      "prompt": "Choose: 1) I (have met/met) her yesterday. 2) They (have lived/lived) here since 2020. 3) We (have finished/finished) the task an hour ago.",
+      "items": [
+        "I (have met/met) her yesterday.",
+        "They (have lived/lived) here since 2020.",
+        "We (have finished/finished) the task an hour ago."
+      ],
+      "answers": [
+        "met",
+        "have lived",
+        "finished"
+      ]
+    },
+    {
+      "id": "grammar-23",
+      "kind": "grammar",
+      "level": "B1",
+      "number": 23,
+      "title": "Present perfect with for and since",
+      "durationMin": 20,
+      "goal": "Use for with a period of time and since with a starting point.",
+      "examples": "for three years; since Monday; She has worked here for six months.",
+      "prompt": "Complete: 1) since/for 2019 2) since/for two weeks 3) since/for lunchtime.",
+      "items": [
+        "since/for 2019",
+        "since/for two weeks",
+        "since/for lunchtime."
+      ],
+      "answers": [
+        "since",
+        "for",
+        "since"
+      ]
+    },
+    {
+      "id": "grammar-24",
+      "kind": "grammar",
+      "level": "B1",
+      "number": 24,
+      "title": "Past continuous",
+      "durationMin": 20,
+      "goal": "Use was/were + verb-ing for an action in progress at a past time or as background.",
+      "examples": "I was reading when the lights went out.",
+      "prompt": "Complete: 1) They \\_\\_ (walk) at 8 p.m. 2) I \\_\\_ (cook) when she called. 3) What \\_\\_ you \\_\\_ (do) at noon?",
+      "items": [
+        "They ____ (walk) at 8 p.m.",
+        "I ____ (cook) when she called.",
+        "What ____ you ____ (do) at noon?"
+      ],
+      "answers": [
+        "were walking",
+        "was cooking",
+        "were / doing"
+      ]
+    },
+    {
+      "id": "grammar-25",
+      "kind": "grammar",
+      "level": "B1",
+      "number": 25,
+      "title": "Past continuous and past simple",
+      "durationMin": 20,
+      "goal": "Use past continuous for the longer background action and past simple for the shorter interrupting event.",
+      "examples": "While we were driving, a tyre burst.",
+      "prompt": "Join using when or while: 1) I sleep / the alarm ring. 2) They walk / it start to rain.",
+      "items": [
+        "I sleep / the alarm ring.",
+        "They walk / it start to rain."
+      ],
+      "answers": [
+        "I was sleeping when the alarm rang.",
+        "They were walking when it started to rain."
+      ]
+    },
+    {
+      "id": "grammar-26",
+      "kind": "grammar",
+      "level": "B1",
+      "number": 26,
+      "title": "Will and going to",
+      "durationMin": 20,
+      "goal": "Use will for spontaneous decisions and many predictions; going to for prior plans or evidence-based predictions.",
+      "examples": "I'll answer the phone. We are going to move next month.",
+      "prompt": "Choose: 1) The phone is ringing. I \\_\\_ answer it. 2) We bought paint; we \\_\\_ decorate the room. 3) I think prices \\_\\_ rise.",
+      "items": [
+        "The phone is ringing. I ____ answer it.",
+        "We bought paint; we ____ decorate the room.",
+        "I think prices ____ rise."
+      ],
+      "answers": [
+        "will",
+        "are going to",
+        "will"
+      ]
+    },
+    {
+      "id": "grammar-27",
+      "kind": "grammar",
+      "level": "B1",
+      "number": 27,
+      "title": "Zero and first conditionals",
+      "durationMin": 20,
+      "goal": "Use zero conditional for general truths and first conditional for realistic future possibilities.",
+      "examples": "If water freezes, it expands. If it rains, we'll stay inside.",
+      "prompt": "Complete: 1) If you heat ice, it \\_\\_ (melt). 2) If she studies, she \\_\\_ (pass). 3) Plants die if they \\_\\_ (not / get) water.",
+      "items": [
+        "If you heat ice, it ____ (melt).",
+        "If she studies, she ____ (pass).",
+        "Plants die if they ____ (not / get) water."
+      ],
+      "answers": [
+        "melts",
+        "will pass",
+        "don't get"
+      ]
+    },
+    {
+      "id": "grammar-28",
+      "kind": "grammar",
+      "level": "B1",
+      "number": 28,
+      "title": "Modal verbs: must, have to, should",
+      "durationMin": 20,
+      "goal": "Use must/have to for obligation and should for advice. Mustn't means prohibition.",
+      "examples": "You must wear a helmet. I have to renew my ID. You should rest.",
+      "prompt": "Choose: 1) You \\_\\_ see a dentist about that pain. (advice) 2) Visitors \\_\\_ touch the equipment. (prohibition) 3) I \\_\\_ submit the form by Friday. (obligation).",
+      "items": [
+        "You ____ see a dentist about that pain. (advice)",
+        "Visitors ____ touch the equipment. (prohibition)",
+        "I ____ submit the form by Friday. (obligation)."
+      ],
+      "answers": [
+        "should",
+        "mustn't",
+        "have to"
+      ]
+    },
+    {
+      "id": "grammar-29",
+      "kind": "grammar",
+      "level": "B1",
+      "number": 29,
+      "title": "Passive voice: present and past",
+      "durationMin": 20,
+      "goal": "Use be + past participle when the action or result matters more than the agent.",
+      "examples": "The vaccine is stored safely. The bridge was built in 1920.",
+      "prompt": "Change to passive: 1) Workers clean the lab. 2) A storm damaged the roof.",
+      "items": [
+        "Workers clean the lab.",
+        "A storm damaged the roof."
+      ],
+      "answers": [
+        "The lab is cleaned by workers.",
+        "The roof was damaged by a storm."
+      ]
+    },
+    {
+      "id": "grammar-30",
+      "kind": "grammar",
+      "level": "B1",
+      "number": 30,
+      "title": "Reported speech: statements",
+      "durationMin": 20,
+      "goal": "When reporting past words, pronouns and tenses often shift back depending on context.",
+      "examples": "\"I am tired,\" she said. → She said that she was tired.",
+      "prompt": "Report: 1) Ali said, \"I need help.\" 2) Maya said, \"We have finished.\"",
+      "items": [
+        "Ali said, \"I need help.\"",
+        "Maya said, \"We have finished.\""
+      ],
+      "answers": [
+        "Ali said that he needed help.",
+        "Maya said that they had finished."
+      ]
+    },
+    {
+      "id": "grammar-31",
+      "kind": "grammar",
+      "level": "B2",
+      "number": 31,
+      "title": "Second conditional",
+      "durationMin": 20,
+      "goal": "Use if + past simple, would + base verb for unreal or unlikely present/future situations.",
+      "examples": "If I had more time, I would learn Japanese.",
+      "prompt": "Complete: 1) If I \\_\\_ (be) you, I \\_\\_ (ask) for advice. 2) She would travel if she \\_\\_ (have) savings.",
+      "items": [
+        "If I ____ (be) you, I ____ (ask) for advice.",
+        "She would travel if she ____ (have) savings."
+      ],
+      "answers": [
+        "were / would ask",
+        "had"
+      ]
+    },
+    {
+      "id": "grammar-32",
+      "kind": "grammar",
+      "level": "B2",
+      "number": 32,
+      "title": "Third conditional",
+      "durationMin": 20,
+      "goal": "Use if + past perfect, would have + past participle for an unreal past situation.",
+      "examples": "If they had left earlier, they would have caught the train.",
+      "prompt": "Complete: 1) If we \\_\\_ (check) the map, we \\_\\_ (not / get) lost. 2) He would have passed if he \\_\\_ (revise).",
+      "items": [
+        "If we ____ (check) the map, we ____ (not / get) lost.",
+        "He would have passed if he ____ (revise)."
+      ],
+      "answers": [
+        "had checked / wouldn't have got",
+        "had revised"
+      ]
+    },
+    {
+      "id": "grammar-33",
+      "kind": "grammar",
+      "level": "B2",
+      "number": 33,
+      "title": "Mixed conditionals",
+      "durationMin": 20,
+      "goal": "Combine past and present time references when a past event affects the present or a present condition affected the past.",
+      "examples": "If I had studied medicine, I would be a doctor now.",
+      "prompt": "Complete: 1) If she had accepted the job, she \\_\\_ (live) in Paris now. 2) If I were more careful, I \\_\\_ (not / make) that mistake yesterday.",
+      "items": [
+        "If she had accepted the job, she ____ (live) in Paris now.",
+        "If I were more careful, I ____ (not / make) that mistake yesterday."
+      ],
+      "answers": [
+        "would be living",
+        "wouldn't have made"
+      ]
+    },
+    {
+      "id": "grammar-34",
+      "kind": "grammar",
+      "level": "B2",
+      "number": 34,
+      "title": "Defining and non-defining relative clauses",
+      "durationMin": 20,
+      "goal": "Use who, which, that, whose and where to add information. Non-defining clauses use commas and do not use that.",
+      "examples": "The nurse who helped me was kind. Dr Lee, who works here, is on leave.",
+      "prompt": "Join: 1) The book is excellent. You recommended it. 2) My aunt lives in Oran. She is an engineer. (non-defining)",
+      "items": [
+        "The book is excellent. You recommended it.",
+        "My aunt lives in Oran. She is an engineer. (non-defining)"
+      ],
+      "answers": [
+        "The book that/which you recommended is excellent.",
+        "My aunt, who is an engineer, lives in Oran."
+      ]
+    },
+    {
+      "id": "grammar-35",
+      "kind": "grammar",
+      "level": "B2",
+      "number": 35,
+      "title": "Advanced passive structures",
+      "durationMin": 20,
+      "goal": "Use passive forms with modals, perfect tenses and reporting verbs to focus on actions or claims.",
+      "examples": "The data must be protected. The results have been published. It is believed that the site is ancient.",
+      "prompt": "Rewrite: 1) They must repair the road. 2) People believe the painting is authentic.",
+      "items": [
+        "They must repair the road.",
+        "People believe the painting is authentic."
+      ],
+      "answers": [
+        "The road must be repaired.",
+        "The painting is believed to be authentic."
+      ]
+    },
+    {
+      "id": "grammar-36",
+      "kind": "grammar",
+      "level": "B2",
+      "number": 36,
+      "title": "Causative have and get",
+      "durationMin": 20,
+      "goal": "Use have/get + object + past participle when arranging for someone else to do a service.",
+      "examples": "I had my laptop repaired. She is getting her eyes tested.",
+      "prompt": "Complete: 1) We \\_\\_ our roof \\_\\_ (repair) last month. 2) He is going to \\_\\_ his suit \\_\\_ (clean).",
+      "items": [
+        "We ____ our roof ____ (repair) last month.",
+        "He is going to ____ his suit ____ (clean)."
+      ],
+      "answers": [
+        "had / repaired",
+        "get / cleaned"
+      ]
+    },
+    {
+      "id": "grammar-37",
+      "kind": "grammar",
+      "level": "B2",
+      "number": 37,
+      "title": "Gerunds and infinitives",
+      "durationMin": 20,
+      "goal": "Some verbs take -ing, some take to + infinitive, and some change meaning depending on the form.",
+      "examples": "avoid driving; decide to leave; remember locking vs remember to lock.",
+      "prompt": "Complete: 1) She avoids \\_\\_ (eat) late. 2) We decided \\_\\_ (wait). 3) Please remember \\_\\_ (send) the file.",
+      "items": [
+        "She avoids ____ (eat) late.",
+        "We decided ____ (wait).",
+        "Please remember ____ (send) the file."
+      ],
+      "answers": [
+        "eating",
+        "to wait",
+        "to send"
+      ]
+    },
+    {
+      "id": "grammar-38",
+      "kind": "grammar",
+      "level": "B2",
+      "number": 38,
+      "title": "Participle clauses",
+      "durationMin": 20,
+      "goal": "Use present or past participle clauses to shorten sentences when the subject is shared.",
+      "examples": "Walking home, I saw the parade. Built in 1890, the station is still in use.",
+      "prompt": "Rewrite using a participle clause: 1) Because she was tired, she went home. 2) The bridge was designed by an engineer; it won an award.",
+      "items": [
+        "Because she was tired, she went home.",
+        "The bridge was designed by an engineer; it won an award."
+      ],
+      "answers": [
+        "Being tired, she went home.",
+        "Designed by an engineer, the bridge won an award."
+      ]
+    },
+    {
+      "id": "grammar-39",
+      "kind": "grammar",
+      "level": "B2",
+      "number": 39,
+      "title": "Inversion for emphasis",
+      "durationMin": 20,
+      "goal": "Use inversion after negative or limiting expressions such as never, rarely, only then and not until.",
+      "examples": "Never have I seen such a view. Only then did we understand.",
+      "prompt": "Rewrite with inversion: 1) I had never heard such a story. 2) We understood only after the test.",
+      "items": [
+        "I had never heard such a story.",
+        "We understood only after the test."
+      ],
+      "answers": [
+        "Never had I heard such a story.",
+        "Only after the test did we understand."
+      ]
+    },
+    {
+      "id": "grammar-40",
+      "kind": "grammar",
+      "level": "B2",
+      "number": 40,
+      "title": "Modal perfects",
+      "durationMin": 20,
+      "goal": "Use modal + have + past participle to speculate or judge about the past.",
+      "examples": "She must have forgotten. You should have called. They might have missed the bus.",
+      "prompt": "Choose a suitable modal perfect: 1) The lights are on; they \\_\\_ arrived. (strong deduction) 2) You \\_\\_ told me earlier. (criticism) 3) He \\_\\_ taken the wrong train. (possibility).",
+      "items": [
+        "The lights are on; they ____ arrived. (strong deduction)",
+        "You ____ told me earlier. (criticism)",
+        "He ____ taken the wrong train. (possibility)."
+      ],
+      "answers": [
+        "must have",
+        "should have",
+        "might have"
+      ]
+    },
+    {
+      "id": "grammar-41",
+      "kind": "grammar",
+      "level": "C1",
+      "number": 41,
+      "title": "Future perfect and future continuous",
+      "durationMin": 20,
+      "goal": "Use future perfect for completion before a future point and future continuous for an action in progress then.",
+      "examples": "By June, I will have finished. At 9 tomorrow, I will be presenting.",
+      "prompt": "Complete: 1) By 2030, scientists \\_\\_ (develop) new treatments. 2) This time tomorrow, we \\_\\_ (fly) to Rome.",
+      "items": [
+        "By 2030, scientists ____ (develop) new treatments.",
+        "This time tomorrow, we ____ (fly) to Rome."
+      ],
+      "answers": [
+        "will have developed",
+        "will be flying"
+      ]
+    },
+    {
+      "id": "grammar-42",
+      "kind": "grammar",
+      "level": "C1",
+      "number": 42,
+      "title": "Future in the past",
+      "durationMin": 20,
+      "goal": "Use would or was/were going to to describe a future viewed from a past point.",
+      "examples": "She said she would return. I was going to call, but I forgot.",
+      "prompt": "Report: 1) \"I will send the report,\" he said. 2) We planned to move, but the sale failed.",
+      "items": [
+        "\"I will send the report,\" he said.",
+        "We planned to move, but the sale failed."
+      ],
+      "answers": [
+        "He said he would send the report.",
+        "We were going to move, but the sale failed."
+      ]
+    },
+    {
+      "id": "grammar-43",
+      "kind": "grammar",
+      "level": "C1",
+      "number": 43,
+      "title": "Advanced article use and zero article",
+      "durationMin": 20,
+      "goal": "Use the with specific or unique references, a/an for first mention of singular countable nouns, and no article for many general plural or uncountable nouns.",
+      "examples": "The moon is bright. Knowledge takes time. A researcher called yesterday.",
+      "prompt": "Insert articles where needed: 1) \\_\\_ information is valuable. 2) She is \\_\\_ university lecturer. 3) \\_\\_ sun was hidden by clouds.",
+      "items": [
+        "____ information is valuable.",
+        "She is ____ university lecturer.",
+        "____ sun was hidden by clouds."
+      ],
+      "answers": [
+        "no article",
+        "a",
+        "The"
+      ]
+    },
+    {
+      "id": "grammar-44",
+      "kind": "grammar",
+      "level": "C1",
+      "number": 44,
+      "title": "Subjunctive and formal mandative structures",
+      "durationMin": 20,
+      "goal": "In formal English, suggest, recommend, insist and essential can be followed by that + base verb.",
+      "examples": "The committee recommended that he be appointed. It is essential that every form be signed.",
+      "prompt": "Complete: 1) They insisted that she \\_\\_ (attend). 2) It is vital that the data \\_\\_ (remain) secure.",
+      "items": [
+        "They insisted that she ____ (attend).",
+        "It is vital that the data ____ (remain) secure."
+      ],
+      "answers": [
+        "attend",
+        "remain"
+      ]
+    },
+    {
+      "id": "grammar-45",
+      "kind": "grammar",
+      "level": "C1",
+      "number": 45,
+      "title": "Cleft sentences",
+      "durationMin": 20,
+      "goal": "Use it-clefts and wh-clefts to focus on a particular part of a message.",
+      "examples": "It was the timing that caused the problem. What we need is reliable evidence.",
+      "prompt": "Rewrite to emphasize the underlined idea: 1) The lack of funding delayed the project. 2) I need a quiet place.",
+      "items": [
+        "The lack of funding delayed the project.",
+        "I need a quiet place."
+      ],
+      "answers": [
+        "It was the lack of funding that delayed the project.",
+        "What I need is a quiet place."
+      ]
+    },
+    {
+      "id": "grammar-46",
+      "kind": "grammar",
+      "level": "C1",
+      "number": 46,
+      "title": "Ellipsis and substitution",
+      "durationMin": 20,
+      "goal": "Avoid repetition with so, not, do, one/ones and ellipsis when the meaning is clear.",
+      "examples": "I hope so. The red one is mine. She can play and I can too.",
+      "prompt": "Replace repeated words: 1) \"Will it work?\" \"I think it will work.\" 2) I prefer the large cup, not the small cup.",
+      "items": [
+        "\"Will it work?\" \"I think it will work.\"",
+        "I prefer the large cup, not the small cup."
+      ],
+      "answers": [
+        "I think so.",
+        "I prefer the large cup, not the small one."
+      ]
+    },
+    {
+      "id": "grammar-47",
+      "kind": "grammar",
+      "level": "C1",
+      "number": 47,
+      "title": "Advanced hedging and stance",
+      "durationMin": 20,
+      "goal": "Use may, might, appears to, tends to, arguably and cautious adverbs to avoid overstating claims.",
+      "examples": "The findings may indicate a link. The policy appears to have reduced costs.",
+      "prompt": "Rewrite more cautiously: 1) This treatment cures everyone. 2) The policy caused the decline.",
+      "items": [
+        "This treatment cures everyone.",
+        "The policy caused the decline."
+      ],
+      "answers": [
+        "This treatment may help some patients.",
+        "The policy appears to have contributed to the decline."
+      ]
+    },
+    {
+      "id": "grammar-48",
+      "kind": "grammar",
+      "level": "C1",
+      "number": 48,
+      "title": "Nominalisation",
+      "durationMin": 20,
+      "goal": "Turn verbs or adjectives into nouns to create concise formal or academic style.",
+      "examples": "The company expanded rapidly. → The company experienced rapid expansion.",
+      "prompt": "Nominalise: 1) The population grew quickly. 2) They decided to postpone the launch.",
+      "items": [
+        "The population grew quickly.",
+        "They decided to postpone the launch."
+      ],
+      "answers": [
+        "rapid population growth",
+        "their decision to postpone the launch"
+      ]
+    },
+    {
+      "id": "grammar-49",
+      "kind": "grammar",
+      "level": "C1",
+      "number": 49,
+      "title": "Complex reporting structures",
+      "durationMin": 20,
+      "goal": "Use reporting verbs and passive reporting structures to attribute claims precisely.",
+      "examples": "Researchers are believed to have identified a new species. The report is said to contain errors.",
+      "prompt": "Rewrite: 1) People say the minister has resigned. 2) Experts believe the site was occupied earlier.",
+      "items": [
+        "People say the minister has resigned.",
+        "Experts believe the site was occupied earlier."
+      ],
+      "answers": [
+        "The minister is said to have resigned.",
+        "The site is believed to have been occupied earlier."
+      ]
+    },
+    {
+      "id": "grammar-50",
+      "kind": "grammar",
+      "level": "C1",
+      "number": 50,
+      "title": "Discourse markers and cohesion",
+      "durationMin": 20,
+      "goal": "Choose linking expressions that show contrast, concession, cause, result, qualification and sequence.",
+      "examples": "Nevertheless signals contrast; consequently signals result; furthermore adds a point.",
+      "prompt": "Choose a suitable linker: 1) The sample was small; , the results are useful. (concession) 2) Costs rose; , the project was delayed. (result) 3) \\_\\_, the study examines rural schools. (introducing focus).",
+      "items": [
+        "The sample was small; , the results are useful. (concession)",
+        "Costs rose; , the project was delayed. (result)",
+        "____, the study examines rural schools. (introducing focus)."
+      ],
+      "answers": [
+        "nevertheless",
+        "consequently",
+        "More specifically"
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "id": "reading-1",
+      "kind": "reading",
+      "level": "A1",
+      "number": 1,
+      "title": "A Visit to the Clinic",
+      "subject": "A1 • Health",
+      "durationMin": 8,
+      "passage": "Nora visits the clinic because she has a sore throat. The nurse asks her to sit down and checks her temperature. The doctor says she should drink water and rest. Nora receives a note for school. She thanks the staff and goes home with her mother.",
+      "questions": [
+        "Why does Nora visit the clinic?",
+        "What does the doctor advise her to do?"
+      ],
+      "answers": [
+        "Because she has a sore throat.",
+        "Drink water and rest."
+      ]
+    },
+    {
+      "id": "reading-2",
+      "kind": "reading",
+      "level": "A1",
+      "number": 2,
+      "title": "The Old Castle",
+      "subject": "A1 • History",
+      "durationMin": 8,
+      "passage": "Sam and his class visit an old castle. Their guide explains that people built it many years ago to protect the town. The walls are thick and the windows are small. The students take notes and draw the main tower. Sam wants to learn more about the past.",
+      "questions": [
+        "Why was the castle built?",
+        "What does Sam draw?"
+      ],
+      "answers": [
+        "To protect the town.",
+        "The main tower."
+      ]
+    },
+    {
+      "id": "reading-3",
+      "kind": "reading",
+      "level": "A1",
+      "number": 3,
+      "title": "A Healthy Breakfast",
+      "subject": "A1 • Food and health",
+      "durationMin": 7,
+      "passage": "Mina eats breakfast before school. She has bread, an egg, an apple and a glass of milk. Her father says breakfast gives the body energy. Mina puts a bottle of water in her bag because she has sports in the afternoon.",
+      "questions": [
+        "Name two things Mina eats.",
+        "Why does she take water?"
+      ],
+      "answers": [
+        "Any two: bread, an egg, an apple, milk.",
+        "Because she has sports in the afternoon."
+      ]
+    },
+    {
+      "id": "reading-4",
+      "kind": "reading",
+      "level": "A1",
+      "number": 4,
+      "title": "A Day at the Farm",
+      "subject": "A1 • Nature",
+      "durationMin": 8,
+      "passage": "On Saturday, Adam visits his uncle's farm. He feeds the chickens and gives water to the horses. There are green fields behind the house. In the afternoon, he picks tomatoes with his cousin. Adam enjoys the fresh air and the quiet place.",
+      "questions": [
+        "Which animals does Adam feed or water?",
+        "What does he pick?"
+      ],
+      "answers": [
+        "Chickens and horses.",
+        "Tomatoes."
+      ]
+    },
+    {
+      "id": "reading-5",
+      "kind": "reading",
+      "level": "A1",
+      "number": 5,
+      "title": "The School Library",
+      "subject": "A1 • Education",
+      "durationMin": 7,
+      "passage": "The school library is quiet and bright. It has books about animals, space and famous people. Lina borrows a book about planets. The librarian writes the return date on a small card. Lina plans to read ten pages every evening.",
+      "questions": [
+        "What book does Lina borrow?",
+        "How many pages does she plan to read each evening?"
+      ],
+      "answers": [
+        "A book about planets.",
+        "Ten pages."
+      ]
+    },
+    {
+      "id": "reading-6",
+      "kind": "reading",
+      "level": "A1",
+      "number": 6,
+      "title": "A Bus to the Museum",
+      "subject": "A1 • Travel",
+      "durationMin": 8,
+      "passage": "Our class takes a bus to the city museum. We leave school at nine and arrive twenty minutes later. A guide shows us old coins, clothes and tools. We eat lunch in the garden before returning to school at two.",
+      "questions": [
+        "How do the students travel?",
+        "What three kinds of objects do they see?"
+      ],
+      "answers": [
+        "By bus.",
+        "Coins, clothes and tools."
+      ]
+    },
+    {
+      "id": "reading-7",
+      "kind": "reading",
+      "level": "A1",
+      "number": 7,
+      "title": "The Weather Station",
+      "subject": "A1 • Science",
+      "durationMin": 8,
+      "passage": "A weather station measures temperature, wind and rain. Today the sky is cloudy and the wind is strong. The worker records the information on a computer. People use weather reports to plan trips and protect farms from storms.",
+      "questions": [
+        "What does a weather station measure?",
+        "Why do people use weather reports?"
+      ],
+      "answers": [
+        "Temperature, wind and rain.",
+        "To plan trips and protect farms from storms."
+      ]
+    },
+    {
+      "id": "reading-8",
+      "kind": "reading",
+      "level": "A1",
+      "number": 8,
+      "title": "Helping a Neighbour",
+      "subject": "A1 • Community",
+      "durationMin": 7,
+      "passage": "Mr Karim lives next door to Sara. He is carrying two heavy bags, so Sara opens the gate and helps him. He smiles and thanks her. Sara learns that small acts of kindness can make a neighbourhood friendlier.",
+      "questions": [
+        "What is Mr Karim carrying?",
+        "What does Sara do?"
+      ],
+      "answers": [
+        "Two heavy bags.",
+        "She opens the gate and helps him."
+      ]
+    },
+    {
+      "id": "reading-9",
+      "kind": "reading",
+      "level": "A1",
+      "number": 9,
+      "title": "The Little Robot",
+      "subject": "A1 • Technology",
+      "durationMin": 8,
+      "passage": "A school club builds a small robot. It can move forward, turn and follow a black line on the floor. The students use a simple computer program to control it. Their teacher reminds them to test one change at a time.",
+      "questions": [
+        "What can the robot do?",
+        "What does the teacher advise?"
+      ],
+      "answers": [
+        "Move forward, turn and follow a black line.",
+        "Test one change at a time."
+      ]
+    },
+    {
+      "id": "reading-10",
+      "kind": "reading",
+      "level": "A1",
+      "number": 10,
+      "title": "A Park for Everyone",
+      "subject": "A1 • Environment",
+      "durationMin": 8,
+      "passage": "The town opens a new park. There are trees, benches and a playground. A wide path helps people using wheelchairs. Volunteers plant flowers near the entrance. Families visit the park after school and keep it clean.",
+      "questions": [
+        "Who plants flowers?",
+        "How does the park help wheelchair users?"
+      ],
+      "answers": [
+        "Volunteers.",
+        "It has a wide path."
+      ]
+    },
+    {
+      "id": "reading-11",
+      "kind": "reading",
+      "level": "A2",
+      "number": 11,
+      "title": "A Nurse's Busy Morning",
+      "subject": "A2 • Health",
+      "durationMin": 9,
+      "passage": "At a community health centre, Nurse Elena begins work at seven. She checks patients' names, measures blood pressure and updates medical records. One patient feels nervous, so Elena explains each step calmly. The centre is busy, but the team shares tasks and takes short breaks when possible.",
+      "questions": [
+        "List two tasks Elena performs.",
+        "How does she help the nervous patient?"
+      ],
+      "answers": [
+        "Any two: checks names, measures blood pressure, updates records.",
+        "She explains each step calmly."
+      ]
+    },
+    {
+      "id": "reading-12",
+      "kind": "reading",
+      "level": "A2",
+      "number": 12,
+      "title": "How a City Grew",
+      "subject": "A2 • History",
+      "durationMin": 9,
+      "passage": "A century ago, the town had a small market and a railway station. Factories later attracted workers from nearby villages. New homes, schools and roads appeared. Today, the old station is a museum, while the market remains a popular meeting place.",
+      "questions": [
+        "What attracted workers to the town?",
+        "What is the old station now?"
+      ],
+      "answers": [
+        "Factories.",
+        "A museum."
+      ]
+    },
+    {
+      "id": "reading-13",
+      "kind": "reading",
+      "level": "A2",
+      "number": 13,
+      "title": "Keeping Food Safe",
+      "subject": "A2 • Science and health",
+      "durationMin": 9,
+      "passage": "Food safety begins before cooking. People should wash their hands, clean work surfaces and keep raw meat separate from vegetables. Cold food belongs in a refrigerator. These habits reduce the risk of harmful bacteria spreading from one food to another.",
+      "questions": [
+        "Why should raw meat be kept separate?",
+        "Name two food-safety habits."
+      ],
+      "answers": [
+        "To reduce the spread of harmful bacteria.",
+        "Any two: wash hands, clean surfaces, refrigerate cold food."
+      ]
+    },
+    {
+      "id": "reading-14",
+      "kind": "reading",
+      "level": "A2",
+      "number": 14,
+      "title": "The Coastal Train",
+      "subject": "A2 • Travel",
+      "durationMin": 8,
+      "passage": "The coastal train connects three towns. It is slower than the express service, but passengers enjoy views of beaches and fishing boats. The railway company has added clear signs and step-free access at two stations. Visitors are advised to check the timetable before travelling.",
+      "questions": [
+        "What can passengers see from the train?",
+        "What should visitors check?"
+      ],
+      "answers": [
+        "Beaches and fishing boats.",
+        "The timetable."
+      ]
+    },
+    {
+      "id": "reading-15",
+      "kind": "reading",
+      "level": "A2",
+      "number": 15,
+      "title": "A Museum's Digital Guide",
+      "subject": "A2 • Technology",
+      "durationMin": 9,
+      "passage": "The city museum has introduced a digital guide. Visitors scan a code beside an object and read a short explanation on their phones. The guide is available in four languages. Staff say it helps visitors explore at their own speed, although printed guides remain available.",
+      "questions": [
+        "How do visitors open an explanation?",
+        "Why are printed guides still available?"
+      ],
+      "answers": [
+        "They scan a code beside the object.",
+        "Because printed guides remain an option for visitors."
+      ]
+    },
+    {
+      "id": "reading-16",
+      "kind": "reading",
+      "level": "A2",
+      "number": 16,
+      "title": "The Community Garden",
+      "subject": "A2 • Environment",
+      "durationMin": 9,
+      "passage": "Residents turned an empty lot into a community garden. Each family cares for one small area. They grow tomatoes, beans and herbs without using strong chemical sprays. Rainwater is collected in large containers. The garden provides fresh food and gives neighbours a place to meet.",
+      "questions": [
+        "What did residents turn the empty lot into?",
+        "How do they collect water?"
+      ],
+      "answers": [
+        "A community garden.",
+        "In large containers that collect rainwater."
+      ]
+    },
+    {
+      "id": "reading-17",
+      "kind": "reading",
+      "level": "A2",
+      "number": 17,
+      "title": "Learning a New Skill",
+      "subject": "A2 • Education",
+      "durationMin": 8,
+      "passage": "Rami wanted to repair bicycles, so he joined a weekend workshop. At first, he found the tools confusing. The instructor demonstrated each task and let learners practise in pairs. After four sessions, Rami could replace a tyre and adjust the brakes safely.",
+      "questions": [
+        "Why did Rami join the workshop?",
+        "What could he do after four sessions?"
+      ],
+      "answers": [
+        "To learn to repair bicycles.",
+        "Replace a tyre and adjust the brakes."
+      ]
+    },
+    {
+      "id": "reading-18",
+      "kind": "reading",
+      "level": "A2",
+      "number": 18,
+      "title": "The History of a Family Recipe",
+      "subject": "A2 • Culture",
+      "durationMin": 9,
+      "passage": "A family prepares the same lentil soup every winter. The recipe came from the grandmother, who learned it from her mother. Over time, the family added local vegetables but kept the original spices. Cooking together helps younger relatives remember family stories.",
+      "questions": [
+        "Who first taught the grandmother the recipe?",
+        "What has the family changed?"
+      ],
+      "answers": [
+        "Her mother.",
+        "They added local vegetables."
+      ]
+    },
+    {
+      "id": "reading-19",
+      "kind": "reading",
+      "level": "A2",
+      "number": 19,
+      "title": "A Small Business Online",
+      "subject": "A2 • Business",
+      "durationMin": 9,
+      "passage": "Two friends started an online shop selling handmade notebooks. They photograph each product, write clear descriptions and answer customer questions. They also calculate delivery costs before setting prices. Their first month was quiet, but customer reviews helped more people discover the shop.",
+      "questions": [
+        "What do the friends sell?",
+        "How did more people discover the shop?"
+      ],
+      "answers": [
+        "Handmade notebooks.",
+        "Customer reviews helped people discover it."
+      ]
+    },
+    {
+      "id": "reading-20",
+      "kind": "reading",
+      "level": "A2",
+      "number": 20,
+      "title": "Preparing for a Storm",
+      "subject": "A2 • Weather and safety",
+      "durationMin": 8,
+      "passage": "The local council sends a storm warning by text message. Residents are asked to secure loose objects, charge their phones and avoid walking near the river. The emergency team checks drains and prepares a temporary shelter at the sports hall.",
+      "questions": [
+        "Name two actions residents should take.",
+        "Where is the temporary shelter?"
+      ],
+      "answers": [
+        "Any two: secure loose objects, charge phones, avoid the river.",
+        "At the sports hall."
+      ]
+    },
+    {
+      "id": "reading-21",
+      "kind": "reading",
+      "level": "B1",
+      "number": 21,
+      "title": "Why Sleep Matters",
+      "subject": "B1 • Health",
+      "durationMin": 10,
+      "passage": "Sleep supports memory, attention and physical recovery. During sleep, the brain processes information gathered during the day. Regular schedules and a quiet bedroom can improve sleep quality. Screens and caffeine close to bedtime may make it harder to fall asleep. Experts recommend building a routine rather than expecting one perfect night to solve long-term tiredness.",
+      "questions": [
+        "Give two benefits of sleep.",
+        "What two habits may make sleep more difficult?"
+      ],
+      "answers": [
+        "Any two: supports memory, attention, physical recovery, information",
+        "Screens and caffeine close to bedtime."
+      ]
+    },
+    {
+      "id": "reading-22",
+      "kind": "reading",
+      "level": "B1",
+      "number": 22,
+      "title": "The Discovery of Penicillin",
+      "subject": "B1 • History and medicine",
+      "durationMin": 10,
+      "passage": "In 1928, Alexander Fleming noticed that mould had stopped bacteria growing in a laboratory dish. His observation helped scientists develop penicillin, one of the first widely used antibiotics. Turning the discovery into a medicine required further research and production work. The story shows how an unexpected observation can become important when researchers investigate it carefully.",
+      "questions": [
+        "What did Fleming notice?",
+        "Why was further work necessary?"
+      ],
+      "answers": [
+        "Mould had stopped bacteria growing.",
+        "To develop and produce it as a usable medicine."
+      ]
+    },
+    {
+      "id": "reading-23",
+      "kind": "reading",
+      "level": "B1",
+      "number": 23,
+      "title": "The Hidden Cost of Fast Fashion",
+      "subject": "B1 • Business and environment",
+      "durationMin": 10,
+      "passage": "Fast fashion makes new clothing designs available quickly and at low prices. However, frequent production can use large amounts of water and energy, while unwanted clothes may become waste. Some companies are testing repair services, recycled fibres and take-back schemes. Consumers can also extend the life of clothing by repairing it and buying fewer items.",
+      "questions": [
+        "Name two environmental costs mentioned.",
+        "Give one action consumers can take."
+      ],
+      "answers": [
+        "Any two: water use, energy use, textile waste.",
+        "Repair clothing or buy fewer items."
+      ]
+    },
+    {
+      "id": "reading-24",
+      "kind": "reading",
+      "level": "B1",
+      "number": 24,
+      "title": "An Ancient Trade Route",
+      "subject": "B1 • History",
+      "durationMin": 10,
+      "passage": "Trade routes connected communities long before modern transport. Merchants carried salt, textiles, metal goods and ideas across deserts and mountains. Their journeys encouraged the growth of towns near wells and safe crossings. Trade also spread languages, technologies and religious traditions, although travel could be dangerous and expensive.",
+      "questions": [
+        "What goods did merchants carry? Name two.",
+        "How did trade affect culture?"
+      ],
+      "answers": [
+        "Any two: salt, textiles, metal goods.",
+        "It spread languages, technologies and religious traditions."
+      ]
+    },
+    {
+      "id": "reading-25",
+      "kind": "reading",
+      "level": "B1",
+      "number": 25,
+      "title": "How Vaccines Train the Immune System",
+      "subject": "B1 • Medical science",
+      "durationMin": 11,
+      "passage": "Vaccines expose the immune system to a harmless form or part of a pathogen, or instructions for making a harmless target. The body learns to recognise it and can respond more quickly during a later encounter. Different vaccines work in different ways, and recommendations depend on age, health and local guidance. Vaccination programmes can reduce the spread and severity of some diseases.",
+      "questions": [
+        "What does a vaccine help the immune system recognise?",
+        "What can recommendations depend on?"
+      ],
+      "answers": [
+        "A pathogen or a part of it.",
+        "Age, health and local guidance."
+      ]
+    },
+    {
+      "id": "reading-26",
+      "kind": "reading",
+      "level": "B1",
+      "number": 26,
+      "title": "The Rise of Public Libraries",
+      "subject": "B1 • Education and society",
+      "durationMin": 10,
+      "passage": "Public libraries have changed from quiet rooms of printed books into community learning spaces. Many now offer internet access, language classes, job-search support and digital collections. Their purpose remains similar: to make information and learning opportunities available to everyone. Libraries also provide a shared place for people who may not have suitable study space at home.",
+      "questions": [
+        "Name two modern library services.",
+        "Why are libraries useful beyond lending books?"
+      ],
+      "answers": [
+        "Any two: internet access, language classes, job support, digital",
+        "They provide learning services and shared study space."
+      ]
+    },
+    {
+      "id": "reading-27",
+      "kind": "reading",
+      "level": "B1",
+      "number": 27,
+      "title": "Coral Reefs Under Pressure",
+      "subject": "B1 • Environment",
+      "durationMin": 10,
+      "passage": "Coral reefs support a wide range of marine life and help protect coastlines from waves. Rising sea temperatures can cause coral bleaching, a process in which corals lose the algae that provide much of their energy. Pollution and destructive fishing add further pressure. Marine protected areas and reduced emissions can help, but recovery takes time.",
+      "questions": [
+        "What happens during coral bleaching?",
+        "Name one additional threat to reefs."
+      ],
+      "answers": [
+        "Corals lose the algae that provide much of their energy.",
+        "Pollution or destructive fishing."
+      ]
+    },
+    {
+      "id": "reading-28",
+      "kind": "reading",
+      "level": "B1",
+      "number": 28,
+      "title": "A Career in Medical Imaging",
+      "subject": "B1 • Careers and technology",
+      "durationMin": 10,
+      "passage": "Medical imaging professionals operate equipment that helps doctors examine the body. Their work requires technical knowledge, careful communication and attention to safety. Before a scan, they explain the procedure and check relevant information. Images are then reviewed by qualified clinicians. The role combines technology with direct patient care.",
+      "questions": [
+        "What is one responsibility before a scan?",
+        "Which professionals review the images?"
+      ],
+      "answers": [
+        "Explain the procedure or check relevant information.",
+        "Qualified clinicians."
+      ]
+    },
+    {
+      "id": "reading-29",
+      "kind": "reading",
+      "level": "B1",
+      "number": 29,
+      "title": "The Psychology of Habits",
+      "subject": "B1 • Psychology",
+      "durationMin": 10,
+      "passage": "Habits are behaviours repeated in response to familiar situations. A cue can trigger an action, and a reward may make the behaviour more likely to happen again. People who want to build a study habit can choose a regular time, prepare materials in advance and begin with a small task. Consistency is often more useful than relying on motivation alone.",
+      "questions": [
+        "What are the three parts of the habit pattern described?",
+        "Suggest one way to build a study habit."
+      ],
+      "answers": [
+        "Cue, action and reward.",
+        "Choose a regular time, prepare materials or start with a small task."
+      ]
+    },
+    {
+      "id": "reading-30",
+      "kind": "reading",
+      "level": "B1",
+      "number": 30,
+      "title": "The First Flight",
+      "subject": "B1 • Science and history",
+      "durationMin": 10,
+      "passage": "Early powered flight required experimentation with engines, wings and control systems. The Wright brothers tested designs repeatedly before their successful flight in 1903. Their achievement did not end aviation research; later engineers improved safety, speed and passenger comfort. Modern aircraft are the result of many contributions over more than a century.",
+      "questions": [
+        "What did early flight experiments involve?",
+        "Why is modern aviation not the work of one invention alone?"
+      ],
+      "answers": [
+        "Engines, wings and control systems.",
+        "Many engineers improved aircraft over more than a century."
+      ]
+    },
+    {
+      "id": "reading-31",
+      "kind": "reading",
+      "level": "B2",
+      "number": 31,
+      "title": "Antibiotic Resistance: A Shared Challenge",
+      "subject": "B2 • Medicine",
+      "durationMin": 12,
+      "passage": "Antibiotics have transformed medicine, but their effectiveness is threatened when bacteria evolve resistance. Unnecessary use, incorrect dosing and poor infection control can accelerate the problem. Resistance does not mean a person's body becomes resistant; rather, resistant bacteria survive and multiply. Health systems monitor patterns, support responsible prescribing and encourage infection prevention. The challenge requires cooperation among clinicians, researchers, policymakers and the public.",
+      "questions": [
+        "Clarify what becomes resistant: the patient or the bacteria?",
+        "Identify two actions that help address the problem."
+      ],
+      "answers": [
+        "The bacteria.",
+        "Responsible prescribing, monitoring, infection prevention, or public"
+      ]
+    },
+    {
+      "id": "reading-32",
+      "kind": "reading",
+      "level": "B2",
+      "number": 32,
+      "title": "The Archive Beneath the City",
+      "subject": "B2 • Archaeology",
+      "durationMin": 12,
+      "passage": "During construction of a metro station, workers uncovered foundations and pottery from an earlier settlement. Archaeologists documented each layer before objects were moved, because the position of an artefact can reveal how a place was used. The project was delayed while experts assessed the site. The discovery prompted debate about how cities should balance development with the preservation of shared heritage.",
+      "questions": [
+        "Why was the position of each artefact important?",
+        "What issue did the discovery raise?"
+      ],
+      "answers": [
+        "Its position can reveal how the place was used.",
+        "Balancing urban development with heritage preservation."
+      ]
+    },
+    {
+      "id": "reading-33",
+      "kind": "reading",
+      "level": "B2",
+      "number": 33,
+      "title": "Can Artificial Intelligence Support Doctors?",
+      "subject": "B2 • Technology and medicine",
+      "durationMin": 12,
+      "passage": "Artificial intelligence can help clinicians identify patterns in scans, organise records and estimate risk. Yet a model may perform poorly when data differ from the population on which it was trained. Systems can also reproduce biases present in historical records. For this reason, clinical AI should be evaluated carefully, monitored after deployment and used to support–-not replace–-professional judgement.",
+      "questions": [
+        "Give two possible uses of clinical AI.",
+        "Why might a model perform poorly in a new setting?"
+      ],
+      "answers": [
+        "Any two: scan analysis, record organisation, risk estimation.",
+        "The new data or population may differ from its training data."
+      ]
+    },
+    {
+      "id": "reading-34",
+      "kind": "reading",
+      "level": "B2",
+      "number": 34,
+      "title": "The Economics of Public Transport",
+      "subject": "B2 • Economics",
+      "durationMin": 11,
+      "passage": "Public transport requires substantial investment, but its benefits are not limited to ticket revenue. Reliable buses and trains can connect workers to jobs, reduce congestion and improve access to education and healthcare. However, routes must reflect where people live and work. If services are infrequent or unsafe, potential passengers may continue using private cars, limiting the network's impact.",
+      "questions": [
+        "Name two benefits beyond ticket revenue.",
+        "What can prevent people from using public transport?"
+      ],
+      "answers": [
+        "Any two: access to jobs, less congestion, access to education or",
+        "Infrequent or unsafe services, or poorly planned routes."
+      ]
+    },
+    {
+      "id": "reading-35",
+      "kind": "reading",
+      "level": "B2",
+      "number": 35,
+      "title": "A River Shared by Three Countries",
+      "subject": "B2 • Geopolitics and environment",
+      "durationMin": 12,
+      "passage": "A river crossing national borders can create both cooperation and tension. Upstream dams may support electricity and irrigation, while downstream communities may fear reduced water flow. Agreements can establish data sharing, minimum flows and procedures for droughts. Such arrangements are difficult because rainfall varies and each country faces different economic pressures. Long-term trust depends on transparent information and regular negotiation.",
+      "questions": [
+        "Why might upstream dams cause concern downstream?",
+        "Name two tools an agreement could establish."
+      ],
+      "answers": [
+        "They may reduce water flow available downstream.",
+        "Data sharing, minimum flows, drought procedures."
+      ]
+    },
+    {
+      "id": "reading-36",
+      "kind": "reading",
+      "level": "B2",
+      "number": 36,
+      "title": "The Ethics of Medical Research",
+      "subject": "B2 • Research ethics",
+      "durationMin": 12,
+      "passage": "Medical research can produce treatments that improve lives, but participants must be protected. Ethical review considers informed consent, possible harm, privacy and fair selection. Consent is not simply a signature: participants should understand the study and be free to leave without penalty. Researchers must report results honestly, including findings that do not support their original hypothesis.",
+      "questions": [
+        "Why is consent more than a signature?",
+        "What should researchers do with results that contradict their"
+      ],
+      "answers": [
+        "Participants must understand and freely agree, with the right to",
+        "Report them honestly."
+      ]
+    },
+    {
+      "id": "reading-37",
+      "kind": "reading",
+      "level": "B2",
+      "number": 37,
+      "title": "Restoring a Historic Wetland",
+      "subject": "B2 • Conservation",
+      "durationMin": 11,
+      "passage": "A wetland restoration project removed barriers that had changed the natural flow of water. Native plants returned, attracting insects and birds. The project team measured water quality and counted species over several seasons. Early results were encouraging, although specialists warned that a single successful year could not prove long-term recovery. Continued monitoring will show whether the ecosystem becomes more resilient.",
+      "questions": [
+        "What change helped restore the wetland?",
+        "Why is monitoring over several seasons important?"
+      ],
+      "answers": [
+        "Removing barriers that changed natural water flow.",
+        "One successful year cannot prove long-term recovery."
+      ]
+    },
+    {
+      "id": "reading-38",
+      "kind": "reading",
+      "level": "B2",
+      "number": 38,
+      "title": "The Changing Nature of Work",
+      "subject": "B2 • Work and society",
+      "durationMin": 11,
+      "passage": "Remote work has altered how some organisations recruit, communicate and assess performance. It can reduce commuting and widen access to jobs, but it may also weaken informal learning and blur boundaries between work and home. Successful arrangements depend on clear expectations, appropriate technology and deliberate opportunities for colleagues to collaborate. No single model suits every occupation or worker.",
+      "questions": [
+        "Give one benefit and one challenge of remote work.",
+        "What helps remote arrangements succeed?"
+      ],
+      "answers": [
+        "Benefit: less commuting or wider job access. Challenge: weaker",
+        "Clear expectations, suitable technology and planned collaboration."
+      ]
+    },
+    {
+      "id": "reading-39",
+      "kind": "reading",
+      "level": "B2",
+      "number": 39,
+      "title": "Why Historical Sources Disagree",
+      "subject": "B2 • History and media literacy",
+      "durationMin": 12,
+      "passage": "Two accounts of the same historical event may differ because their authors had different aims, access to information or social positions. Historians compare documents, material evidence and the circumstances in which sources were produced. A source can be valuable even when it is biased, provided its limitations are recognised. The goal is not to find a perfectly neutral witness but to build a reasoned interpretation from evidence.",
+      "questions": [
+        "Give two reasons historical accounts may differ.",
+        "Does bias make a source useless? Explain."
+      ],
+      "answers": [
+        "Different aims, access to information or social positions.",
+        "No. It can still be valuable if its limitations are recognised."
+      ]
+    },
+    {
+      "id": "reading-40",
+      "kind": "reading",
+      "level": "B2",
+      "number": 40,
+      "title": "The Science of Urban Heat",
+      "subject": "B2 • Climate and cities",
+      "durationMin": 11,
+      "passage": "Cities often remain warmer than surrounding rural areas because concrete and asphalt absorb heat, while limited vegetation reduces shade and cooling through evaporation. Dark roofs and heavy traffic can add to the problem. Planting trees, creating shaded routes and using reflective materials can lower local temperatures. However, planners must consider water availability and ensure that improvements benefit vulnerable neighbourhoods.",
+      "questions": [
+        "Why can cities remain warmer than rural areas?",
+        "Name two possible responses."
+      ],
+      "answers": [
+        "Built surfaces absorb heat and there is less vegetation and",
+        "Plant trees, shade routes or use reflective materials."
+      ]
+    },
+    {
+      "id": "reading-41",
+      "kind": "reading",
+      "level": "C1",
+      "number": 41,
+      "title": "The Limits of Diagnostic Certainty",
+      "subject": "C1 • Medicine and philosophy",
+      "durationMin": 14,
+      "passage": "Diagnosis is often presented as a decisive label, yet clinical reasoning usually involves probabilities. Symptoms overlap, tests have limitations and a patient's history may change the interpretation of results. Good practitioners therefore distinguish between what is known, what is suspected and what remains uncertain. Communicating uncertainty need not undermine confidence; handled transparently, it can help patients understand why further testing or observation is appropriate.",
+      "questions": [
+        "How does the passage characterise diagnosis?",
+        "Why can transparent uncertainty strengthen communication?"
+      ],
+      "answers": [
+        "As probabilistic reasoning rather than always a decisive label.",
+        "It helps patients understand the reasons for further tests or"
+      ]
+    },
+    {
+      "id": "reading-42",
+      "kind": "reading",
+      "level": "C1",
+      "number": 42,
+      "title": "Who Owns the Past?",
+      "subject": "C1 • Cultural heritage",
+      "durationMin": 13,
+      "passage": "The return of cultural objects held in foreign museums raises questions that cannot be reduced to ownership documents alone. Acquisition may have occurred through purchase, coercion or colonial extraction, and records may be incomplete. Museums argue that collections can support public education and conservation; communities of origin may emphasise sovereignty, identity and the right to interpret their heritage. Durable solutions often require provenance research and negotiation rather than slogans.",
+      "questions": [
+        "Why are ownership records insufficient on their own?",
+        "Identify the competing concerns described."
+      ],
+      "answers": [
+        "Objects may have been acquired through coercion or colonial",
+        "Museum education/conservation and source-community sovereignty,"
+      ]
+    },
+    {
+      "id": "reading-43",
+      "kind": "reading",
+      "level": "C1",
+      "number": 43,
+      "title": "The Hidden Assumptions in Economic Forecasts",
+      "subject": "C1 • Economics",
+      "durationMin": 13,
+      "passage": "Economic forecasts are not neutral predictions detached from judgement. They depend on assumptions about interest rates, consumer behaviour, productivity and external shocks. A precise figure can create an illusion of certainty when the underlying conditions are unstable. Responsible analysts therefore publish scenarios, explain uncertainty and revise projections as evidence changes. The value of a forecast lies partly in making assumptions visible, not merely in guessing a future number.",
+      "questions": [
+        "What creates an illusion of certainty?",
+        "What should responsible analysts publish or explain?"
+      ],
+      "answers": [
+        "A precise figure despite unstable underlying conditions.",
+        "Scenarios, assumptions and uncertainty; they should revise"
+      ]
+    },
+    {
+      "id": "reading-44",
+      "kind": "reading",
+      "level": "C1",
+      "number": 44,
+      "title": "Language, Power and Medical Communication",
+      "subject": "C1 • Language and health",
+      "durationMin": 13,
+      "passage": "Medical language can convey precision among specialists while excluding patients who do not share its vocabulary. Replacing every technical term with a simpler word is not always possible, since distinctions matter. The task is therefore one of mediation: clinicians can define unfamiliar terms, use examples and check understanding without speaking down to patients. Clear communication is not an optional courtesy but part of meaningful consent and safe care.",
+      "questions": [
+        "Why should technical terms not simply be removed in every case?",
+        "What does the passage mean by mediation?"
+      ],
+      "answers": [
+        "Some distinctions require precise terminology.",
+        "Explaining terms and checking understanding while preserving"
+      ]
+    },
+    {
+      "id": "reading-45",
+      "kind": "reading",
+      "level": "C1",
+      "number": 45,
+      "title": "The Archaeology of Everyday Objects",
+      "subject": "C1 • Archaeology",
+      "durationMin": 13,
+      "passage": "A broken cooking pot may appear less significant than a royal inscription, yet ordinary objects can reveal patterns of diet, trade and domestic labour. Their value emerges through context: where they were found, what surrounded them and how they were made. Archaeology thus challenges histories focused exclusively on rulers and battles. It reconstructs social life from fragments, while acknowledging that the surviving record is uneven.",
+      "questions": [
+        "What can ordinary objects reveal?",
+        "Why does context matter?"
+      ],
+      "answers": [
+        "Diet, trade and domestic labour.",
+        "Location, surrounding objects and manufacturing details shape"
+      ]
+    },
+    {
+      "id": "reading-46",
+      "kind": "reading",
+      "level": "C1",
+      "number": 46,
+      "title": "Designing Cities for an Ageing Population",
+      "subject": "C1 • Urban planning",
+      "durationMin": 13,
+      "passage": "An ageing population does not require cities to be designed exclusively for older residents. Features such as step-free transport, benches, safe crossings and accessible public toilets benefit parents with prams, injured people and commuters as well. This is the logic of universal design: anticipate varied abilities rather than treating accessibility as a later addition. Implementation nevertheless requires consultation, maintenance budgets and attention to neighbourhood differences.",
+      "questions": [
+        "What is universal design?",
+        "Name two groups besides older residents who may benefit."
+      ],
+      "answers": [
+        "Designing for varied abilities from the outset.",
+        "Parents with prams, injured people or commuters."
+      ]
+    },
+    {
+      "id": "reading-47",
+      "kind": "reading",
+      "level": "C1",
+      "number": 47,
+      "title": "When Conservation Conflicts with Livelihoods",
+      "subject": "C1 • Environment and policy",
+      "durationMin": 14,
+      "passage": "Conservation policies may restrict activities on which local households depend. If communities bear the immediate costs while benefits accrue elsewhere, opposition is hardly surprising. Effective programmes therefore involve residents in decision-making, recognise customary rights and provide credible alternatives. This does not eliminate difficult trade-offs, but it can make restrictions more legitimate and outcomes more durable. Ecological targets are unlikely to endure without social trust.",
+      "questions": [
+        "Why might residents oppose conservation restrictions?",
+        "What makes programmes more legitimate?"
+      ],
+      "answers": [
+        "Their livelihoods may be restricted while benefits go elsewhere.",
+        "Participation, recognition of rights and credible alternatives."
+      ]
+    },
+    {
+      "id": "reading-48",
+      "kind": "reading",
+      "level": "C1",
+      "number": 48,
+      "title": "The Reliability of Digital Memory",
+      "subject": "C1 • Technology",
+      "durationMin": 13,
+      "passage": "Digital archives seem permanent, but files depend on formats, storage media, passwords and institutions that maintain them. A photograph saved today may become unreadable if software disappears or metadata is lost. Preservation therefore involves repeated migration, redundant storage and documentation. The paradox is that digital information is easy to copy but not automatically durable; long-term memory requires active stewardship.",
+      "questions": [
+        "Why are digital files not automatically permanent?",
+        "Name two preservation practices."
+      ],
+      "answers": [
+        "They depend on formats, media, access credentials and maintenance.",
+        "Migration, redundant storage or documentation."
+      ]
+    },
+    {
+      "id": "reading-49",
+      "kind": "reading",
+      "level": "C1",
+      "number": 49,
+      "title": "The Politics of Scientific Evidence",
+      "subject": "C1 • Science and policy",
+      "durationMin": 14,
+      "passage": "Scientific evidence informs policy, but it rarely dictates a single decision. Policymakers must weigh probabilities alongside cost, rights, distributional effects and public values. Disagreement may therefore persist even when the underlying measurements are accepted. Confusing scientific uncertainty with political disagreement can obscure the real debate: not only what is likely to happen, but who should bear the risks and who receives the benefits.",
+      "questions": [
+        "Why might policy disagreement continue despite agreement on",
+        "What questions extend beyond scientific prediction?"
+      ],
+      "answers": [
+        "Policy also involves costs, rights, distribution and values.",
+        "Who bears risks and who receives benefits."
+      ]
+    },
+    {
+      "id": "reading-50",
+      "kind": "reading",
+      "level": "C1",
+      "number": 50,
+      "title": "The Art of Translating Humour",
+      "subject": "C1 • Language and culture",
+      "durationMin": 13,
+      "passage": "Humour often relies on ambiguity, shared assumptions and sounds that cannot be transferred directly between languages. A literal translation may preserve the words while losing the joke. Translators must decide whether to recreate the effect, explain the reference or retain the original form. Each choice involves a trade-off between cultural context, rhythm and fidelity, and the best solution depends on audience and purpose.",
+      "questions": [
+        "Why can literal translation fail with humour?",
+        "Name two strategies a translator might use."
+      ],
+      "answers": [
+        "It may preserve words but lose ambiguity, sound or shared cultural",
+        "Recreate the effect, explain the reference or retain the original."
+      ]
+    }
+  ]
+}

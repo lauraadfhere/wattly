@@ -241,6 +241,8 @@ type LiveLessonRow = {
   title_ar?: string;
   category: LiveLessonCategory;
   level?: string;
+  ages?: string;
+  subject?: string;
   teacher: string;
   teacher_ar?: string;
   when_label: string;
@@ -250,21 +252,30 @@ type LiveLessonRow = {
 };
 
 function mapRow(row: LiveLessonRow): LiveLesson {
+  const fallback = featuredLiveLessons.find(
+    (l) => l.id === row.$id || l.title === row.title,
+  );
   return {
     id: row.$id,
     title: row.title,
-    titleAr: row.title_ar || row.title,
+    titleAr: row.title_ar || fallback?.titleAr || row.title,
     category: row.category,
-    level: row.level || "",
+    level: row.level || fallback?.level || "",
+    ages: row.ages || fallback?.ages,
     teacher: row.teacher,
-    teacherAr: row.teacher_ar || row.teacher,
-    when: row.when_label,
-    durationMin: Number(row.duration_min) || 30,
-    subject: row.level || "General",
-    icon: row.icon,
+    teacherAr: row.teacher_ar || fallback?.teacherAr || row.teacher,
+    when: row.when_label || fallback?.when || "",
+    durationMin: Number(row.duration_min) || fallback?.durationMin || 30,
+    subject: row.subject || fallback?.subject || row.level || "General",
+    icon: row.icon || fallback?.icon || "book",
   };
 }
 
+export function getLiveLessonById(id: string) {
+  return featuredLiveLessons.find((l) => l.id === id);
+}
+
+/** Always serve the rich 14-subject catalog; enrich from Appwrite when available. */
 export async function fetchLiveLessons(): Promise<LiveLesson[]> {
   if (!process.env.APPWRITE_API_KEY) {
     return featuredLiveLessons;
@@ -275,18 +286,34 @@ export async function fetchLiveLessons(): Promise<LiveLesson[]> {
     const result = await tablesDB.listRows({
       databaseId: appwriteConfig.databaseId,
       tableId: appwriteConfig.tables.liveLessons,
-      queries: [
-        Query.equal("status", "published"),
-        Query.limit(40),
-        Query.orderAsc("category"),
-      ],
+      queries: [Query.equal("status", "published"), Query.limit(40)],
     });
     const rows = (result.rows ?? []) as unknown as LiveLessonRow[];
     if (!rows.length) return featuredLiveLessons;
-    // Prefer richer local subject catalog when backend only has a few rows
-    if (rows.length < 8) return featuredLiveLessons;
-    return rows.map(mapRow);
+
+    // Keep the full local catalog as source of truth for ages/subjects,
+    // overlay teacher/time updates from Appwrite when IDs/titles match.
+    const byTitle = new Map(rows.map((r) => [r.title.toLowerCase(), r]));
+    const byId = new Map(rows.map((r) => [r.$id, r]));
+
+    return featuredLiveLessons.map((lesson) => {
+      const row = byId.get(lesson.id) || byTitle.get(lesson.title.toLowerCase());
+      if (!row) return lesson;
+      return {
+        ...lesson,
+        teacher: row.teacher || lesson.teacher,
+        teacherAr: row.teacher_ar || lesson.teacherAr,
+        when: row.when_label || lesson.when,
+        durationMin: Number(row.duration_min) || lesson.durationMin,
+        level: row.level || lesson.level,
+      };
+    });
   } catch {
     return featuredLiveLessons;
   }
+}
+
+export async function fetchLiveLesson(id: string): Promise<LiveLesson | null> {
+  const catalog = await fetchLiveLessons();
+  return catalog.find((l) => l.id === id) || getLiveLessonById(id) || null;
 }

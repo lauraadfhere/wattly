@@ -17,7 +17,10 @@
     "demo:user": "node --env-file=.env.local scripts/ensure-demo-user.mjs",
     "cloudinary:folders": "node --env-file=.env.local scripts/ensure-cloudinary-folders.mjs",
     "messages:sync": "node scripts/sync-messages-ts.mjs",
-    "cf:sync-vars": "node --env-file=.env.local scripts/sync-cloudflare-vars.mjs"
+    "cf:sync-vars": "node --env-file=.env.local scripts/sync-cloudflare-vars.mjs",
+    "appwrite:platforms": "node --env-file=.env.local scripts/ensure-appwrite-platforms.mjs",
+    "curriculum:parse": "node scripts/parse-kinpal-curriculum.mjs",
+    "library:upload": "node --env-file=.env.local scripts/upload-library-assets.mjs"
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.20.17",

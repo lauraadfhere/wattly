@@ -54,9 +54,25 @@ export default async function CoursesDemo() {
         })}
       </ul>
 
+      <section className="rounded-2xl border-2 border-[#0016BD]/25 bg-[#f8f9ff] p-5">
+        <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#0016BD]">
+          {t("curriculumEyebrow")}
+        </p>
+        <h2 className="mt-1 text-xl font-bold text-[#0b0b1a]">{t("curriculumTitle")}</h2>
+        <p className="mt-2 max-w-2xl text-sm leading-6 text-black/65">
+          {t("curriculumBody")}
+        </p>
+        <Link
+          href="/courses/curriculum"
+          className="mt-4 inline-flex rounded-full bg-[#0016BD] px-5 py-3 text-sm font-semibold text-white"
+        >
+          {t("curriculumCta")}
+        </Link>
+      </section>
+
       <div className="flex flex-wrap gap-3">
         <Link
-          href="/signup"
+          href="/courses/curriculum"
           className="inline-flex rounded-full bg-[#ffc933] px-5 py-3 text-sm font-semibold text-[#0b0b1a]"
         >
           {t("startLearning")}

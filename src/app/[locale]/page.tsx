@@ -4,6 +4,7 @@ import CoursesShowcase from "@/components/CoursesShowcase";
 import Footer from "@/components/Footer";
 import HeroActions from "@/components/HeroActions";
 import HeroWaveLetters from "@/components/HeroWaveLetters";
+import KidsBooksShowcase from "@/components/library/KidsBooksShowcase";
 import ProductsStories from "@/components/ProductsStories";
 import { Link } from "@/i18n/navigation";
 
@@ -88,6 +89,7 @@ export default async function HomePage() {
       </main>
       <CoursesShowcase />
       <ProductsStories />
+      <KidsBooksShowcase />
       <Footer />
     </div>
   );

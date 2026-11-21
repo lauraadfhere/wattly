@@ -10,6 +10,7 @@ export default async function DashboardPage() {
     { href: "/teachers", title: t("findTeacher"), body: t("findTeacherBody") },
     { href: "/live-lessons", title: t("liveLessons"), body: t("liveLessonsBody") },
     { href: "/stories", title: t("stories"), body: t("storiesBody") },
+    { href: "/courses/curriculum", title: t("curriculum"), body: t("curriculumBody") },
     { href: "/practice", title: t("practice"), body: t("practiceBody") },
     { href: "/practice/oral", title: t("oral"), body: t("oralBody") },
     { href: "/audiobooks", title: t("audiobooks"), body: t("audiobooksBody") },

@@ -9,7 +9,7 @@ export default async function LiveLessonsPage() {
   const lessons = await fetchLiveLessons();
 
   return (
-    <PlatformShell title={t("title")} intro={t("intro")}>
+    <PlatformShell title={t("title")} intro={t("intro")} gate="auth">
       <LiveLessonsStudio lessons={lessons} />
       <p className="mt-8">
         <Link
