@@ -13,8 +13,9 @@ const STORAGE_KEY = "wattly-book-reviews";
 function readAll(): BookReview[] {
   if (typeof window === "undefined") return [];
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    const parsed = raw ? (JSON.parse(raw) as BookReview[]) : [];
+    const raw = localStorage.getItem(STORAGE_KEY)?.trim();
+    if (!raw) return [];
+    const parsed = JSON.parse(raw) as BookReview[];
     return Array.isArray(parsed) ? parsed : [];
   } catch {
     return [];

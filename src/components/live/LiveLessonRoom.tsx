@@ -1,15 +1,20 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useAuth } from "@/components/auth/AuthProvider";
+import Avatar from "@/components/Avatar";
 import KidsLessonIcon from "@/components/live/KidsLessonIcon";
 import {
-  liveLessonStyles,
-  liveLessonTeachers,
-  type LiveLesson,
-} from "@/lib/live-lessons";
+  assignableTeachers,
+  findTeacherByName,
+  loadLiveAssignments,
+  saveLiveAssignment,
+  teacherFromAssignment,
+} from "@/lib/live-assignments";
+import { liveLessonStyles, type LiveLesson } from "@/lib/live-lessons";
 
 type LiveLessonRoomProps = {
   lesson: LiveLesson;
@@ -17,30 +22,17 @@ type LiveLessonRoomProps = {
 
 type RoomStatus = "lobby" | "live" | "ended";
 
-const ASSIGN_KEY = "wattly-live-teacher-assignments";
-
-function loadAssignments(): Record<string, string> {
-  if (typeof window === "undefined") return {};
-  try {
-    const raw = localStorage.getItem(ASSIGN_KEY);
-    return raw ? (JSON.parse(raw) as Record<string, string>) : {};
-  } catch {
-    return {};
-  }
-}
-
-function saveAssignment(lessonId: string, teacher: string) {
-  const next = { ...loadAssignments(), [lessonId]: teacher };
-  localStorage.setItem(ASSIGN_KEY, JSON.stringify(next));
-}
-
 export default function LiveLessonRoom({ lesson }: LiveLessonRoomProps) {
   const t = useTranslations("LiveLessons");
-  const { profile } = useAuth();
-  const isTeacher = profile?.role === "teacher" || profile?.role === "admin";
+  const { user, profile } = useAuth();
+  const canAssign = profile?.role === "teacher" || profile?.role === "admin";
+  const isTeacher = canAssign;
   const style = liveLessonStyles[lesson.category];
 
-  const [teacher, setTeacher] = useState(lesson.teacher);
+  const [teacherName, setTeacherName] = useState(lesson.teacher);
+  const [teacherId, setTeacherId] = useState(
+    () => findTeacherByName(lesson.teacher)?.id || "",
+  );
   const [status, setStatus] = useState<RoomStatus>("lobby");
   const [captions, setCaptions] = useState(true);
   const [joined, setJoined] = useState(false);
@@ -48,9 +40,20 @@ export default function LiveLessonRoom({ lesson }: LiveLessonRoomProps) {
   const [note, setNote] = useState("");
 
   useEffect(() => {
-    const assigned = loadAssignments()[lesson.id];
-    if (assigned) setTeacher(assigned);
-  }, [lesson.id]);
+    try {
+      const assignment = loadLiveAssignments()[lesson.id];
+      const teacher = teacherFromAssignment(assignment, lesson.teacher);
+      if (teacher) {
+        setTeacherId(teacher.id);
+        setTeacherName(teacher.nameEn);
+      } else if (assignment?.teacherName) {
+        setTeacherName(assignment.teacherName);
+        setTeacherId(assignment.teacherId || "");
+      }
+    } catch {
+      // ignore corrupt storage
+    }
+  }, [lesson.id, lesson.teacher]);
 
   useEffect(() => {
     if (status !== "live") return;
@@ -64,9 +67,45 @@ export default function LiveLessonRoom({ lesson }: LiveLessonRoomProps) {
     return `${m}:${String(s).padStart(2, "0")}`;
   }, [seconds]);
 
-  function onAssign(name: string) {
-    setTeacher(name);
-    saveAssignment(lesson.id, name);
+  const teacher = teacherFromAssignment(
+    teacherId || teacherName
+      ? {
+          teacherId: teacherId || "unknown",
+          teacherName,
+          assignedAt: "",
+        }
+      : undefined,
+    lesson.teacher,
+  );
+
+  function onAssign(id: string) {
+    const next = assignableTeachers.find((x) => x.id === id);
+    if (!next) return;
+    setTeacherId(next.id);
+    setTeacherName(next.nameEn);
+    saveLiveAssignment(
+      lesson.id,
+      next,
+      profile?.display_name || user?.email || profile?.role,
+    );
+  }
+
+  function assignMyself() {
+    const me =
+      findTeacherByName(profile?.display_name) ||
+      findTeacherByName(user?.name);
+    if (me) {
+      onAssign(me.id);
+      return;
+    }
+    const name = profile?.display_name || user?.name || "Teacher";
+    setTeacherName(name);
+    setTeacherId(user?.$id || "me");
+    saveLiveAssignment(
+      lesson.id,
+      { id: user?.$id || "me", nameEn: name },
+      name,
+    );
   }
 
   function joinRoom() {
@@ -103,16 +142,42 @@ export default function LiveLessonRoom({ lesson }: LiveLessonRoomProps) {
               </span>
               <span className="text-xs font-medium text-black/55">{lesson.level}</span>
               {lesson.ages ? (
-                <span className="text-xs text-black/45">{t("ages", { range: lesson.ages })}</span>
+                <span className="text-xs text-black/45">
+                  {t("ages", { range: lesson.ages })}
+                </span>
               ) : null}
             </div>
             <h2 className="mt-2 text-2xl font-bold text-[#0b0b1a]">{lesson.title}</h2>
             <p className="mt-1 text-sm font-semibold uppercase tracking-wide text-black/45">
               {lesson.subject}
             </p>
-            <p className="mt-2 text-sm text-black/65">
-              {teacher} · {lesson.when} · {t("duration", { minutes: lesson.durationMin })}
-            </p>
+
+            <div className="mt-3 flex items-center gap-3 rounded-xl border border-black/10 bg-white/80 px-3 py-2">
+              {teacher?.image ? (
+                <span className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full">
+                  <Image
+                    src={teacher.image}
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="44px"
+                  />
+                </span>
+              ) : (
+                <Avatar name={teacherName} role="teacher" size="md" />
+              )}
+              <div className="min-w-0">
+                <p className="text-[10px] font-bold uppercase tracking-wide text-black/45">
+                  {t("assignedTo")}
+                </p>
+                <p className="truncate text-sm font-bold text-[#0b0b1a]">
+                  {teacher?.nameEn || teacherName}
+                </p>
+                <p className="text-xs text-black/55">
+                  {lesson.when} · {t("duration", { minutes: lesson.durationMin })}
+                </p>
+              </div>
+            </div>
           </div>
           <div className="rounded-xl bg-white/80 px-4 py-3 text-center">
             <p className="text-[10px] font-bold uppercase tracking-wide text-black/45">
@@ -134,22 +199,34 @@ export default function LiveLessonRoom({ lesson }: LiveLessonRoomProps) {
         </div>
       </div>
 
-      {isTeacher ? (
+      {canAssign ? (
         <div className="rounded-2xl border border-black/10 bg-white p-4">
           <label className="block text-xs font-semibold text-black/55">
             {t("assignTeacher")}
             <select
               className="mt-1 w-full rounded-lg border border-black/15 px-3 py-2 text-sm"
-              value={teacher}
+              value={teacherId}
               onChange={(e) => onAssign(e.target.value)}
             >
-              {liveLessonTeachers.map((name) => (
-                <option key={name} value={name}>
-                  {name}
+              <option value="" disabled>
+                {t("pickTeacher")}
+              </option>
+              {assignableTeachers.map((tr) => (
+                <option key={tr.id} value={tr.id}>
+                  {tr.nameEn}
                 </option>
               ))}
             </select>
           </label>
+          {profile?.role === "teacher" ? (
+            <button
+              type="button"
+              onClick={assignMyself}
+              className="mt-2 rounded-full border border-black/15 bg-[#f8f9ff] px-3 py-1.5 text-xs font-semibold text-[#0016BD]"
+            >
+              {t("assignMyself")}
+            </button>
+          ) : null}
         </div>
       ) : null}
 

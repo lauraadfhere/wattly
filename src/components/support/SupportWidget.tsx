@@ -36,8 +36,9 @@ function shouldHide(pathname: string) {
 function loadTickets(): SupportTicket[] {
   if (typeof window === "undefined") return [];
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    const parsed = raw ? (JSON.parse(raw) as SupportTicket[]) : [];
+    const raw = localStorage.getItem(STORAGE_KEY)?.trim();
+    if (!raw) return [];
+    const parsed = JSON.parse(raw) as SupportTicket[];
     return Array.isArray(parsed) ? parsed : [];
   } catch {
     return [];

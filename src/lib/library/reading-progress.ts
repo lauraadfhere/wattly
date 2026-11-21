@@ -12,8 +12,9 @@ export type ReadingProgress = {
 function readAll(): Record<string, ReadingProgress> {
   if (typeof window === "undefined") return {};
   try {
-    const raw = localStorage.getItem(PROGRESS_KEY);
-    return raw ? (JSON.parse(raw) as Record<string, ReadingProgress>) : {};
+    const raw = localStorage.getItem(PROGRESS_KEY)?.trim();
+    if (!raw) return {};
+    return JSON.parse(raw) as Record<string, ReadingProgress>;
   } catch {
     return {};
   }

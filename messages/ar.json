@@ -480,7 +480,12 @@
     "notesPlaceholder": "Write words, feedback, or homework…",
     "serveHintTitle": "How live serving works",
     "serveHintBody": "Teachers assign themselves, start the session, and guide the agenda. Learners join the room, follow captions, and keep notes.",
-    "backLive": "Back to live lessons"
+    "backLive": "Back to live lessons",
+    "assignMyself": "Assign me",
+    "pickTeacher": "Choose a teacher…",
+    "assignedTo": "Assigned to",
+    "hostTeacher": "Host teacher",
+    "assignedBy": "Assigned by {name}"
   },
   "Assessment": {
     "title": "احجز اختباراً",

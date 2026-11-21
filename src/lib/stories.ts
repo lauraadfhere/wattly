@@ -253,8 +253,9 @@ const SAVED_WORDS_KEY = "wattly-saved-words";
 export function loadSavedWords(): string[] {
   if (typeof window === "undefined") return [];
   try {
-    const raw = localStorage.getItem(SAVED_WORDS_KEY);
-    const parsed = raw ? (JSON.parse(raw) as string[]) : [];
+    const raw = localStorage.getItem(SAVED_WORDS_KEY)?.trim();
+    if (!raw) return [];
+    const parsed = JSON.parse(raw) as string[];
     return Array.isArray(parsed) ? parsed : [];
   } catch {
     return [];

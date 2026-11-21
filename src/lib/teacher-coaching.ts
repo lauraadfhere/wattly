@@ -37,8 +37,9 @@ export const coachingStudents = [
 function readList<T>(key: string): T[] {
   if (typeof window === "undefined") return [];
   try {
-    const raw = localStorage.getItem(key);
-    const parsed = raw ? (JSON.parse(raw) as T[]) : [];
+    const raw = localStorage.getItem(key)?.trim();
+    if (!raw) return [];
+    const parsed = JSON.parse(raw) as T[];
     return Array.isArray(parsed) ? parsed : [];
   } catch {
     return [];
