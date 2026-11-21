@@ -41,10 +41,10 @@ body {
   font-family: var(--font-dashboard), var(--font-poppins), system-ui, sans-serif;
 }
 
-/* Shrink the whole UI ~5% on PC only — mobile stays at 100% */
+/* Shrink the whole UI ~15% on PC only — mobile stays at 100% */
 @media (min-width: 1024px) {
   html {
-    zoom: 0.95;
+    zoom: 0.85;
   }
 }
 
@@ -76,7 +76,7 @@ body {
 
 .hero-wave-letter {
   transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
+  backface-visibility: visible;
 }
 
 @keyframes loader-slide {

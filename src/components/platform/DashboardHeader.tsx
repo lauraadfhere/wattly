@@ -45,6 +45,8 @@ export default function DashboardHeader() {
           >
             <Link href="/dashboard">{t("dashboard")}</Link>
             <Link href="/teachers">{t("teachers")}</Link>
+            <Link href="/stories">{t("stories")}</Link>
+            <Link href="/live-lessons">{t("liveLessons")}</Link>
             <Link href="/practice">{t("practice")}</Link>
             <Link href="/profile">{t("profile")}</Link>
           </nav>
@@ -176,6 +178,12 @@ export default function DashboardHeader() {
               </Link>
               <Link href="/teachers" className="rounded-lg px-3 py-2.5 hover:bg-[#353535]" onClick={() => setMobileOpen(false)}>
                 {t("teachers")}
+              </Link>
+              <Link href="/stories" className="rounded-lg px-3 py-2.5 hover:bg-[#353535]" onClick={() => setMobileOpen(false)}>
+                {t("stories")}
+              </Link>
+              <Link href="/live-lessons" className="rounded-lg px-3 py-2.5 hover:bg-[#353535]" onClick={() => setMobileOpen(false)}>
+                {t("liveLessons")}
               </Link>
               <Link href="/practice" className="rounded-lg px-3 py-2.5 hover:bg-[#353535]" onClick={() => setMobileOpen(false)}>
                 {t("practice")}

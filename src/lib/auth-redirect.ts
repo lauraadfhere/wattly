@@ -28,6 +28,8 @@ const AUTH_REQUIRED_PREFIXES = [
   "/levels",
   "/assessment",
   "/audiobooks",
+  "/stories",
+  "/live-lessons",
 ] as const;
 
 /** Paths that stay public even under an auth-required prefix. */

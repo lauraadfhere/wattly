@@ -4,8 +4,12 @@ const messages = {
     "description": "تعلّم الإنجليزية مع Wattly — دروس شاملة مع معلمين ودعم بالذكاء الاصطناعي."
   },
   "HomePage": {
-    "title": "تعلّم أكثر، احصل على نتائج، وتقدّم.",
+    "bubble": "تعلّم الإنجليزية. احلم بالمزيد",
+    "title": "حقّق أهدافك مع Wattly English",
     "description": "منهج مُثبت مع مرونة كاملة — عبر الإنترنت أو في المركز، أنت تختار.",
+    "point1": "منهج مُثبت بنتائج مضمونة",
+    "point2": "مرونة كاملة — انضم للدروس عبر الإنترنت أو حضوريًا في مراكزنا",
+    "point3": "أفضل طريقة لتعلّم الإنجليزية — أدوات دامجة للأطفال والكبار",
     "startLearning": "ابدأ التعلم",
     "bookTest": "احجز اختباراً",
     "comingSoon": "هذا القسم قادم قريبًا.",
@@ -78,7 +82,8 @@ const messages = {
     "lessons": "الدروس",
     "levels": "المستويات",
     "assessment": "التقييم",
-    "courses": "الدورات"
+    "courses": "الدورات",
+    "support": "Support"
   },
   "Pricing": {
     "title": "الأسعار",
@@ -117,7 +122,8 @@ const messages = {
     "navLabel": "تذييل الصفحة",
     "policies": "السياسات والشروط",
     "contact": "تواصل",
-    "courses": "الدورات"
+    "courses": "الدورات",
+    "support": "Support"
   },
   "ProductsStories": {
     "eyebrow": "منتجات Wattly",
@@ -266,7 +272,9 @@ const messages = {
     "admin": "المشرف",
     "logout": "تسجيل الخروج",
     "login": "تسجيل الدخول",
-    "signup": "إنشاء حساب"
+    "signup": "إنشاء حساب",
+    "stories": "Stories",
+    "liveLessons": "Live lessons"
   },
   "Profile": {
     "title": "ملفك الشخصي",
@@ -285,7 +293,11 @@ const messages = {
     "avatarSaved": "تم تحديث صورة الملف.",
     "avatarFailed": "تعذّر رفع صورة الملف.",
     "avatarInvalid": "يرجى اختيار ملف صورة.",
-    "avatarTooLarge": "يجب أن تكون الصورة أقل من 5 ميغابايت."
+    "avatarTooLarge": "يجب أن تكون الصورة أقل من 5 ميغابايت.",
+    "level": "English level",
+    "levelHint": "Used to match live lessons and stories to your learning stage (Pre-A1 to C1).",
+    "timezone": "Time zone",
+    "timezoneHint": "Live lesson times and bookings show in this zone."
   },
   "Auth": {
     "loginTitle": "مرحبًا بعودتك",
@@ -410,7 +422,9 @@ const messages = {
     "liveLessons": "دروس مباشرة",
     "liveLessonsBody": "انضم إلى حصص مباشرة للأطفال والكبار — بألوان حسب الفئة.",
     "assessment": "احجز اختباراً",
-    "assessmentBody": "تحديد مستوى عن بُعد 15 دقيقة — أطفال أو كبار — من 500 دج."
+    "assessmentBody": "تحديد مستوى عن بُعد 15 دقيقة — أطفال أو كبار — من 500 دج.",
+    "stories": "Stories",
+    "storiesBody": "Amazon-style ebooks for kids and adults — listen word by word and save key vocabulary."
   },
   "LiveLessons": {
     "title": "دروس مباشرة",
@@ -422,7 +436,15 @@ const messages = {
     "adultsTitle": "دروس مباشرة للكبار",
     "adultsBadge": "كبار",
     "duration": "{minutes} د",
-    "backDashboard": "العودة للوحة التحكم"
+    "backDashboard": "العودة للوحة التحكم",
+    "ages": "Ages {range}",
+    "assignTeacher": "Assign teacher",
+    "filterCategory": "Category",
+    "filterLevel": "Level",
+    "filterAge": "Age group",
+    "filterTeacher": "Teacher",
+    "all": "All",
+    "empty": "No lessons match these filters."
   },
   "Assessment": {
     "title": "احجز اختباراً",
@@ -535,6 +557,96 @@ const messages = {
     "pronunciation": "النطق",
     "pronunciationBody": "ملاحظات داعمة اختيارية — ليست إلزامية أبدًا.",
     "pronunciationDetail": "جرّب الأصوات إن أردت. الملاحظات لطيفة ومرئية. يمكنك تخطي الكلام تمامًا."
+  },
+  "Stories": {
+    "title": "Stories",
+    "intro": "English ebook stories for listening practice — kids shelf and adults shelf, with smart word tracking.",
+    "kidsShelf": "For children",
+    "kidsTitle": "Kids story shelf",
+    "adultsShelf": "For adults",
+    "adultsTitle": "Adults story shelf",
+    "playerTitle": "Story listening",
+    "play": "Play",
+    "pause": "Pause",
+    "prevWord": "Previous word",
+    "nextWord": "Next word",
+    "smartTrack": "Smart sound track — tap a word to hear it; star important words to save them",
+    "saveWord": "Save word",
+    "unsaveWord": "Remove saved word",
+    "wordBank": "Saved words",
+    "wordBankEmpty": "No saved words yet. Tap the star next to important words while you listen.",
+    "backStories": "Back to stories",
+    "backDashboard": "Back to dashboard"
+  },
+  "SupportWidget": {
+    "open": "Open support",
+    "close": "Close",
+    "title": "Wattly support",
+    "subtitle": "Claims, refunds, and quick help",
+    "type": "Request type",
+    "types": {
+      "claim": "Claim",
+      "refund": "Refund request",
+      "general": "General support"
+    },
+    "subject": "Subject",
+    "subjectPlaceholder": "Short summary of your request",
+    "body": "Details",
+    "bodyPlaceholder": "Describe what happened… Use formatting for clarity.",
+    "submit": "Send request",
+    "sending": "Sending…",
+    "success": "Your request was saved. You can continue at the Wattly support center.",
+    "openCenter": "Open support.wall-y.ca",
+    "visitCenter": "Visit support.wall-y.ca",
+    "another": "New request",
+    "errorRequired": "Please add a subject and details.",
+    "errorFailed": "Could not save your request. Try again or open the support center.",
+    "bold": "Bold",
+    "italic": "Italic",
+    "underline": "Underline",
+    "bulletList": "Bullet list",
+    "numberList": "Numbered list",
+    "link": "Insert link",
+    "linkPrompt": "Paste a link URL",
+    "clearFormat": "Clear"
+  },
+  "TeacherCoaching": {
+    "eyebrow": "Teacher tools",
+    "title": "Feedback & lesson recommendations",
+    "intro": "Assign feedback to a student and recommend the next Wattly lesson that fits their level.",
+    "student": "Student",
+    "customName": "Student name",
+    "customNamePlaceholder": "Type the learner’s name",
+    "customStudent": "Student",
+    "feedbackTitle": "Assign feedback",
+    "rating": "Progress rating",
+    "stars": "{count} / 5",
+    "note": "Feedback note",
+    "notePlaceholder": "What went well, what to practise next…",
+    "assignFeedback": "Assign feedback",
+    "recommendTitle": "Recommend a lesson",
+    "lesson": "Lesson",
+    "kidsTag": "Kids",
+    "adultsTag": "Adults",
+    "reason": "Why this lesson",
+    "reasonPlaceholder": "Optional note for the student",
+    "defaultReason": "Recommended for your next practice session.",
+    "recommendLesson": "Recommend lesson",
+    "recentFeedback": "Recent feedback",
+    "recentRecs": "Recent recommendations",
+    "emptyFeedback": "No feedback assigned yet.",
+    "emptyRecs": "No lesson recommendations yet.",
+    "remove": "Remove",
+    "openLessons": "Open lessons",
+    "feedbackSaved": "Feedback assigned to the student.",
+    "recSaved": "Lesson recommended to the student.",
+    "needStudent": "Enter the student’s name.",
+    "needNote": "Write a short feedback note.",
+    "needLesson": "Choose a lesson to recommend.",
+    "inboxEyebrow": "From your teachers",
+    "inboxTitle": "Feedback & recommended lessons",
+    "yourFeedback": "Teacher feedback",
+    "yourRecs": "Recommended lessons"
   }
 } as const;
 

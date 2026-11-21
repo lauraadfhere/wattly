@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import DashboardShell from "@/components/platform/DashboardShell";
+import StudentCoachingInbox from "@/components/teachers/StudentCoachingInbox";
 
 export default async function DashboardPage() {
   const t = await getTranslations("Dashboard");
@@ -8,6 +9,7 @@ export default async function DashboardPage() {
   const cards = [
     { href: "/teachers", title: t("findTeacher"), body: t("findTeacherBody") },
     { href: "/live-lessons", title: t("liveLessons"), body: t("liveLessonsBody") },
+    { href: "/stories", title: t("stories"), body: t("storiesBody") },
     { href: "/practice", title: t("practice"), body: t("practiceBody") },
     { href: "/practice/oral", title: t("oral"), body: t("oralBody") },
     { href: "/audiobooks", title: t("audiobooks"), body: t("audiobooksBody") },
@@ -29,6 +31,7 @@ export default async function DashboardPage() {
           </Link>
         ))}
       </div>
+      <StudentCoachingInbox />
     </DashboardShell>
   );
 }

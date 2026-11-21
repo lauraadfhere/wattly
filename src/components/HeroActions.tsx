@@ -158,6 +158,18 @@ export default function HeroActions() {
               </Link>
             </li>
           ))}
+          <li>
+            <a
+              href="https://support.wall-y.ca"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-lg px-3 py-3 text-lg font-medium text-white"
+              onClick={() => setOpen(false)}
+              tabIndex={open ? 0 : -1}
+            >
+              {t("support")}
+            </a>
+          </li>
           {user ? (
             <li>
               <Link

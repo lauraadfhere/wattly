@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import AppLoader from "@/components/AppLoader";
 import CookieBanner from "@/components/CookieBanner";
 import KinpalAssistant from "@/components/KinpalAssistant";
+import SupportWidget from "@/components/support/SupportWidget";
 import { AuthProvider } from "@/components/auth/AuthProvider";
 import { isRtlLocale, routing } from "@/i18n/routing";
 import "../globals.css";
@@ -78,6 +79,7 @@ export default async function LocaleLayout({
             <AppLoader />
             {children}
             <KinpalAssistant />
+            <SupportWidget />
             <CookieBanner />
           </AuthProvider>
         </NextIntlClientProvider>

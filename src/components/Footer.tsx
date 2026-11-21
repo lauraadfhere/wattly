@@ -36,6 +36,14 @@ export default async function Footer() {
               {link.label}
             </Link>
           ))}
+          <a
+            href="https://support.wall-y.ca"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white"
+          >
+            {t("support")}
+          </a>
         </nav>
 
         <div className="flex w-full items-end justify-between gap-4 pt-2">

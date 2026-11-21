@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import PlatformShell from "@/components/platform/PlatformShell";
+import TeacherCoachingPanel from "@/components/teachers/TeacherCoachingPanel";
 import { getTeacherById, teacherIds } from "@/lib/teachers";
 
 export function generateStaticParams() {
@@ -82,6 +83,8 @@ async function TeacherProfileContent({
           {t("back")}
         </Link>
       </div>
+
+      <TeacherCoachingPanel teacherId={teacher.id} teacherName={name} />
     </PlatformShell>
   );
 }

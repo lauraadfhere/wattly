@@ -36,6 +36,8 @@ export default function PlatformHeader() {
         >
           <Link href="/dashboard">{t("dashboard")}</Link>
           <Link href="/teachers">{t("teachers")}</Link>
+          <Link href="/stories">{t("stories")}</Link>
+          <Link href="/live-lessons">{t("liveLessons")}</Link>
           <Link href="/practice">{t("practice")}</Link>
           <Link href="/profile">{t("profile")}</Link>
         </nav>

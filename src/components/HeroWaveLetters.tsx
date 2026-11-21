@@ -21,13 +21,13 @@ const GLOBE_WORDS = [
   "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
 ];
 
-function buildWordEarth(ringCount = 34, basePerRing = 30): WordSpec[] {
+function buildWordEarth(ringCount = 32, basePerRing = 28): WordSpec[] {
   const specs: WordSpec[] = [];
   let wi = 0;
 
   for (let r = 0; r < ringCount; r += 1) {
-    const lat = -0.96 + (r / (ringCount - 1)) * 1.92;
-    const ringR = Math.sqrt(Math.max(0.03, 1 - lat * lat));
+    const lat = -0.94 + (r / (ringCount - 1)) * 1.88;
+    const ringR = Math.sqrt(Math.max(0.04, 1 - lat * lat));
     const count = Math.max(8, Math.round(basePerRing * (0.4 + ringR * 0.85)));
 
     for (let i = 0; i < count; i += 1) {
@@ -37,7 +37,7 @@ function buildWordEarth(ringCount = 34, basePerRing = 30): WordSpec[] {
         word,
         lat,
         lon,
-        size: word.length === 1 ? 0.48 + ringR * 0.1 : 0.42 + ringR * 0.08,
+        size: word.length === 1 ? 0.5 + ringR * 0.1 : 0.44 + ringR * 0.08,
         phase: r * 0.2 + i * 0.05,
       });
       wi += 1;
@@ -48,7 +48,7 @@ function buildWordEarth(ringCount = 34, basePerRing = 30): WordSpec[] {
 }
 
 export default function HeroWaveLetters() {
-  const words = useMemo(() => buildWordEarth(34, 30), []);
+  const words = useMemo(() => buildWordEarth(32, 28), []);
   const stageRef = useRef<HTMLDivElement>(null);
   const pointer = useRef({ x: 0.5, y: 0.5, active: false, nx: 0, ny: 0 });
   const smooth = useRef({ x: 0.5, y: 0.5, active: 0, nx: 0, ny: 0 });
@@ -67,7 +67,7 @@ export default function HeroWaveLetters() {
       const rect = stage.getBoundingClientRect();
       if (rect.width <= 0 || rect.height <= 0) return;
 
-      const pad = 40;
+      const pad = 48;
       const inside =
         event.clientX >= rect.left - pad &&
         event.clientX <= rect.right + pad &&
@@ -89,6 +89,14 @@ export default function HeroWaveLetters() {
       const dt = Math.min(0.05, (time - last) / 1000);
       last = time;
 
+      const w = stage.clientWidth;
+      const h = stage.clientHeight;
+      // Skip until stage has real size — prevents words collapsing / vanishing
+      if (w < 40 || h < 40) {
+        raf.current = window.requestAnimationFrame(tick);
+        return;
+      }
+
       const want = pointer.current.active ? 1 : 0;
       smooth.current.active += (want - smooth.current.active) * 0.08;
       smooth.current.x += (pointer.current.x - smooth.current.x) * 0.1;
@@ -102,21 +110,17 @@ export default function HeroWaveLetters() {
       const pnx = smooth.current.nx;
       const pny = smooth.current.ny;
 
-      // Idle = sticky still; mouse = gentle roll (never vanishes)
-      const rollSpeed = reduceMotion ? 0 : interact * 0.95;
+      const rollSpeed = reduceMotion ? 0 : interact * 0.85;
       spinAngle.current += rollSpeed * dt;
 
-      const w = stage.clientWidth;
-      const h = stage.clientHeight;
-      // Smaller globe so the full form stays inside the hero side
-      const radius = Math.min(w, h) * 0.43;
+      const radius = Math.min(w, h) * 0.42;
       const cx = w * 0.5;
-      const cy = h * 0.52;
+      const cy = h * 0.5;
 
-      const tiltY = (mx - 0.5) * interact * 0.45;
-      const tiltX = (my - 0.5) * interact * 0.3;
+      const tiltY = (mx - 0.5) * interact * 0.4;
+      const tiltX = (my - 0.5) * interact * 0.28;
       const rotY = spinAngle.current + tiltY;
-      const rotX = 0.06 + tiltX;
+      const rotX = 0.05 + tiltX;
 
       const cosY = Math.cos(rotY);
       const sinY = Math.sin(rotY);
@@ -146,30 +150,26 @@ export default function HeroWaveLetters() {
         const near = Math.max(0, 1 - dist * 3) * interact;
         const place = near * near;
 
-        // Soft placement — keep inside bounds so nothing clips away
-        const bulge = 1 + place * 0.18;
-        const slideX = pnx * place * radius * 0.04;
-        const slideY = pny * place * radius * 0.04;
+        const bulge = 1 + place * 0.14;
+        const slideX = pnx * place * radius * 0.03;
+        const slideY = pny * place * radius * 0.03;
 
         const sx = cx + x1 * radius * bulge + slideX;
         const sy = cy + y2 * radius * bulge + slideY;
         const depth = z2;
 
-        // Never hard-hide: fade backs gently so the earth never “disappears”
-        const front = Math.max(0, (depth + 0.35) / 1.35);
-        const shade = 0.55 + front * 0.42;
-        const scale = (0.78 + front * 0.28) * (1 + place * 0.28);
+        // Front stays solid white; back stays faintly visible — never zero
+        const front = Math.max(0.15, (depth + 1) / 2);
+        const shade = 0.5 + front * 0.5;
+        const scale = Math.max(0.55, (0.82 + front * 0.28) * (1 + place * 0.22));
 
         el.style.transform = [
           "translate(-50%, -50%)",
-          `translate3d(${sx}px, ${sy}px, ${depth * radius * 0.4}px)`,
-          `rotateY(${(-rotY + x1 * 0.12) * 57.3}deg)`,
-          `rotateX(${(rotX + y2 * 0.08) * 57.3}deg)`,
-          `scale(${scale})`,
+          `translate3d(${sx.toFixed(2)}px, ${sy.toFixed(2)}px, ${(depth * radius * 0.35).toFixed(2)}px)`,
+          `scale(${scale.toFixed(3)})`,
         ].join(" ");
-        // Always at least faintly visible — solid white on the front
-        el.style.opacity = String(Math.max(0.22, Math.min(1, shade)));
-        el.style.zIndex = String(Math.round(30 + depth * 80 + place * 40));
+        el.style.opacity = String(Math.max(0.35, Math.min(1, shade)));
+        el.style.zIndex = String(Math.round(40 + depth * 80 + place * 30));
       });
 
       raf.current = window.requestAnimationFrame(tick);
@@ -185,12 +185,14 @@ export default function HeroWaveLetters() {
   }, [words]);
 
   return (
-    <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden" aria-hidden="true">
+    <div
+      className="pointer-events-none absolute inset-0 z-[1] hidden overflow-hidden md:block"
+      aria-hidden="true"
+    >
       <div className="relative mx-auto h-full w-full max-w-6xl">
-        {/* Smaller globe — fully visible on the hero right */}
         <div
           ref={stageRef}
-          className="pointer-events-auto absolute top-[14%] bottom-[8%] end-4 aspect-square w-[min(78%,22rem)] sm:end-8 sm:w-[min(64%,26rem)] lg:end-12 lg:w-[min(54%,30rem)]"
+          className="pointer-events-auto absolute top-[12%] bottom-[10%] end-3 aspect-square w-[min(80%,24rem)] overflow-visible sm:end-8 sm:w-[min(62%,28rem)] lg:end-10 lg:w-[min(52%,32rem)]"
           style={{ perspective: "1000px", transformStyle: "preserve-3d" }}
         >
           {words.map((spec, index) => (
@@ -206,8 +208,8 @@ export default function HeroWaveLetters() {
                 fontWeight: 700,
                 letterSpacing: "-0.01em",
                 color: "#ffffff",
-                textShadow: "0 1px 0 rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,40,0.2)",
-                opacity: 0.85,
+                textShadow: "0 1px 2px rgba(0,0,40,0.25)",
+                opacity: 0.9,
                 willChange: "transform, opacity",
                 transformStyle: "preserve-3d",
                 whiteSpace: "nowrap",

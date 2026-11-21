@@ -4,8 +4,12 @@
     "description": "Apprenez l'anglais avec Wattly — leçons inclusives avec professeurs et soutien IA."
   },
   "HomePage": {
-    "title": "Apprenez plus, obtenez des résultats, progressez.",
+    "bubble": "Apprenez l’anglais. Rêvez plus grand",
+    "title": "Atteignez vos objectifs avec Wattly English",
     "description": "Une méthode éprouvée avec une flexibilité totale — en ligne ou en centre, à vous de choisir.",
+    "point1": "Méthode éprouvée avec des résultats garantis",
+    "point2": "Flexibilité totale — cours en ligne et en présentiel dans nos centres",
+    "point3": "La meilleure façon d’apprendre l’anglais — outils inclusifs kids et adultes",
     "startLearning": "Commencer à apprendre",
     "bookTest": "Réserver un test",
     "comingSoon": "Cette section arrive bientôt.",
@@ -78,7 +82,8 @@
     "lessons": "Leçons",
     "levels": "Niveaux",
     "assessment": "Évaluation",
-    "courses": "Cours"
+    "courses": "Cours",
+    "support": "Support"
   },
   "Pricing": {
     "title": "Tarifs",
@@ -117,7 +122,8 @@
     "navLabel": "Pied de page",
     "policies": "Politiques et conditions",
     "contact": "Contact",
-    "courses": "Cours"
+    "courses": "Cours",
+    "support": "Support"
   },
   "ProductsStories": {
     "eyebrow": "Produits Wattly",
@@ -266,7 +272,9 @@
     "admin": "Admin",
     "logout": "Déconnexion",
     "login": "Connexion",
-    "signup": "Inscription"
+    "signup": "Inscription",
+    "stories": "Stories",
+    "liveLessons": "Live lessons"
   },
   "Profile": {
     "title": "Votre profil",
@@ -285,7 +293,11 @@
     "avatarSaved": "Photo de profil mise à jour.",
     "avatarFailed": "Impossible d’envoyer la photo.",
     "avatarInvalid": "Choisissez un fichier image.",
-    "avatarTooLarge": "L’image doit faire moins de 5 Mo."
+    "avatarTooLarge": "L’image doit faire moins de 5 Mo.",
+    "level": "English level",
+    "levelHint": "Used to match live lessons and stories to your learning stage (Pre-A1 to C1).",
+    "timezone": "Time zone",
+    "timezoneHint": "Live lesson times and bookings show in this zone."
   },
   "Auth": {
     "loginTitle": "Bon retour",
@@ -410,7 +422,9 @@
     "liveLessons": "Leçons en direct",
     "liveLessonsBody": "Rejoignez des cours live kids et adultes — couleurs par catégorie.",
     "assessment": "Réserver un test",
-    "assessmentBody": "Placement distant de 15 minutes — kids ou adultes — dès 500 DA."
+    "assessmentBody": "Placement distant de 15 minutes — kids ou adultes — dès 500 DA.",
+    "stories": "Stories",
+    "storiesBody": "Amazon-style ebooks for kids and adults — listen word by word and save key vocabulary."
   },
   "LiveLessons": {
     "title": "Leçons en direct",
@@ -422,7 +436,15 @@
     "adultsTitle": "Leçons live adultes",
     "adultsBadge": "Adultes",
     "duration": "{minutes} min",
-    "backDashboard": "Retour au tableau de bord"
+    "backDashboard": "Retour au tableau de bord",
+    "ages": "Ages {range}",
+    "assignTeacher": "Assign teacher",
+    "filterCategory": "Category",
+    "filterLevel": "Level",
+    "filterAge": "Age group",
+    "filterTeacher": "Teacher",
+    "all": "All",
+    "empty": "No lessons match these filters."
   },
   "Assessment": {
     "title": "Réserver un test",
@@ -473,9 +495,18 @@
     "open": "Ouvrir l’activité",
     "backDashboard": "Retour au tableau de bord",
     "cards": {
-      "warmup": { "title": "Échauffement", "body": "Exercices de prononciation doux, sans pression." },
-      "dialogue": { "title": "Dialogue oral", "body": "Jeux de rôle courts pour le quotidien." },
-      "shadow": { "title": "Écoute shadow", "body": "Écoutez, pausez, répétez à votre rythme." }
+      "warmup": {
+        "title": "Échauffement",
+        "body": "Exercices de prononciation doux, sans pression."
+      },
+      "dialogue": {
+        "title": "Dialogue oral",
+        "body": "Jeux de rôle courts pour le quotidien."
+      },
+      "shadow": {
+        "title": "Écoute shadow",
+        "body": "Écoutez, pausez, répétez à votre rythme."
+      }
     }
   },
   "Audiobooks": {
@@ -526,5 +557,95 @@
     "pronunciation": "Prononciation",
     "pronunciationBody": "Retour bienveillant optionnel — jamais obligatoire.",
     "pronunciationDetail": "Essayez les sons si vous voulez. Retour doux et visuel. Vous pouvez éviter de parler."
+  },
+  "Stories": {
+    "title": "Stories",
+    "intro": "English ebook stories for listening practice — kids shelf and adults shelf, with smart word tracking.",
+    "kidsShelf": "For children",
+    "kidsTitle": "Kids story shelf",
+    "adultsShelf": "For adults",
+    "adultsTitle": "Adults story shelf",
+    "playerTitle": "Story listening",
+    "play": "Play",
+    "pause": "Pause",
+    "prevWord": "Previous word",
+    "nextWord": "Next word",
+    "smartTrack": "Smart sound track — tap a word to hear it; star important words to save them",
+    "saveWord": "Save word",
+    "unsaveWord": "Remove saved word",
+    "wordBank": "Saved words",
+    "wordBankEmpty": "No saved words yet. Tap the star next to important words while you listen.",
+    "backStories": "Back to stories",
+    "backDashboard": "Back to dashboard"
+  },
+  "SupportWidget": {
+    "open": "Open support",
+    "close": "Close",
+    "title": "Wattly support",
+    "subtitle": "Claims, refunds, and quick help",
+    "type": "Request type",
+    "types": {
+      "claim": "Claim",
+      "refund": "Refund request",
+      "general": "General support"
+    },
+    "subject": "Subject",
+    "subjectPlaceholder": "Short summary of your request",
+    "body": "Details",
+    "bodyPlaceholder": "Describe what happened… Use formatting for clarity.",
+    "submit": "Send request",
+    "sending": "Sending…",
+    "success": "Your request was saved. You can continue at the Wattly support center.",
+    "openCenter": "Open support.wall-y.ca",
+    "visitCenter": "Visit support.wall-y.ca",
+    "another": "New request",
+    "errorRequired": "Please add a subject and details.",
+    "errorFailed": "Could not save your request. Try again or open the support center.",
+    "bold": "Bold",
+    "italic": "Italic",
+    "underline": "Underline",
+    "bulletList": "Bullet list",
+    "numberList": "Numbered list",
+    "link": "Insert link",
+    "linkPrompt": "Paste a link URL",
+    "clearFormat": "Clear"
+  },
+  "TeacherCoaching": {
+    "eyebrow": "Teacher tools",
+    "title": "Feedback & lesson recommendations",
+    "intro": "Assign feedback to a student and recommend the next Wattly lesson that fits their level.",
+    "student": "Student",
+    "customName": "Student name",
+    "customNamePlaceholder": "Type the learner’s name",
+    "customStudent": "Student",
+    "feedbackTitle": "Assign feedback",
+    "rating": "Progress rating",
+    "stars": "{count} / 5",
+    "note": "Feedback note",
+    "notePlaceholder": "What went well, what to practise next…",
+    "assignFeedback": "Assign feedback",
+    "recommendTitle": "Recommend a lesson",
+    "lesson": "Lesson",
+    "kidsTag": "Kids",
+    "adultsTag": "Adults",
+    "reason": "Why this lesson",
+    "reasonPlaceholder": "Optional note for the student",
+    "defaultReason": "Recommended for your next practice session.",
+    "recommendLesson": "Recommend lesson",
+    "recentFeedback": "Recent feedback",
+    "recentRecs": "Recent recommendations",
+    "emptyFeedback": "No feedback assigned yet.",
+    "emptyRecs": "No lesson recommendations yet.",
+    "remove": "Remove",
+    "openLessons": "Open lessons",
+    "feedbackSaved": "Feedback assigned to the student.",
+    "recSaved": "Lesson recommended to the student.",
+    "needStudent": "Enter the student’s name.",
+    "needNote": "Write a short feedback note.",
+    "needLesson": "Choose a lesson to recommend.",
+    "inboxEyebrow": "From your teachers",
+    "inboxTitle": "Feedback & recommended lessons",
+    "yourFeedback": "Teacher feedback",
+    "yourRecs": "Recommended lessons"
   }
 }

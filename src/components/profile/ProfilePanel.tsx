@@ -7,6 +7,13 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import Avatar from "@/components/Avatar";
 import { updateProfileAvatar, updateProfileName } from "@/lib/auth";
 import { uploadAvatarImage } from "@/lib/cloudinary";
+import {
+  ENGLISH_LEVELS,
+  TIMEZONES,
+  loadProfilePrefs,
+  saveProfilePrefs,
+  type EnglishLevel,
+} from "@/lib/profile-prefs";
 
 export default function ProfilePanel() {
   const t = useTranslations("Profile");
@@ -15,6 +22,8 @@ export default function ProfilePanel() {
   const router = useRouter();
   const fileRef = useRef<HTMLInputElement>(null);
   const [name, setName] = useState("");
+  const [level, setLevel] = useState<EnglishLevel>("A1");
+  const [timezone, setTimezone] = useState("UTC");
   const [preview, setPreview] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const [uploading, setUploading] = useState(false);
@@ -30,6 +39,9 @@ export default function ProfilePanel() {
   useEffect(() => {
     setName(profile?.display_name || user?.name || "");
     setPreview(profile?.avatar_url || null);
+    const prefs = loadProfilePrefs(profile?.user_id || user?.$id);
+    setLevel(prefs.level);
+    setTimezone(prefs.timezone);
   }, [profile, user]);
 
   async function onSubmit(event: FormEvent) {
@@ -41,6 +53,10 @@ export default function ProfilePanel() {
     try {
       const updated = await updateProfileName(profile.$id, name.trim());
       setProfile(updated);
+      saveProfilePrefs(
+        { level, timezone },
+        profile.user_id || user?.$id,
+      );
       await refresh();
       setMessage(t("saved"));
     } catch (err) {
@@ -167,6 +183,47 @@ export default function ProfilePanel() {
           <p className="rounded-xl bg-[#f5f7ff] px-4 py-3 text-sm text-[#000A5E]/80">
             {tAuth(`roles.${profile.role}` as "roles.learner")}
           </p>
+        </div>
+
+        <div>
+          <label htmlFor="english_level" className="mb-1 block text-sm font-medium">
+            {t("level")}
+          </label>
+          <select
+            id="english_level"
+            value={level}
+            onChange={(e) => setLevel(e.target.value as EnglishLevel)}
+            className="w-full rounded-xl border border-[#0016BD]/20 px-4 py-3"
+          >
+            {ENGLISH_LEVELS.map((lv) => (
+              <option key={lv} value={lv}>
+                {lv}
+              </option>
+            ))}
+          </select>
+          <p className="mt-1 text-xs text-black/50">{t("levelHint")}</p>
+        </div>
+
+        <div>
+          <label htmlFor="timezone" className="mb-1 block text-sm font-medium">
+            {t("timezone")}
+          </label>
+          <select
+            id="timezone"
+            value={timezone}
+            onChange={(e) => setTimezone(e.target.value)}
+            className="w-full rounded-xl border border-[#0016BD]/20 px-4 py-3"
+          >
+            {TIMEZONES.map((tz) => (
+              <option key={tz} value={tz}>
+                {tz}
+              </option>
+            ))}
+            {!TIMEZONES.includes(timezone as (typeof TIMEZONES)[number]) ? (
+              <option value={timezone}>{timezone}</option>
+            ) : null}
+          </select>
+          <p className="mt-1 text-xs text-black/50">{t("timezoneHint")}</p>
         </div>
 
         {message ? (

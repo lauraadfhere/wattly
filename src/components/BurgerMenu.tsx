@@ -95,6 +95,18 @@ export default function BurgerMenu() {
               </Link>
             </li>
           ))}
+          <li>
+            <a
+              href="https://support.wall-y.ca"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-lg px-3 py-3 text-lg font-medium text-white transition hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ffc933]"
+              onClick={() => setOpen(false)}
+              tabIndex={open ? 0 : -1}
+            >
+              {t("support")}
+            </a>
+          </li>
         </ul>
       </nav>
     </>
