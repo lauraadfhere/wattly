@@ -43,7 +43,6 @@ export default function DashboardHeader() {
             aria-label={t("navLabel")}
             className="dashboard-nav flex items-center gap-6 text-[15px] font-medium text-white"
           >
-            <Link href="/dashboard">{t("dashboard")}</Link>
             <Link href="/teachers">{t("teachers")}</Link>
             <Link href="/stories">{t("stories")}</Link>
             <Link href="/live-lessons">{t("liveLessons")}</Link>
