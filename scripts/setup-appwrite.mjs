@@ -193,6 +193,53 @@ async function main() {
     { key: "created_by", type: "string", size: 64, required: false },
   ]);
 
+  const liveLessonPerms = [
+    Permission.read(Role.any()),
+    Permission.create(Role.users()),
+    Permission.update(Role.users()),
+    Permission.delete(Role.users()),
+  ];
+
+  try {
+    await tablesDB.getTable({ databaseId, tableId: "live_lessons" });
+    console.log("Table exists: live_lessons");
+  } catch {
+    await tablesDB.createTable({
+      databaseId,
+      tableId: "live_lessons",
+      name: "Live Lessons",
+      permissions: liveLessonPerms,
+      columns: [
+        { key: "title", type: "string", size: 200, required: true },
+        { key: "title_ar", type: "string", size: 200, required: false },
+        {
+          key: "category",
+          type: "enum",
+          elements: ["kids", "adults"],
+          required: true,
+        },
+        { key: "level", type: "string", size: 32, required: false },
+        { key: "teacher", type: "string", size: 120, required: true },
+        { key: "teacher_ar", type: "string", size: 120, required: false },
+        { key: "when_label", type: "string", size: 120, required: true },
+        { key: "duration_min", type: "integer", required: true },
+        {
+          key: "icon",
+          type: "enum",
+          elements: ["star", "rocket", "bear", "book", "globe", "chat"],
+          required: true,
+        },
+        {
+          key: "status",
+          type: "enum",
+          elements: ["draft", "published", "archived"],
+          required: true,
+        },
+      ],
+    });
+    console.log("Created table: live_lessons");
+  }
+
   console.log("Appwrite Wattly schema ready.");
 }
 

@@ -12,5 +12,6 @@ export const appwriteConfig = {
     courses: "courses",
     videos: "videos",
     contentItems: "content_items",
+    liveLessons: "live_lessons",
   },
 } as const;

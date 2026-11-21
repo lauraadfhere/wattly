@@ -41,10 +41,10 @@ body {
   font-family: var(--font-dashboard), var(--font-poppins), system-ui, sans-serif;
 }
 
-/* Reduce desktop chrome ~10% so 100% zoom still feels comfortable */
+/* Shrink the whole UI ~5% on PC only — mobile stays at 100% */
 @media (min-width: 1024px) {
   html {
-    font-size: 90%;
+    zoom: 0.95;
   }
 }
 
@@ -72,6 +72,11 @@ body {
 
 .hero-rise-delay {
   animation-delay: 0.12s;
+}
+
+.hero-wave-letter {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
 }
 
 @keyframes loader-slide {

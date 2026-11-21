@@ -1,16 +1,10 @@
 import { Suspense } from "react";
-import { getTranslations } from "next-intl/server";
-import AuthShell from "@/components/auth/AuthShell";
-import RoleLoginPanel from "@/components/auth/RoleLoginPanel";
+import TeacherLoginSplit from "@/components/auth/TeacherLoginSplit";
 
-export default async function TeacherLoginPage() {
-  const t = await getTranslations("LoginHub");
-
+export default function TeacherLoginPage() {
   return (
-    <AuthShell title={t("teacherTitle")} intro={t("teacherBody")}>
-      <Suspense fallback={<p className="text-sm text-black/60">…</p>}>
-        <RoleLoginPanel role="teacher" />
-      </Suspense>
-    </AuthShell>
+    <Suspense fallback={<div className="min-h-dvh bg-white p-10 text-black/60">…</div>}>
+      <TeacherLoginSplit />
+    </Suspense>
   );
 }

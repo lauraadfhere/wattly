@@ -4,8 +4,8 @@ import { useEffect, useId, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useAuth } from "@/components/auth/AuthProvider";
-import Avatar from "@/components/Avatar";
 import LanguageGlobe from "@/components/LanguageGlobe";
+import ProfileMenu from "@/components/platform/ProfileMenu";
 
 const menuItems = [
   { href: "/about", key: "about" as const },
@@ -21,11 +21,9 @@ const menuItems = [
 export default function HeroActions() {
   const t = useTranslations("Menu");
   const tPlatform = useTranslations("Platform");
-  const { user, profile, loading } = useAuth();
+  const { user, loading } = useAuth();
   const [open, setOpen] = useState(false);
   const panelId = useId();
-
-  const displayName = profile?.display_name || user?.name || user?.email || "";
 
   useEffect(() => {
     if (!open) return;
@@ -45,7 +43,7 @@ export default function HeroActions() {
 
   return (
     <>
-      <div className="sticky top-0 z-50 border-b border-white/10 bg-[#000ea8]/90 backdrop-blur-md">
+      <div className="sticky top-0 z-50 bg-[#000ea8]">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-end gap-1 px-4 py-2 sm:px-8 lg:px-12">
           <Link
             href="/about"
@@ -74,21 +72,24 @@ export default function HeroActions() {
             </svg>
           </Link>
 
+          <a
+            href="https://www.linkedin.com/company/wattly"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex h-11 w-11 items-center justify-center text-white"
+            aria-label="LinkedIn"
+          >
+            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
+              <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.05c.53-1 1.82-2.05 3.75-2.05 4.01 0 4.75 2.64 4.75 6.07V23h-4v-6.6c0-1.57-.03-3.59-2.19-3.59-2.19 0-2.53 1.71-2.53 3.48V23h-4V8.5z" />
+            </svg>
+          </a>
+
           {loading ? (
             <span className="ms-1 h-9 w-9 animate-pulse rounded-full bg-white/15" />
           ) : user ? (
-            <Link
-              href="/profile"
-              className="ms-1 flex items-center gap-2"
-              aria-label={tPlatform("profile")}
-            >
-              <Avatar
-                name={displayName}
-                role={profile?.role}
-                size="sm"
-                src={profile?.avatar_url}
-              />
-            </Link>
+            <div className="ms-1">
+              <ProfileMenu tone="hero" />
+            </div>
           ) : null}
 
           <button

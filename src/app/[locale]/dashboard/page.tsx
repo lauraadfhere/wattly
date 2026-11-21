@@ -7,7 +7,10 @@ export default async function DashboardPage() {
 
   const cards = [
     { href: "/teachers", title: t("findTeacher"), body: t("findTeacherBody") },
+    { href: "/live-lessons", title: t("liveLessons"), body: t("liveLessonsBody") },
     { href: "/practice", title: t("practice"), body: t("practiceBody") },
+    { href: "/practice/oral", title: t("oral"), body: t("oralBody") },
+    { href: "/audiobooks", title: t("audiobooks"), body: t("audiobooksBody") },
     { href: "/lessons", title: t("lessons"), body: t("lessonsBody") },
     { href: "/assessment", title: t("assessment"), body: t("assessmentBody") },
   ] as const;

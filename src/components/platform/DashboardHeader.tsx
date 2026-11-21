@@ -5,19 +5,16 @@ import { FormEvent, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link, useRouter } from "@/i18n/navigation";
 import { useAuth } from "@/components/auth/AuthProvider";
-import Avatar from "@/components/Avatar";
 import LanguageGlobe from "@/components/LanguageGlobe";
+import ProfileMenu from "@/components/platform/ProfileMenu";
 
 export default function DashboardHeader() {
   const t = useTranslations("Platform");
   const tMenu = useTranslations("Menu");
-  const { user, profile, loading, logout } = useAuth();
+  const { user, loading, logout } = useAuth();
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  const displayName = profile?.display_name || user?.name || "";
-  const role = profile?.role;
 
   function onSearch(event: FormEvent) {
     event.preventDefault();
@@ -81,17 +78,7 @@ export default function DashboardHeader() {
             {loading ? (
               <span className="h-9 w-24 animate-pulse rounded-full bg-white/10" />
             ) : user ? (
-              <Link href="/profile" className="flex items-center gap-2 pe-1">
-                <Avatar
-                  name={displayName || user.email}
-                  role={role}
-                  size="sm"
-                  src={profile?.avatar_url}
-                />
-                <span className="hidden max-w-[8rem] truncate text-sm font-medium text-white lg:inline">
-                  {displayName || user.email}
-                </span>
-              </Link>
+              <ProfileMenu tone="dark" />
             ) : (
               <Link href="/login" className="text-sm font-semibold text-white">
                 {t("login")}

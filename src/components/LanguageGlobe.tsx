@@ -74,30 +74,36 @@ export default function LanguageGlobe({ tone = "hero" }: LanguageGlobeProps) {
       </button>
 
       {open ? (
-        <ul
-          id={menuId}
-          role="listbox"
-          className="absolute end-0 top-[calc(100%+0.35rem)] z-50 min-w-[11rem] overflow-hidden rounded-xl bg-[#2b2b2b] py-1.5 text-white shadow-[0_12px_30px_rgba(0,0,0,0.35)]"
-        >
-          {routing.locales.map((code) => (
-            <li key={code} role="option" aria-selected={code === locale}>
-              <button
-                type="button"
-                className={`block w-full px-4 py-2.5 text-start text-[15px] ${
-                  code === locale
-                    ? "bg-[#3a3a3a] font-semibold"
-                    : "font-normal hover:bg-[#353535]"
-                }`}
-                onClick={() => {
-                  setOpen(false);
-                  router.replace(pathname, { locale: code });
-                }}
-              >
-                {localeLabels[code] ?? code}
-              </button>
-            </li>
-          ))}
-        </ul>
+        <div className="absolute end-0 top-[calc(100%+0.35rem)] z-50 pt-1.5">
+          <span
+            className="absolute end-4 top-0 h-0 w-0 border-x-[7px] border-b-[8px] border-x-transparent border-b-[#f3f3f3]"
+            aria-hidden="true"
+          />
+          <ul
+            id={menuId}
+            role="listbox"
+            className="relative min-w-[11rem] overflow-hidden rounded-xl border border-[#e4e4e4] bg-[#f7f7f7] py-1.5 text-[#1a1a1a] shadow-[0_12px_28px_rgba(0,0,0,0.14)]"
+          >
+            {routing.locales.map((code) => (
+              <li key={code} role="option" aria-selected={code === locale}>
+                <button
+                  type="button"
+                  className={`block w-full px-4 py-2.5 text-start text-[15px] ${
+                    code === locale
+                      ? "bg-white font-semibold"
+                      : "font-normal hover:bg-[#ececec]"
+                  }`}
+                  onClick={() => {
+                    setOpen(false);
+                    router.replace(pathname, { locale: code });
+                  }}
+                >
+                  {localeLabels[code] ?? code}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
       ) : null}
     </div>
   );
