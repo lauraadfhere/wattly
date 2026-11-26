@@ -5,7 +5,7 @@ import { fetchActivity } from "@/lib/activities.server";
 import { fetchStory } from "@/lib/stories.server";
 
 const DEFAULT_NVIDIA_BASE_URL = "https://integrate.api.nvidia.com/v1";
-const DEFAULT_NVIDIA_MODEL = "meta/llama-3.3-70b-instruct";
+const DEFAULT_NVIDIA_MODEL = "mistralai/mistral-large-4-1t-a52b";
 const DEFAULT_OPENAI_MODEL = "gpt-4o-mini";
 
 export type BalliaiRuntimeConfig = {
@@ -15,6 +15,7 @@ export type BalliaiRuntimeConfig = {
   maxOutputTokens: number;
   temperature: number;
   timeoutMs: number;
+  reasoningEffort?: "low";
 };
 
 function num(value: string | undefined, fallback: number) {
@@ -45,7 +46,9 @@ export function balliaiConfig(): BalliaiRuntimeConfig {
       (usingOpenAi ? DEFAULT_OPENAI_MODEL : DEFAULT_NVIDIA_MODEL),
     maxOutputTokens: num(process.env.BALLIAI_MAX_OUTPUT_TOKENS, 900),
     temperature: num(process.env.BALLIAI_TEMPERATURE, 0.4),
-    timeoutMs: num(process.env.BALLIAI_REQUEST_TIMEOUT_MS, 25000),
+    timeoutMs: num(process.env.BALLIAI_REQUEST_TIMEOUT_MS, 55000),
+    // The NVIDIA reasoning model needs this to return content within the timeout.
+    reasoningEffort: usingOpenAi ? undefined : "low",
   };
 }
 
@@ -223,6 +226,7 @@ export async function callBalliai(
         model: config.model,
         temperature: config.temperature,
         max_tokens: config.maxOutputTokens,
+        ...(config.reasoningEffort ? { reasoning_effort: config.reasoningEffort } : {}),
         messages: [
           { role: "system", content: system },
           ...history.map((m) => ({ role: m.role, content: m.content })),

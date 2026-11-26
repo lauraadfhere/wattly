@@ -5,6 +5,7 @@ export function postLoginPath(profile: WattlyProfile | null | undefined): string
   if (!profile) return "/dashboard";
   if (profile.role === "admin") return "/admin";
   if (!profile.onboarding_done) return "/onboarding";
+  if (profile.role === "teacher") return "/teacher/dashboard";
   return "/dashboard";
 }
 
@@ -19,6 +20,7 @@ const GUEST_ONLY_PREFIXES = [
 
 const AUTH_REQUIRED_PREFIXES = [
   "/dashboard",
+  "/teacher/dashboard",
   "/onboarding",
   "/profile",
   "/practice",

@@ -963,6 +963,23 @@ const messages = {
     "backDashboard": "Back to dashboard",
     "backCourses": "Back to courses",
     "askBalliai": "Ask BALLIAI about this activity"
+  },
+  "TeacherDashboard": {
+    "title": "Teacher dashboard",
+    "intro": "Coach your students: assign feedback, recommend lessons and keep track of your learners.",
+    "defaultName": "Teacher",
+    "welcome": "Welcome back",
+    "studentsCount": "Students in your coaching list",
+    "notTeacher": "This page is for teacher accounts.",
+    "goStudent": "Go to the student dashboard",
+    "messages": "Messages center",
+    "messagesBody": "Talk with your students and review the feedback you have sent.",
+    "liveLessons": "Live lessons",
+    "liveLessonsBody": "Assign yourself to live classes and start sessions for kids and adults.",
+    "lessons": "Lesson library",
+    "lessonsBody": "Browse the lessons you can recommend to your students.",
+    "teachersDirectory": "Teacher directory",
+    "teachersDirectoryBody": "See how other Wattly teachers present their profiles and specialties."
   }
 } as const;
 

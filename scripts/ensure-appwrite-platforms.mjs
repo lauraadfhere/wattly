@@ -29,6 +29,16 @@ const platforms = [
     name: "Wattly Cloudflare",
     hostname: "wattly.cquesenberry5.workers.dev",
   },
+  {
+    platformId: "wattly-prod-apex",
+    name: "Wattly Production",
+    hostname: "wattl-y.co.uk",
+  },
+  {
+    platformId: "wattly-prod-www",
+    name: "Wattly Production WWW",
+    hostname: "www.wattl-y.co.uk",
+  },
 ];
 
 async function listPlatforms() {
