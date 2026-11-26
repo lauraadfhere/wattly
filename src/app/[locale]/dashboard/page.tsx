@@ -7,6 +7,7 @@ export default async function DashboardPage() {
   const t = await getTranslations("Dashboard");
 
   const cards = [
+    { href: "/messages", title: t("messages"), body: t("messagesBody") },
     { href: "/teachers", title: t("findTeacher"), body: t("findTeacherBody") },
     { href: "/live-lessons", title: t("liveLessons"), body: t("liveLessonsBody") },
     { href: "/stories", title: t("stories"), body: t("storiesBody") },

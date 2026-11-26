@@ -25,6 +25,10 @@ export type LibraryBook = {
   pdfUrl?: string;
   epubPublicId?: string;
   epubUrl?: string;
+  /** Appwrite Storage file id for the EPUB (preferred delivery). */
+  epubFileId?: string;
+  /** Appwrite Storage bucket id (defaults to library_epubs). */
+  epubBucketId?: string;
   minutes: number;
 };
 
@@ -68,6 +72,15 @@ export function libraryPageImageSrc(book: LibraryBook, page: number, width = 110
 
 export function libraryEpubSrc(book: LibraryBook) {
   return book.epubUrl || "";
+}
+
+/** True when catalog has an Appwrite Storage EPUB or a remote URL. */
+export function libraryHasEpub(book: LibraryBook) {
+  return Boolean(book.epubFileId || book.epubUrl);
+}
+
+export function libraryEpubProxySrc(book: LibraryBook) {
+  return `/api/library/epub/${book.id}`;
 }
 
 /** Fallback catalog used before Cloudinary upload finishes. */

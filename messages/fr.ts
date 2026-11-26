@@ -269,7 +269,6 @@ const messages = {
     "navLabel": "Plateforme",
     "home": "Accueil",
     "dashboard": "Tableau de bord",
-    "messages": "Messages",
     "teachers": "Professeurs",
     "practice": "Pratique",
     "onboarding": "Onboarding",
@@ -657,7 +656,8 @@ const messages = {
     "wordBank": "Saved words",
     "wordBankEmpty": "No saved words yet. Tap the star next to important words while you listen.",
     "backStories": "Back to stories",
-    "backDashboard": "Back to dashboard"
+    "backDashboard": "Back to dashboard",
+    "questionsTitle": "Questions de compréhension"
   },
   "SupportWidget": {
     "open": "Open support",
@@ -853,6 +853,23 @@ const messages = {
     "readerSearchHits": "{count} matches on this spread",
     "readerSave": "Save place",
     "readerSaved": "Place saved — you can continue from here later."
+  },
+  "Activities": {
+    "title": "Bibliothèque d’activités",
+    "intro": "Toutes les unités du programme Wattly et les sujets d’écriture, au même endroit.",
+    "curriculumTitle": "Activités du programme",
+    "curriculumIntro": "70 unités structurées en grammaire et écriture, avec étapes pédagogiques et critères de réussite.",
+    "writingTitle": "Pratique de l’écriture",
+    "writingIntro": "100 sujets d’écriture du niveau pré-A1 au C2, classés par public.",
+    "outcome": "Objectif d’apprentissage",
+    "task": "Tâche de l’apprenant",
+    "procedure": "Déroulement pédagogique",
+    "model": "Modèle et soutien linguistique",
+    "success": "Critères de réussite",
+    "after": "Après l’écriture",
+    "backActivities": "Retour aux activités",
+    "backDashboard": "Retour au tableau de bord",
+    "backCourses": "Retour aux cours"
   }
 } as const;
 

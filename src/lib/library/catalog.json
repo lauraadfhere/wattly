@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T19:08:21.536Z",
+  "updatedAt": "2026-11-21T19:28:57.946Z",
   "cloudName": "dp5g9tinm",
   "kids": [
     {
@@ -198,7 +198,9 @@
       "coverUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795271205/wattly/covers/adults-babbylon.png",
       "epubPublicId": "wattly/epubs/adults-babbylon.epub",
       "epubUrl": "https://res.cloudinary.com/dp5g9tinm/raw/upload/v1795271206/wattly/epubs/adults-babbylon.epub",
-      "minutes": 25
+      "minutes": 25,
+      "epubBucketId": "library_epubs",
+      "epubFileId": "adults-babbylon"
     },
     {
       "id": "adults-do-not-click",
@@ -214,7 +216,9 @@
       "coverUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795271208/wattly/covers/adults-do-not-click.png",
       "epubPublicId": "wattly/epubs/adults-do-not-click.epub",
       "epubUrl": "https://res.cloudinary.com/dp5g9tinm/raw/upload/v1795271209/wattly/epubs/adults-do-not-click.epub",
-      "minutes": 25
+      "minutes": 25,
+      "epubBucketId": "library_epubs",
+      "epubFileId": "adults-do-not-click"
     },
     {
       "id": "adults-sports-injuries",
@@ -230,7 +234,9 @@
       "coverUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795271212/wattly/covers/adults-sports-injuries.jpg",
       "epubPublicId": "wattly/epubs/adults-sports-injuries.epub",
       "epubUrl": "https://res.cloudinary.com/dp5g9tinm/raw/upload/v1795271214/wattly/epubs/adults-sports-injuries.epub",
-      "minutes": 25
+      "minutes": 25,
+      "epubBucketId": "library_epubs",
+      "epubFileId": "adults-sports-injuries"
     },
     {
       "id": "adults-kingdom-rainbow",
@@ -246,7 +252,9 @@
       "coverUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795271216/wattly/covers/adults-kingdom-rainbow.png",
       "epubPublicId": "wattly/epubs/adults-kingdom-rainbow.epub",
       "epubUrl": "https://res.cloudinary.com/dp5g9tinm/raw/upload/v1795271217/wattly/epubs/adults-kingdom-rainbow.epub",
-      "minutes": 25
+      "minutes": 25,
+      "epubBucketId": "library_epubs",
+      "epubFileId": "adults-kingdom-rainbow"
     },
     {
       "id": "adults-kingdom-clock",
@@ -262,7 +270,10 @@
       "coverUrl": "https://res.cloudinary.com/dp5g9tinm/image/upload/v1795271221/wattly/covers/adults-kingdom-clock.png",
       "epubPublicId": "wattly/epubs/adults-kingdom-clock.epub",
       "epubUrl": "https://res.cloudinary.com/dp5g9tinm/raw/upload/v1795271229/wattly/epubs/adults-kingdom-clock.epub",
-      "minutes": 25
+      "minutes": 25,
+      "epubBucketId": "library_epubs",
+      "epubFileId": "adults-kingdom-clock"
     }
-  ]
+  ],
+  "epubBucketId": "library_epubs"
 }

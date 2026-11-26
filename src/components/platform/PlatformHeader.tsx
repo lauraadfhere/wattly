@@ -35,6 +35,7 @@ export default function PlatformHeader() {
           className="hidden items-center gap-4 text-sm font-medium text-black md:flex"
         >
           <Link href="/dashboard">{t("dashboard")}</Link>
+          <Link href="/messages">{t("messages")}</Link>
           <Link href="/teachers">{t("teachers")}</Link>
           <Link href="/stories">{t("stories")}</Link>
           <Link href="/live-lessons">{t("liveLessons")}</Link>

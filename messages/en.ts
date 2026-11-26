@@ -484,6 +484,8 @@ const messages = {
   "Dashboard": {
     "title": "Your learning home",
     "intro": "Find a teacher, practice with AI support, and track your progress — at your pace.",
+    "messages": "Messages center",
+    "messagesBody": "Teacher conversations, feedback, and lesson notifications in one place.",
     "findTeacher": "Find a teacher",
     "findTeacherBody": "Match with inclusive teachers by level, language, and specialization.",
     "practice": "AI practice",
@@ -521,7 +523,8 @@ const messages = {
     "wordBank": "Saved words",
     "wordBankEmpty": "No saved words yet. Tap the star next to important words while you listen.",
     "backStories": "Back to stories",
-    "backDashboard": "Back to dashboard"
+    "backDashboard": "Back to dashboard",
+    "questionsTitle": "Comprehension questions"
   },
   "Library": {
     "hubIntro": "Kids PDF storybooks with covers, plus adult Kindle-style EPUB reading — mobile and tablet friendly.",
@@ -836,7 +839,44 @@ const messages = {
     "inboxEyebrow": "From your teachers",
     "inboxTitle": "Feedback & recommended lessons",
     "yourFeedback": "Teacher feedback",
-    "yourRecs": "Recommended lessons"
+    "yourRecs": "Recommended lessons",
+    "openMessages": "Open Messages Center"
+  },
+  "MessagesCenter": {
+    "pageTitle": "Messages Center",
+    "pageIntro": "Talk with your teachers, read feedback, and keep lesson notifications in context.",
+    "eyebrow": "Inbox",
+    "title": "Messages & teacher feedback",
+    "intro": "Every teacher conversation stays here — including feedback and lesson recommendations.",
+    "loading": "Loading messages…",
+    "needLogin": "Sign in to open your Messages Center.",
+    "login": "Log in",
+    "unreadBadge": "{count} unread",
+    "startWithStudent": "Message a student",
+    "startWithTeacher": "Message a teacher",
+    "startThread": "Start conversation",
+    "threadStarted": "Conversation started — reply here anytime.",
+    "conversations": "Conversations",
+    "emptyThreads": "No conversations yet. Start one above, or wait for teacher feedback.",
+    "contextWith": "{teacher} ↔ {student}",
+    "filterAll": "All",
+    "filterFeedback": "Feedback",
+    "filterChat": "Messages",
+    "emptyMessages": "No items in this filter.",
+    "kindFeedback": "Feedback",
+    "kindRecommendation": "Lesson",
+    "kindNotification": "Notice",
+    "kindChat": "Message",
+    "ratingLine": "Progress {count}/5",
+    "lessonLine": "Recommended: {title}",
+    "openLessons": "Open lessons",
+    "composeLabel": "Write a message",
+    "composePlaceholder": "Write a reply…",
+    "send": "Send",
+    "pickThread": "Select a conversation to see messages and feedback.",
+    "inboxHint": "Feedback and teacher notes also appear in Messages Center.",
+    "openInbox": "Open Messages Center",
+    "openInboxUnread": "Open inbox ({count})"
   },
   "Practice": {
     "title": "Practice hub",
@@ -853,6 +893,23 @@ const messages = {
     "pronunciation": "Pronunciation",
     "pronunciationBody": "Optional supportive feedback — never required.",
     "pronunciationDetail": "Try sounds when you want. Feedback is gentle and visual. You can skip speaking entirely."
+  },
+  "Activities": {
+    "title": "Activity library",
+    "intro": "Every Wattly curriculum unit and writing prompt, ready in one place.",
+    "curriculumTitle": "Curriculum activities",
+    "curriculumIntro": "70 structured units across grammar and writing, with teaching steps and success criteria.",
+    "writingTitle": "Writing practice",
+    "writingIntro": "100 writing prompts from Pre-A1 to C2, grouped by audience.",
+    "outcome": "Learning outcome",
+    "task": "Learner task",
+    "procedure": "Teaching procedure",
+    "model": "Model and language support",
+    "success": "Success criteria",
+    "after": "After writing",
+    "backActivities": "Back to activities",
+    "backDashboard": "Back to dashboard",
+    "backCourses": "Back to courses"
   }
 } as const;
 

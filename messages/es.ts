@@ -269,7 +269,6 @@ const messages = {
     "navLabel": "Plataforma",
     "home": "Inicio",
     "dashboard": "Panel",
-    "messages": "Mensajes",
     "teachers": "Profesores",
     "practice": "Práctica",
     "onboarding": "Onboarding",
@@ -657,7 +656,8 @@ const messages = {
     "wordBank": "Saved words",
     "wordBankEmpty": "No saved words yet. Tap the star next to important words while you listen.",
     "backStories": "Back to stories",
-    "backDashboard": "Back to dashboard"
+    "backDashboard": "Back to dashboard",
+    "questionsTitle": "Preguntas de comprensión"
   },
   "SupportWidget": {
     "open": "Open support",
@@ -853,6 +853,23 @@ const messages = {
     "readerSearchHits": "{count} matches on this spread",
     "readerSave": "Save place",
     "readerSaved": "Place saved — you can continue from here later."
+  },
+  "Activities": {
+    "title": "Biblioteca de actividades",
+    "intro": "Todas las unidades del currículo Wattly y las consignas de escritura, en un solo lugar.",
+    "curriculumTitle": "Actividades del currículo",
+    "curriculumIntro": "70 unidades estructuradas de gramática y escritura, con pasos de enseñanza y criterios de logro.",
+    "writingTitle": "Práctica de escritura",
+    "writingIntro": "100 consignas de escritura de Pre-A1 a C2, agrupadas por público.",
+    "outcome": "Objetivo de aprendizaje",
+    "task": "Tarea del estudiante",
+    "procedure": "Procedimiento de enseñanza",
+    "model": "Modelo y apoyo lingüístico",
+    "success": "Criterios de logro",
+    "after": "Después de escribir",
+    "backActivities": "Volver a las actividades",
+    "backDashboard": "Volver al panel",
+    "backCourses": "Volver a los cursos"
   }
 } as const;
 

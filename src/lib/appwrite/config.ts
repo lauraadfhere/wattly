@@ -2,6 +2,10 @@ export const appwriteConfig = {
   endpoint: process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT!,
   projectId: process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID!,
   databaseId: process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID || "wattly",
+  buckets: {
+    libraryEpubs:
+      process.env.APPWRITE_LIBRARY_EPUBS_BUCKET || "library_epubs",
+  },
   tables: {
     wattly: "wattly",
     profiles: "profiles",
@@ -13,5 +17,7 @@ export const appwriteConfig = {
     videos: "videos",
     contentItems: "content_items",
     liveLessons: "live_lessons",
+    stories: "stories",
+    activities: "activities",
   },
 } as const;

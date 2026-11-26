@@ -4,7 +4,13 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { libraryEpubSrc, libraryPageCount, type LibraryBook } from "@/lib/library";
+import {
+  libraryEpubProxySrc,
+  libraryEpubSrc,
+  libraryHasEpub,
+  libraryPageCount,
+  type LibraryBook,
+} from "@/lib/library";
 import {
   loadReadingProgress,
   saveReadingProgress,
@@ -55,6 +61,28 @@ declare global {
   interface Window {
     ePub?: (url: string | ArrayBuffer, options?: Record<string, unknown>) => EpubBook;
   }
+}
+
+function waitForHost(
+  getEl: () => HTMLDivElement | null,
+  timeoutMs = 8000,
+) {
+  return new Promise<HTMLDivElement>((resolve, reject) => {
+    const started = Date.now();
+    const tick = () => {
+      const el = getEl();
+      if (el) {
+        resolve(el);
+        return;
+      }
+      if (Date.now() - started > timeoutMs) {
+        reject(new Error("Reader host missing"));
+        return;
+      }
+      requestAnimationFrame(tick);
+    };
+    tick();
+  });
 }
 
 function waitForSize(el: HTMLElement, timeoutMs = 8000) {
@@ -130,7 +158,8 @@ export default function KindleEpubReader({ book }: Props) {
   const [locationTotal, setLocationTotal] = useState(libraryPageCount(book) * 6);
   const [currentCfi, setCurrentCfi] = useState<string | undefined>();
   const remoteSrc = libraryEpubSrc(book);
-  const proxySrc = `/api/library/epub/${book.id}`;
+  const proxySrc = libraryEpubProxySrc(book);
+  const hasSource = libraryHasEpub(book);
 
   useEffect(() => {
     setPercent(loadReadingProgress(book.id).percent);
@@ -140,12 +169,13 @@ export default function KindleEpubReader({ book }: Props) {
     let cancelled = false;
 
     async function boot() {
-      if (!remoteSrc || !hostRef.current) {
-        setError(t("epubMissing"));
-        return;
-      }
+      setError(null);
+      setReady(false);
 
       try {
+        const host = await waitForHost(() => hostRef.current);
+        if (cancelled) return;
+
         await loadScript(
           "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js",
           "jszip",
@@ -154,12 +184,18 @@ export default function KindleEpubReader({ book }: Props) {
           "https://cdnjs.cloudflare.com/ajax/libs/epub.js/0.3.93/epub.min.js",
           "epubjs",
         );
-        if (cancelled || !window.ePub || !hostRef.current) return;
+        if (cancelled || !window.ePub) return;
 
-        // Prefer same-origin proxy, fall back to Cloudinary raw URL
+        // Same-origin Appwrite/Cloudinary proxy first; optional remote fallback.
+        const sources = [proxySrc, remoteSrc].filter(Boolean) as string[];
+        if (!sources.length && !hasSource) {
+          setError(t("epubMissing"));
+          return;
+        }
+
         let buffer: ArrayBuffer | null = null;
         let lastError: unknown = null;
-        for (const src of [proxySrc, remoteSrc]) {
+        for (const src of sources.length ? sources : [proxySrc]) {
           try {
             const res = await fetch(src);
             if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -171,12 +207,17 @@ export default function KindleEpubReader({ book }: Props) {
           }
         }
         if (!buffer) {
+          if (!hasSource) {
+            setError(t("epubMissing"));
+            return;
+          }
           throw lastError instanceof Error
             ? lastError
             : new Error(t("epubFailed"));
         }
 
-        hostRef.current.innerHTML = "";
+        if (cancelled) return;
+        host.innerHTML = "";
         const epubBook = window.ePub(buffer);
         await epubBook.ready;
         if (epubBook.opened) await epubBook.opened;
@@ -189,11 +230,11 @@ export default function KindleEpubReader({ book }: Props) {
           // locations optional
         }
 
-        const size = await waitForSize(hostRef.current);
+        const size = await waitForSize(host);
         if (cancelled) return;
 
         const wide = size.width >= 720;
-        const rendition = epubBook.renderTo(hostRef.current, {
+        const rendition = epubBook.renderTo(host, {
           width: size.width,
           height: size.height,
           flow: "paginated",
@@ -271,7 +312,9 @@ export default function KindleEpubReader({ book }: Props) {
         renditionRef.current = rendition;
         setReady(true);
       } catch (err) {
-        setError(err instanceof Error ? err.message : t("epubFailed"));
+        if (!cancelled) {
+          setError(err instanceof Error ? err.message : t("epubFailed"));
+        }
       }
     }
 
@@ -289,7 +332,7 @@ export default function KindleEpubReader({ book }: Props) {
     };
     // fontSize applied in a separate effect after boot
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [book.id, remoteSrc, proxySrc, t]);
+  }, [book.id, remoteSrc, proxySrc, hasSource, t]);
 
   useEffect(() => {
     if (!renditionRef.current || !ready) return;
@@ -542,23 +585,20 @@ export default function KindleEpubReader({ book }: Props) {
               </span>
             </button>
 
+            <div
+              ref={hostRef}
+              className="absolute inset-x-12 inset-y-0 sm:inset-x-14"
+              aria-hidden={Boolean(error) || !ready}
+            />
             {error ? (
-              <p className="absolute inset-0 flex items-center justify-center px-6 text-center text-sm text-[#8a1010]">
+              <p className="absolute inset-0 z-10 flex items-center justify-center bg-white px-6 text-center text-sm text-[#8a1010]">
                 {error}
               </p>
-            ) : (
-              <>
-                <div
-                  ref={hostRef}
-                  className="absolute inset-x-12 inset-y-0 sm:inset-x-14"
-                />
-                {!ready ? (
-                  <p className="absolute inset-0 flex items-center justify-center text-sm text-black/45">
-                    {t("loadingReader")}
-                  </p>
-                ) : null}
-              </>
-            )}
+            ) : !ready ? (
+              <p className="absolute inset-0 z-10 flex items-center justify-center text-sm text-black/45">
+                {t("loadingReader")}
+              </p>
+            ) : null}
           </div>
 
           {/* Kindle footer: scrubber + Location X of Y • Z% */}

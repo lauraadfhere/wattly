@@ -1,4 +1,4 @@
-import { Client, TablesDB, Users, Account } from "node-appwrite";
+import { Client, TablesDB, Users, Account, Storage } from "node-appwrite";
 import { appwriteConfig } from "./config";
 
 export function createAdminClient() {
@@ -10,6 +10,7 @@ export function createAdminClient() {
   return {
     client,
     tablesDB: new TablesDB(client),
+    storage: new Storage(client),
     users: new Users(client),
     account: new Account(client),
   };

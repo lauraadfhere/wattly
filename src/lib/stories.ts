@@ -7,7 +7,8 @@ export type StoryWord = {
 
 export type Story = {
   id: string;
-  audience: StoryAudience;
+  /** Set for the kids/adults shelves; CEFR stories from the catalog leave it unset. */
+  audience?: StoryAudience;
   title: string;
   author: string;
   level: string;
@@ -17,6 +18,8 @@ export type Story = {
   summary: string;
   /** Spoken script broken into words for smart tracking */
   words: StoryWord[];
+  /** Comprehension questions (CEFR catalog stories only) */
+  questions?: string[];
 };
 
 export const stories: Story[] = [

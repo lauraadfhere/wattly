@@ -43,6 +43,7 @@ export default function DashboardHeader() {
             aria-label={t("navLabel")}
             className="dashboard-nav flex items-center gap-6 text-[15px] font-medium text-white"
           >
+            <Link href="/messages">{t("messages")}</Link>
             <Link href="/teachers">{t("teachers")}</Link>
             <Link href="/stories">{t("stories")}</Link>
             <Link href="/live-lessons">{t("liveLessons")}</Link>
@@ -197,6 +198,9 @@ export default function DashboardHeader() {
             <div className="grid gap-1 text-sm">
               <Link href="/dashboard" className="rounded-lg px-3 py-2.5 hover:bg-[#353535]" onClick={() => setMobileOpen(false)}>
                 {t("dashboard")}
+              </Link>
+              <Link href="/messages" className="rounded-lg px-3 py-2.5 hover:bg-[#353535]" onClick={() => setMobileOpen(false)}>
+                {t("messages")}
               </Link>
               <Link href="/teachers" className="rounded-lg px-3 py-2.5 hover:bg-[#353535]" onClick={() => setMobileOpen(false)}>
                 {t("teachers")}

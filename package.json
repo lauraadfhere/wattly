@@ -20,7 +20,8 @@
     "cf:sync-vars": "node --env-file=.env.local scripts/sync-cloudflare-vars.mjs",
     "appwrite:platforms": "node --env-file=.env.local scripts/ensure-appwrite-platforms.mjs",
     "curriculum:parse": "node scripts/parse-kinpal-curriculum.mjs",
-    "library:upload": "node --env-file=.env.local scripts/upload-library-assets.mjs"
+    "library:upload": "node --env-file=.env.local scripts/upload-library-assets.mjs",
+    "library:epubs:appwrite": "node --env-file=.env.local scripts/upload-library-epubs-appwrite.mjs"
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.20.17",

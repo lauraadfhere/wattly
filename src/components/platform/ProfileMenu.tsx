@@ -101,6 +101,9 @@ export default function ProfileMenu({ tone = "dark" }: ProfileMenuProps) {
           <Link href="/dashboard" role="menuitem" className={itemClass} onClick={() => setOpen(false)}>
             {t("dashboard")}
           </Link>
+          <Link href="/messages" role="menuitem" className={itemClass} onClick={() => setOpen(false)}>
+            {t("messages")}
+          </Link>
           <Link href="/teachers" role="menuitem" className={itemClass} onClick={() => setOpen(false)}>
             {t("teachers")}
           </Link>

@@ -269,7 +269,6 @@ const messages = {
     "navLabel": "المنصة",
     "home": "الرئيسية",
     "dashboard": "لوحة التحكم",
-    "messages": "الرسائل",
     "teachers": "المعلمون",
     "practice": "التدريب",
     "onboarding": "البدء",
@@ -657,7 +656,8 @@ const messages = {
     "wordBank": "Saved words",
     "wordBankEmpty": "No saved words yet. Tap the star next to important words while you listen.",
     "backStories": "Back to stories",
-    "backDashboard": "Back to dashboard"
+    "backDashboard": "Back to dashboard",
+    "questionsTitle": "أسئلة الفهم"
   },
   "SupportWidget": {
     "open": "Open support",
@@ -853,6 +853,23 @@ const messages = {
     "readerSearchHits": "{count} matches on this spread",
     "readerSave": "Save place",
     "readerSaved": "Place saved — you can continue from here later."
+  },
+  "Activities": {
+    "title": "مكتبة الأنشطة",
+    "intro": "جميع وحدات منهج Wattly وأنشطة الكتابة في مكان واحد.",
+    "curriculumTitle": "أنشطة المنهج",
+    "curriculumIntro": "70 وحدة منظّمة في القواعد والكتابة، مع خطوات التدريس ومعايير النجاح.",
+    "writingTitle": "تدريب الكتابة",
+    "writingIntro": "100 نشاط كتابة من Pre-A1 إلى C2، مرتّبة حسب الفئة.",
+    "outcome": "هدف التعلّم",
+    "task": "مهمة المتعلّم",
+    "procedure": "خطوات التدريس",
+    "model": "النموذج والدعم اللغوي",
+    "success": "معايير النجاح",
+    "after": "بعد الكتابة",
+    "backActivities": "العودة إلى الأنشطة",
+    "backDashboard": "العودة إلى لوحة التحكم",
+    "backCourses": "العودة إلى الدورات"
   }
 } as const;
 

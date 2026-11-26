@@ -6,6 +6,10 @@ import { Link } from "@/i18n/navigation";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { kidsLessons, advancedLessons } from "@/lib/lessons";
 import {
+  notifyFeedbackInMessages,
+  notifyRecommendationInMessages,
+} from "@/lib/messages-center";
+import {
   addFeedback,
   addRecommendation,
   coachingStudents,
@@ -73,7 +77,7 @@ export default function TeacherCoachingPanel({
       setMessage(t("needNote"));
       return;
     }
-    addFeedback({
+    const item = addFeedback({
       teacherId,
       teacherName,
       studentKey: studentKey === "custom" ? `custom:${name.toLowerCase()}` : studentKey,
@@ -81,6 +85,7 @@ export default function TeacherCoachingPanel({
       rating,
       note: note.trim(),
     });
+    notifyFeedbackInMessages(item);
     setFeedbackList(loadFeedback(teacherId));
     setNote("");
     setMessage(t("feedbackSaved"));
@@ -98,7 +103,7 @@ export default function TeacherCoachingPanel({
       setMessage(t("needLesson"));
       return;
     }
-    addRecommendation({
+    const item = addRecommendation({
       teacherId,
       teacherName,
       studentKey: studentKey === "custom" ? `custom:${name.toLowerCase()}` : studentKey,
@@ -108,6 +113,7 @@ export default function TeacherCoachingPanel({
       track: lesson.trackLabel,
       reason: reason.trim() || t("defaultReason"),
     });
+    notifyRecommendationInMessages(item);
     setRecs(loadRecommendations(teacherId));
     setReason("");
     setMessage(t("recSaved"));
@@ -121,6 +127,12 @@ export default function TeacherCoachingPanel({
         </p>
         <h3 className="mt-1 text-xl font-bold text-[#0b0b1a]">{t("title")}</h3>
         <p className="mt-1 text-sm text-black/60">{t("intro")}</p>
+        <Link
+          href="/messages"
+          className="mt-2 inline-block text-sm font-semibold text-[#0016BD] underline"
+        >
+          {t("openMessages")}
+        </Link>
       </div>
 
       {message ? (

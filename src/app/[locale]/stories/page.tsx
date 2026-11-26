@@ -2,13 +2,15 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import LibraryShelf from "@/components/library/LibraryShelf";
 import PlatformShell from "@/components/platform/PlatformShell";
-import { storiesFor } from "@/lib/stories";
+import { fetchStories } from "@/lib/stories.server";
 
 export default async function StoriesHubPage() {
   const t = await getTranslations("Stories");
   const tLib = await getTranslations("Library");
-  const listeningKids = storiesFor("kids");
-  const listeningAdults = storiesFor("adults");
+  const catalog = await fetchStories();
+  const listeningKids = catalog.filter((s) => s.audience === "kids");
+  const listeningAdults = catalog.filter((s) => s.audience === "adults");
+  const cefrStories = catalog.filter((s) => !s.audience);
 
   return (
     <PlatformShell title={t("title")} intro={tLib("hubIntro")} gate="auth">
@@ -53,6 +55,22 @@ export default async function StoriesHubPage() {
             </ul>
           </div>
         </div>
+      </section>
+
+      <section className="mt-12 border-t border-black/10 pt-8">
+        <ul className="space-y-2">
+          {cefrStories.map((story) => (
+            <li key={story.id}>
+              <Link
+                href={`/stories/${story.id}`}
+                className="block rounded-xl border border-black/10 bg-white px-3 py-2 text-sm font-medium hover:border-[#0016BD]/40"
+              >
+                <span className="text-black/45">{story.level} · </span>
+                {story.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <p className="mt-8">

@@ -4,7 +4,9 @@ import { notFound } from "next/navigation";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import PlatformShell from "@/components/platform/PlatformShell";
+import BookTrialLink from "@/components/teachers/BookTrialLink";
 import TeacherCoachingPanel from "@/components/teachers/TeacherCoachingPanel";
+import TeacherTraceBeacon from "@/components/teachers/TeacherTraceBeacon";
 import { getTeacherById, teacherIds } from "@/lib/teachers";
 
 export function generateStaticParams() {
@@ -30,6 +32,7 @@ async function TeacherProfileContent({
 
   return (
     <PlatformShell title={t("profileTitle")}>
+      <TeacherTraceBeacon teacherId={teacher.id} />
       <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
         <Image
           src={teacher.image}
@@ -70,12 +73,7 @@ async function TeacherProfileContent({
       </div>
 
       <div className="mt-6 flex flex-wrap gap-3">
-        <Link
-          href="/dashboard"
-          className="rounded-full bg-[#0016BD] px-5 py-3 text-sm font-semibold text-white"
-        >
-          {t("bookTrial")}
-        </Link>
+        <BookTrialLink teacherId={teacher.id} label={t("bookTrial")} />
         <Link
           href="/teachers"
           className="rounded-full border border-[#0016BD]/25 px-5 py-3 text-sm font-semibold text-[#0016BD]"
