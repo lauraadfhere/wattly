@@ -218,7 +218,10 @@ const messages = {
     "curriculumEyebrow": "Kinpal English Academy",
     "curriculumTitle": "A1→C1 grammar & reading activities",
     "curriculumBody": "50 grammar lessons and 50 reading activities with timers, answer check, and full answer keys — structured for focused study sessions.",
-    "curriculumCta": "Open full curriculum"
+    "curriculumCta": "Open full curriculum",
+    "coversKicker": "Bibliothèque de cours Wattly",
+    "coversTitle": "Dix cours, une seule plateforme",
+    "coversIntro": "Chaque couverture ouvre l'espace Wattly correspondant — niveaux, grammaire, vocabulaire, expression orale, écoute, lecture, écriture ou préparation d'examen."
   },
   "Policies": {
     "title": "Politiques et conditions",
@@ -636,7 +639,55 @@ const messages = {
     "conversationDetail": "Pratiquez commander ou vous présenter. Une question à la fois. Pas de chrono ni de score.",
     "pronunciation": "Prononciation",
     "pronunciationBody": "Retour bienveillant optionnel — jamais obligatoire.",
-    "pronunciationDetail": "Essayez les sons si vous voulez. Retour doux et visuel. Vous pouvez éviter de parler."
+    "pronunciationDetail": "Essayez les sons si vous voulez. Retour doux et visuel. Vous pouvez éviter de parler.",
+    "balliaiTitle": "Découvrez BALLIAI — votre compagnon d'apprentissage de l'anglais",
+    "balliaiBody": "Posez vos questions sur la grammaire, le vocabulaire, la lecture ou l'écriture. BALLIAI répond à votre niveau CECRL et peut s'appuyer sur l'histoire ou l'activité Wattly ouverte.",
+    "balliaiCta": "Discuter avec BALLIAI",
+    "balliaiIntro": "Votre assistant d'anglais par IA. Choisissez un niveau et un mode, puis posez votre question — avec le contexte de la leçon quand vous arrivez depuis une histoire ou une activité.",
+    "balliaiTagline": "Votre compagnon d'anglais Wattly",
+    "balliaiGreeting": "Bonjour ! Je suis BALLIAI, votre assistant d'anglais Wattly. Que souhaitez-vous apprendre aujourd'hui ?",
+    "balliaiPlaceholder": "Une question de grammaire, un mot, une histoire, votre texte…",
+    "balliaiSend": "Envoyer",
+    "balliaiThinking": "BALLIAI réfléchit…",
+    "balliaiClear": "Nouvelle discussion",
+    "balliaiLevel": "Niveau CECRL",
+    "balliaiModeLabel": "Mode",
+    "balliaiLesson": "Leçon Wattly",
+    "balliaiLessonNote": "BALLIAI utilise cette leçon comme source principale et vous le signale si la réponse ne s'y trouve pas.",
+    "balliaiMoreTitle": "Continuer à pratiquer",
+    "balliaiMoreActivities": "Bibliothèque d'activités (170)",
+    "balliaiMoreStories": "Histoires et questions",
+    "balliaiMorePractice": "Espace d'entraînement",
+    "balliaiDisclaimer": "BALLIAI est un assistant d'apprentissage, pas un enseignant ni un organisme d'examen. Ne partagez jamais d'informations personnelles.",
+    "balliaiSetupTitle": "BALLIAI attend sa clé de modèle",
+    "balliaiSetupBody": "Le chat est prêt, mais aucune clé de modèle n'est encore configurée sur le serveur. Ajoutez NVIDIA_API_KEY comme secret du Worker pour l'activer.",
+    "modeAsk": "Demander à BALLIAI",
+    "modeGrammar": "Coach de grammaire",
+    "modeVocabulary": "Coach de vocabulaire",
+    "modeReading": "Aide à la lecture",
+    "modeWriting": "Coach d'écriture",
+    "modeConversation": "Pratique de conversation",
+    "modeExam": "Préparation d'examen",
+    "chipAsk": "Posez-moi une question sur votre leçon d'anglais.",
+    "chipGrammar": "Explique simplement le present perfect.",
+    "chipVocabulary": "Apprends-moi cinq mots sur les voyages.",
+    "chipWriting": "Donne-moi un avis sur un court paragraphe.",
+    "waysTitle": "Pratiquez à votre façon",
+    "contextKicker": "Depuis le backend",
+    "contextTitle": "Contexte de pratique",
+    "contextIntro": "Des histoires avec questions de compréhension et des activités du programme, directement depuis le catalogue Wattly. Ouvrez-en une ou confiez-la à BALLIAI.",
+    "storyLabel": "Histoire + questions",
+    "questionCount": "{count} questions de compréhension",
+    "openStory": "Lire l'histoire",
+    "askBalliai": "Demander à BALLIAI",
+    "contextCurriculum": "Activités du programme",
+    "contextWriting": "Pratique d'écriture",
+    "allActivities": "Les 170 activités",
+    "allStories": "Toutes les histoires",
+    "errTooLong": "Ce message est un peu long — merci de le raccourcir.",
+    "errRateLimited": "Vous avez envoyé beaucoup de messages. Patientez quelques minutes.",
+    "errTimeout": "BALLIAI a mis trop de temps à répondre. Réessayez.",
+    "errGeneric": "BALLIAI n'a pas pu répondre. Réessayez."
   },
   "Stories": {
     "title": "Stories",
@@ -657,7 +708,8 @@ const messages = {
     "wordBankEmpty": "No saved words yet. Tap the star next to important words while you listen.",
     "backStories": "Back to stories",
     "backDashboard": "Back to dashboard",
-    "questionsTitle": "Questions de compréhension"
+    "questionsTitle": "Questions de compréhension",
+    "askBalliai": "Demander à BALLIAI à propos de cette histoire"
   },
   "SupportWidget": {
     "open": "Open support",
@@ -869,7 +921,8 @@ const messages = {
     "after": "Après l’écriture",
     "backActivities": "Retour aux activités",
     "backDashboard": "Retour au tableau de bord",
-    "backCourses": "Retour aux cours"
+    "backCourses": "Retour aux cours",
+    "askBalliai": "Demander à BALLIAI à propos de cette activité"
   }
 } as const;
 

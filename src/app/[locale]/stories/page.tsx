@@ -13,7 +13,7 @@ export default async function StoriesHubPage() {
   const cefrStories = catalog.filter((s) => !s.audience);
 
   return (
-    <PlatformShell title={t("title")} intro={tLib("hubIntro")} gate="auth">
+    <PlatformShell title={t("title")} intro={tLib("hubIntro")} gate="none">
       <LibraryShelf />
 
       <section className="mt-12 border-t border-black/10 pt-8">

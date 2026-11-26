@@ -218,7 +218,10 @@
     "curriculumEyebrow": "Kinpal English Academy",
     "curriculumTitle": "A1→C1 grammar & reading activities",
     "curriculumBody": "50 grammar lessons and 50 reading activities with timers, answer check, and full answer keys — structured for focused study sessions.",
-    "curriculumCta": "Open full curriculum"
+    "curriculumCta": "Open full curriculum",
+    "coversKicker": "Biblioteca de cursos Wattly",
+    "coversTitle": "Diez cursos, una plataforma",
+    "coversIntro": "Cada portada abre la sección correspondiente de Wattly — niveles, gramática, vocabulario, expresión oral, escucha, lectura, escritura o preparación de exámenes."
   },
   "Policies": {
     "title": "Políticas y términos",
@@ -636,7 +639,55 @@
     "conversationDetail": "Practica pedir comida o presentarte. Una pregunta a la vez. Sin cronómetro ni puntuación.",
     "pronunciation": "Pronunciación",
     "pronunciationBody": "Feedback de apoyo opcional — nunca obligatorio.",
-    "pronunciationDetail": "Prueba sonidos si quieres. Feedback amable y visual. Puedes no hablar."
+    "pronunciationDetail": "Prueba sonidos si quieres. Feedback amable y visual. Puedes no hablar.",
+    "balliaiTitle": "Conoce a BALLIAI — tu compañero de inglés",
+    "balliaiBody": "Pregunta sobre gramática, vocabulario, lectura o escritura. BALLIAI responde a tu nivel MCER y puede usar la historia o actividad de Wattly que estás viendo.",
+    "balliaiCta": "Chatear con BALLIAI",
+    "balliaiIntro": "Tu asistente de inglés con IA. Elige un nivel y un modo y pregunta lo que quieras — con contexto de la lección cuando llegas desde una historia o actividad.",
+    "balliaiTagline": "Tu compañero de inglés de Wattly",
+    "balliaiGreeting": "¡Hola! Soy BALLIAI, tu asistente de inglés de Wattly. ¿Qué te gustaría aprender hoy?",
+    "balliaiPlaceholder": "Pregunta sobre gramática, una palabra, una historia o tu texto…",
+    "balliaiSend": "Enviar",
+    "balliaiThinking": "BALLIAI está pensando…",
+    "balliaiClear": "Nuevo chat",
+    "balliaiLevel": "Nivel MCER",
+    "balliaiModeLabel": "Modo",
+    "balliaiLesson": "Lección de Wattly",
+    "balliaiLessonNote": "BALLIAI usa esta lección como fuente principal y te avisa si la respuesta no está en ella.",
+    "balliaiMoreTitle": "Sigue practicando",
+    "balliaiMoreActivities": "Biblioteca de actividades (170)",
+    "balliaiMoreStories": "Historias y preguntas",
+    "balliaiMorePractice": "Centro de práctica",
+    "balliaiDisclaimer": "BALLIAI es un asistente de aprendizaje, no un profesor ni una entidad de exámenes. Nunca compartas datos personales.",
+    "balliaiSetupTitle": "BALLIAI necesita su clave de modelo",
+    "balliaiSetupBody": "El chat está creado y funcionando, pero aún no hay clave de modelo en el servidor. Añade NVIDIA_API_KEY como secreto del Worker para activarlo.",
+    "modeAsk": "Preguntar a BALLIAI",
+    "modeGrammar": "Entrenador de gramática",
+    "modeVocabulary": "Entrenador de vocabulario",
+    "modeReading": "Ayuda de lectura",
+    "modeWriting": "Entrenador de escritura",
+    "modeConversation": "Práctica de conversación",
+    "modeExam": "Práctica de examen",
+    "chipAsk": "Pregúntame lo que quieras sobre tu lección de inglés.",
+    "chipGrammar": "Explica el present perfect de forma sencilla.",
+    "chipVocabulary": "Enséñame cinco palabras sobre viajes.",
+    "chipWriting": "Dame comentarios sobre un párrafo corto.",
+    "waysTitle": "Practica a tu manera",
+    "contextKicker": "Desde el backend",
+    "contextTitle": "Contexto de práctica",
+    "contextIntro": "Historias con preguntas de comprensión y actividades del plan de estudios, directas del catálogo de Wattly. Abre una o pásasela a BALLIAI.",
+    "storyLabel": "Historia + preguntas",
+    "questionCount": "{count} preguntas de comprensión",
+    "openStory": "Leer la historia",
+    "askBalliai": "Preguntar a BALLIAI",
+    "contextCurriculum": "Actividades del plan",
+    "contextWriting": "Práctica de escritura",
+    "allActivities": "Las 170 actividades",
+    "allStories": "Todas las historias",
+    "errTooLong": "Ese mensaje es un poco largo — acórtalo, por favor.",
+    "errRateLimited": "Has enviado muchos mensajes. Espera unos minutos.",
+    "errTimeout": "BALLIAI tardó demasiado en responder. Inténtalo de nuevo.",
+    "errGeneric": "BALLIAI no pudo responder ahora. Inténtalo de nuevo."
   },
   "Stories": {
     "title": "Stories",
@@ -657,7 +708,8 @@
     "wordBankEmpty": "No saved words yet. Tap the star next to important words while you listen.",
     "backStories": "Back to stories",
     "backDashboard": "Back to dashboard",
-    "questionsTitle": "Preguntas de comprensión"
+    "questionsTitle": "Preguntas de comprensión",
+    "askBalliai": "Preguntar a BALLIAI sobre esta historia"
   },
   "SupportWidget": {
     "open": "Open support",
@@ -869,6 +921,7 @@
     "after": "Después de escribir",
     "backActivities": "Volver a las actividades",
     "backDashboard": "Volver al panel",
-    "backCourses": "Volver a los cursos"
+    "backCourses": "Volver a los cursos",
+    "askBalliai": "Preguntar a BALLIAI sobre esta actividad"
   }
 }

@@ -36,7 +36,7 @@ export default async function ActivityDetailPage({ params }: Props) {
   ].filter((s) => s.body);
 
   return (
-    <PlatformShell title={activity.title} gate="auth">
+    <PlatformShell title={activity.title} gate="none">
       <article className="rounded-2xl border-2 border-black/10 bg-white p-5">
         <p className="text-xs font-bold uppercase tracking-wide text-black/45">
           {activity.externalId} · {meta.join(" · ")}
@@ -51,6 +51,13 @@ export default async function ActivityDetailPage({ params }: Props) {
           ))}
         </div>
       </article>
+
+      <Link
+        href={`/practice/conversation?activity=${activity.id}&mode=grammar`}
+        className="mt-5 inline-flex rounded-full bg-[#0016BD] px-5 py-2.5 text-sm font-bold text-white"
+      >
+        {t("askBalliai")}
+      </Link>
 
       <p className="mt-8 flex flex-wrap gap-4 text-sm">
         <Link

@@ -250,7 +250,10 @@
         "title": "Exam readiness",
         "body": "Structured prep with flexible formats — no pressure timers."
       }
-    }
+    },
+    "coversKicker": "Wattly course library",
+    "coversTitle": "Ten courses, one platform",
+    "coversIntro": "Each cover opens the matching Wattly shelf — levels, grammar, vocabulary, speaking, listening, reading, writing or exam preparation."
   },
   "Curriculum": {
     "pageTitle": "Kinpal curriculum",
@@ -524,7 +527,8 @@
     "wordBankEmpty": "No saved words yet. Tap the star next to important words while you listen.",
     "backStories": "Back to stories",
     "backDashboard": "Back to dashboard",
-    "questionsTitle": "Comprehension questions"
+    "questionsTitle": "Comprehension questions",
+    "askBalliai": "Ask BALLIAI about this story"
   },
   "Library": {
     "hubIntro": "Kids PDF storybooks with covers, plus adult Kindle-style EPUB reading — mobile and tablet friendly.",
@@ -892,7 +896,55 @@
     "conversationDetail": "Practice ordering food or introducing yourself. Ask one question at a time. No timers, no scores.",
     "pronunciation": "Pronunciation",
     "pronunciationBody": "Optional supportive feedback — never required.",
-    "pronunciationDetail": "Try sounds when you want. Feedback is gentle and visual. You can skip speaking entirely."
+    "pronunciationDetail": "Try sounds when you want. Feedback is gentle and visual. You can skip speaking entirely.",
+    "balliaiTitle": "Meet BALLIAI — your English learning companion",
+    "balliaiBody": "Ask about grammar, vocabulary, reading or writing. BALLIAI answers at your CEFR level and can use the Wattly story or activity you are viewing.",
+    "balliaiCta": "Chat with BALLIAI",
+    "balliaiIntro": "Your AI English learning assistant. Choose a level and a mode, then ask anything — lesson-aware when you arrive from a story or activity.",
+    "balliaiTagline": "Your Wattly English learning companion",
+    "balliaiGreeting": "Hello! I'm BALLIAI, your Wattly English learning assistant. What would you like to learn today?",
+    "balliaiPlaceholder": "Ask about grammar, a word, a story or your writing…",
+    "balliaiSend": "Send",
+    "balliaiThinking": "BALLIAI is thinking…",
+    "balliaiClear": "New chat",
+    "balliaiLevel": "CEFR level",
+    "balliaiModeLabel": "Mode",
+    "balliaiLesson": "Wattly lesson",
+    "balliaiLessonNote": "BALLIAI uses this lesson as its main source and says so when the answer is not inside it.",
+    "balliaiMoreTitle": "Keep practising",
+    "balliaiMoreActivities": "Activity library (170)",
+    "balliaiMoreStories": "Stories and questions",
+    "balliaiMorePractice": "Practice hub",
+    "balliaiDisclaimer": "BALLIAI is a learning assistant, not a teacher or exam board. Never share personal details.",
+    "balliaiSetupTitle": "BALLIAI needs its model key",
+    "balliaiSetupBody": "The chat is built and running, but no model key is set on the server yet. Add NVIDIA_API_KEY as a Worker secret to switch it on.",
+    "modeAsk": "Ask BALLIAI",
+    "modeGrammar": "Grammar Coach",
+    "modeVocabulary": "Vocabulary Coach",
+    "modeReading": "Reading Helper",
+    "modeWriting": "Writing Coach",
+    "modeConversation": "Conversation Practice",
+    "modeExam": "Exam Practice",
+    "chipAsk": "Ask me anything about your English lesson.",
+    "chipGrammar": "Explain the present perfect simply.",
+    "chipVocabulary": "Teach me five words about travel.",
+    "chipWriting": "Give me feedback on a short paragraph.",
+    "waysTitle": "Practice your way",
+    "contextKicker": "From the backend",
+    "contextTitle": "Practice Context",
+    "contextIntro": "Stories with comprehension questions and curriculum activities, straight from the Wattly catalogue. Open one, or hand it to BALLIAI.",
+    "storyLabel": "Story + questions",
+    "questionCount": "{count} comprehension questions",
+    "openStory": "Read the story",
+    "askBalliai": "Ask BALLIAI",
+    "contextCurriculum": "Curriculum activities",
+    "contextWriting": "Writing practice",
+    "allActivities": "All 170 activities",
+    "allStories": "All stories",
+    "errTooLong": "That message is a little long — please shorten it.",
+    "errRateLimited": "You have sent a lot of messages. Please wait a few minutes and try again.",
+    "errTimeout": "BALLIAI took too long to answer. Please try again.",
+    "errGeneric": "BALLIAI could not answer just now. Please try again."
   },
   "Activities": {
     "title": "Activity library",
@@ -909,6 +961,7 @@
     "after": "After writing",
     "backActivities": "Back to activities",
     "backDashboard": "Back to dashboard",
-    "backCourses": "Back to courses"
+    "backCourses": "Back to courses",
+    "askBalliai": "Ask BALLIAI about this activity"
   }
 }

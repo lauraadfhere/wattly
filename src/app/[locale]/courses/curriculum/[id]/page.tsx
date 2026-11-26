@@ -20,7 +20,7 @@ export default async function CurriculumActivityPage({ params }: Props) {
   const t = await getTranslations("Curriculum");
 
   return (
-    <PlatformShell title={t("activityTitle")} intro={t("activityIntro")} gate="auth">
+    <PlatformShell title={t("activityTitle")} intro={t("activityIntro")} gate="none">
       <CurriculumActivityPlayer activity={activity} />
     </PlatformShell>
   );

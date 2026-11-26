@@ -7,7 +7,7 @@ export default async function CurriculumPage() {
   const t = await getTranslations("Curriculum");
 
   return (
-    <PlatformShell title={t("pageTitle")} intro={t("pageIntro")} gate="auth">
+    <PlatformShell title={t("pageTitle")} intro={t("pageIntro")} gate="none">
       <CurriculumHub />
       <p className="mt-8">
         <Link href="/courses" className="text-sm font-semibold text-[#0016BD] underline">

@@ -19,7 +19,7 @@ export default async function StoryDetailPage({ params }: Props) {
   const t = await getTranslations("Stories");
 
   return (
-    <PlatformShell title={t("playerTitle")} gate="auth">
+    <PlatformShell title={t("playerTitle")} gate="none">
       <StoryPlayer story={story} />
       {story.questions?.length ? (
         <section className="mt-6 rounded-2xl border border-black/10 bg-white p-5">
@@ -31,6 +31,14 @@ export default async function StoryDetailPage({ params }: Props) {
           </ol>
         </section>
       ) : null}
+
+      <Link
+        href={`/practice/conversation?story=${story.id}&mode=reading`}
+        className="mt-5 inline-flex rounded-full bg-[#0016BD] px-5 py-2.5 text-sm font-bold text-white"
+      >
+        {t("askBalliai")}
+      </Link>
+
       <p className="mt-8 flex flex-wrap gap-4 text-sm">
         <Link href="/stories" className="font-semibold text-[#0016BD] underline">
           {t("backStories")}

@@ -5,7 +5,7 @@ export default async function VocabularyPracticePage() {
   const t = await getTranslations("Practice");
 
   return (
-    <PlatformShell title={t("vocabulary")} gate="auth">
+    <PlatformShell title={t("vocabulary")} gate="none">
       <p className="max-w-2xl text-base leading-7 text-[#000A5E]/75">
         {t("vocabularyDetail")}
       </p>

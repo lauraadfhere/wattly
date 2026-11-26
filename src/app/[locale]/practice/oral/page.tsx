@@ -12,7 +12,7 @@ export default async function OralPracticePage() {
   ];
 
   return (
-    <PlatformShell title={t("title")} intro={t("intro")} gate="auth">
+    <PlatformShell title={t("title")} intro={t("intro")} gate="none">
       <div className="grid gap-4 sm:grid-cols-3">
         {drills.map((drill) => (
           <Link

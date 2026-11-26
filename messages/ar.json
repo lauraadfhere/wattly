@@ -218,7 +218,10 @@
     "curriculumEyebrow": "Kinpal English Academy",
     "curriculumTitle": "A1→C1 grammar & reading activities",
     "curriculumBody": "50 grammar lessons and 50 reading activities with timers, answer check, and full answer keys — structured for focused study sessions.",
-    "curriculumCta": "Open full curriculum"
+    "curriculumCta": "Open full curriculum",
+    "coversKicker": "مكتبة دورات Wattly",
+    "coversTitle": "عشر دورات في منصّة واحدة",
+    "coversIntro": "كل غلاف يفتح القسم المناسب في Wattly — المستويات أو القواعد أو المفردات أو التحدث أو الاستماع أو القراءة أو الكتابة أو التحضير للامتحان."
   },
   "Policies": {
     "title": "السياسات والشروط",
@@ -636,7 +639,55 @@
     "conversationDetail": "تمرّن على طلب الطعام أو تقديم نفسك. سؤال واحد في كل مرة. بلا مؤقت أو درجات.",
     "pronunciation": "النطق",
     "pronunciationBody": "ملاحظات داعمة اختيارية — ليست إلزامية أبدًا.",
-    "pronunciationDetail": "جرّب الأصوات إن أردت. الملاحظات لطيفة ومرئية. يمكنك تخطي الكلام تمامًا."
+    "pronunciationDetail": "جرّب الأصوات إن أردت. الملاحظات لطيفة ومرئية. يمكنك تخطي الكلام تمامًا.",
+    "balliaiTitle": "تعرّف على BALLIAI — رفيقك في تعلّم الإنجليزية",
+    "balliaiBody": "اسأل عن القواعد أو المفردات أو القراءة أو الكتابة. يجيب BALLIAI حسب مستواك في الإطار الأوروبي ويمكنه استخدام القصة أو النشاط المفتوح في Wattly.",
+    "balliaiCta": "تحدّث مع BALLIAI",
+    "balliaiIntro": "مساعدك لتعلّم الإنجليزية بالذكاء الاصطناعي. اختر المستوى والنمط ثم اسأل ما تريد — مع سياق الدرس عند الوصول من قصة أو نشاط.",
+    "balliaiTagline": "رفيقك في تعلّم الإنجليزية من Wattly",
+    "balliaiGreeting": "مرحبًا! أنا BALLIAI، مساعدك لتعلّم الإنجليزية في Wattly. ماذا تريد أن تتعلّم اليوم؟",
+    "balliaiPlaceholder": "اسأل عن القواعد أو كلمة أو قصة أو كتابتك…",
+    "balliaiSend": "إرسال",
+    "balliaiThinking": "BALLIAI يفكّر…",
+    "balliaiClear": "محادثة جديدة",
+    "balliaiLevel": "مستوى CEFR",
+    "balliaiModeLabel": "النمط",
+    "balliaiLesson": "درس Wattly",
+    "balliaiLessonNote": "يعتمد BALLIAI على هذا الدرس كمصدر رئيسي وسيخبرك إن لم تكن الإجابة فيه.",
+    "balliaiMoreTitle": "واصل التدرّب",
+    "balliaiMoreActivities": "مكتبة الأنشطة (170)",
+    "balliaiMoreStories": "قصص وأسئلة",
+    "balliaiMorePractice": "مركز التدرّب",
+    "balliaiDisclaimer": "BALLIAI مساعد تعليمي وليس معلّمًا أو جهة امتحانات. لا تشارك بياناتك الشخصية أبدًا.",
+    "balliaiSetupTitle": "يحتاج BALLIAI إلى مفتاح النموذج",
+    "balliaiSetupBody": "المحادثة جاهزة وتعمل، لكن لم يُضبط مفتاح النموذج على الخادم بعد. أضف NVIDIA_API_KEY كسرّ في Worker لتفعيلها.",
+    "modeAsk": "اسأل BALLIAI",
+    "modeGrammar": "مدرّب القواعد",
+    "modeVocabulary": "مدرّب المفردات",
+    "modeReading": "مساعدة القراءة",
+    "modeWriting": "مدرّب الكتابة",
+    "modeConversation": "تدريب المحادثة",
+    "modeExam": "تدريب الامتحان",
+    "chipAsk": "اسألني أي شيء عن درسك في الإنجليزية.",
+    "chipGrammar": "اشرح المضارع التام ببساطة.",
+    "chipVocabulary": "علّمني خمس كلمات عن السفر.",
+    "chipWriting": "أعطني ملاحظات على فقرة قصيرة.",
+    "waysTitle": "تدرّب بطريقتك",
+    "contextKicker": "من الخادم",
+    "contextTitle": "سياق التدريب",
+    "contextIntro": "قصص مع أسئلة فهم وأنشطة من المنهج، مباشرة من كتالوج Wattly. افتح واحدة أو سلّمها إلى BALLIAI.",
+    "storyLabel": "قصة + أسئلة",
+    "questionCount": "{count} أسئلة فهم",
+    "openStory": "اقرأ القصة",
+    "askBalliai": "اسأل BALLIAI",
+    "contextCurriculum": "أنشطة المنهج",
+    "contextWriting": "تدريب الكتابة",
+    "allActivities": "الأنشطة الـ170",
+    "allStories": "كل القصص",
+    "errTooLong": "الرسالة طويلة قليلًا — اختصرها من فضلك.",
+    "errRateLimited": "أرسلت رسائل كثيرة. انتظر بضع دقائق ثم حاول.",
+    "errTimeout": "استغرق BALLIAI وقتًا طويلًا للرد. حاول مرة أخرى.",
+    "errGeneric": "لم يستطع BALLIAI الرد الآن. حاول مرة أخرى."
   },
   "Stories": {
     "title": "Stories",
@@ -657,7 +708,8 @@
     "wordBankEmpty": "No saved words yet. Tap the star next to important words while you listen.",
     "backStories": "Back to stories",
     "backDashboard": "Back to dashboard",
-    "questionsTitle": "أسئلة الفهم"
+    "questionsTitle": "أسئلة الفهم",
+    "askBalliai": "اسأل BALLIAI عن هذه القصة"
   },
   "SupportWidget": {
     "open": "Open support",
@@ -869,6 +921,7 @@
     "after": "بعد الكتابة",
     "backActivities": "العودة إلى الأنشطة",
     "backDashboard": "العودة إلى لوحة التحكم",
-    "backCourses": "العودة إلى الدورات"
+    "backCourses": "العودة إلى الدورات",
+    "askBalliai": "اسأل BALLIAI عن هذا النشاط"
   }
 }

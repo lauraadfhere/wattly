@@ -18,7 +18,7 @@ export default async function ActivitiesPage() {
   ].filter((g) => g.items.length);
 
   return (
-    <PlatformShell title={t("title")} intro={t("intro")} gate="auth">
+    <PlatformShell title={t("title")} intro={t("intro")} gate="none">
       <section>
         <h2 className="text-lg font-bold text-[#0b0b1a]">{t("curriculumTitle")}</h2>
         <p className="mt-1 text-sm text-black/60">{t("curriculumIntro")}</p>
